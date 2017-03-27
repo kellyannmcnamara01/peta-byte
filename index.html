@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html laang="en">
+<!--
+
+    Project: Temiskaming Hospital Website
+    Team Name: PetaByte
+    Class: Mobile Development
+    Professor: Lee Situ
+
+    Team Members:
+        Bryan Stephens:         Team Lead
+        Kelly Ann McNamara      Assistant Lead & Lead Designer
+        Wei Gao                 Documentation Lead
+        Ahmed Selim             Assistant Documentation Lead
+        Jessica Sawicz          Job Title
+        Mahmud Shakir           Job Title
+        Nathan Mante            Job Title
+
+    __________________________________
+
+    INDEX
+
+    01. Navigation
+    02. Opening Image
+    03. Three Callouts
+        03-1. Callout One
+        03-2. Callout Two
+        03-3. Callout Three
+    04. Donate
+        04-1. Donate Button Callout
+        04-2. Donor Story Preview
+    05. Events & Visiting Hours
+        05-1. Events
+        05-2. Visiting Hours
+    06. Contact
+        06-1. Map
+        06-2. Contact information
+    07. Footer
+
+-->
+
+<head>
+    <title>Temiskaming Hospital</title>
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+    <!-- 01. Navigation -->
+        <nav class="navbar">
+            <div class="row">
+                <div id="main-nav-logo" class="col-md-3 col-sm-3 col-6">
+                    <img src="opt-imgs/nav-logo.jpg" alt="" />
+                </div>
+                <div id="main-nav" class="col-md-9 col-sm-9 col-6">
+                    <ul>
+                        <li class="nav-item">
+                            <a id="main-nav__item-1"href="">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="dropdown-toggle" id="main-nav__item-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Patients &amp; Visitors
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="main-nav__item-2">
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="dropdown-toggle" id="main-nav__item-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Services
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="main-nav__item-3">
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="dropdown-toggle" id="main-nav__item-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Opportunities
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="main-nav__item-4">
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="dropdown-toggle" id="main-nav__item-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Donation
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="main-nav__item-5">
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                          </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="dropdown-toggle" id="main-nav__item-6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            FAQ
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="main-nav__item-6">
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                          </div>
+                        </li>
+                        <li class="nav-item">
+                            <a id="main-nav__item-7"href="">Conact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <!-- 02. Opening Image -->
+    <div id="opening-img"></div>
+    <!-- 03. Three Callouts -->
+    <div id="callouts">
+        <div class="wrapper row">
+            <!-- 03-1. Callout One -->
+            <div id="callouts__block-one" class="col-md-4 col-sm-4 col-12">
+                <h2>Request Appointment</h2>
+                <div class="callouts__blocks_line"></div>
+                <p>It'sas easy as pie. Just simply fill out our form and we will be in touch.</p>
+            </div>
+            <!-- 03-2. Callout Two -->
+            <div id="callouts__block-two" class="col-md-4 col-sm-4 col-12">
+                <h2>Volunteer</h2>
+                <div class="callouts__blocks_line"></div>
+                <p>We are always looking for those in our community who want to help. Check out the current openings.</p>
+            </div>
+            <!-- 03-3. Callout Three -->
+            <div id="callouts__block-three" class="col-md-4 col-sm-4 col-12">
+                <h2>Online Payments</h2>
+                <div class="callouts__blocks_line"></div>
+                <p>You can now easily pay any outstanding dues directly online.</p>
+            </div>
+        </div>
+    </div>
+    <!-- 04. Donate -->
+    <div id="donate-hp">
+            <!-- 04-1. Donate Button Callout -->
+            <div id="donate-hp__button">
+                <div class="wrapper" id="donate-hp__div">
+                    <a href="">Help save lives. Donate today.</a>
+                </div>
+            </div>
+            <!-- 04-2. Donor Story Preview -->
+            <div id="donate-hp__story-preview">
+                <div class="wrapper">
+                    <div id="carouselExampleControls story-preview__carousel" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner" role="listbox">
+                          <div class="carousel-item active row">
+                            <blockquote class="col-md-12 col-sm-12 col-12">"Temiskaming was fantasic when my gradma got sick. They were kind and helpful. They kept her company when she was scared aswell. It was hard for her since my grandpa passed away last year, but they were amazing. My donation is to thank them for their great work."</blockquote>
+                              <p class="col-md-12 col-sm-12 col-12 white">- Jane Smith</p>
+                          </div>
+
+                          <div class="carousel-item row">
+                              <blockquote class="col-md-12 col-sm-12 col-12">"Another Comment."</blockquote>
+                              <p class="col-md-12 col-sm-12 col-12 white">- Jane Smith</p>
+                          </div>
+                          <div class="carousel-item row">
+                              <blockquote class="col-md-12 col-sm-12 col-12">Third Example</blockquote>
+                              <p class="col-md-12 col-sm-12 col-12 white">- Jane Smith</p>
+                          </div>
+                      </div>
+                      <!--<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>-->
+                    </div>
+                    <div id="story-preview__button">
+                        <a href="">View More Donor Stories</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- 05. Events & Visiting Hours -->
+    <div id="events-visiting">
+        <div id="events-curve">
+            <div id="event-content-width" class="wrapper row">
+            <!-- 05-1. Events -->
+            <div id="events-visiting__events" class="col-md-6 col-sm-6 col-12">
+                <h2 class="dark-blue">Upcoming Events</h2>
+                <div class="events__event-listing">
+                    <a href="" class="row">
+                        <div class="events__event-listing_title col-md-4 col-sm-12 col-12">
+                            March 2017
+                        </div>
+                        <div class="events__event-listing_details col-md-8 col-sm-12 col-12">
+                            10:30am | sing-a-long for kids
+                        </div>
+                    </a>
+                </div>
+                <div class="events__event-listing">
+                    <a href="" class="row">
+                        <div class="events__event-listing_title col-md-4 col-sm-12 col-12">
+                            March 2017
+                        </div>
+                        <div class="events__event-listing_details col-md-8 col-sm-12 col-12">
+                            10:30am | sing-a-long for kids
+                        </div>
+                    </a>
+                </div>
+                <div class="events__event-listing">
+                    <a href="" class="row">
+                        <div class="events__event-listing_title col-md-4 col-sm-12 col-12">
+                            March 2017
+                        </div>
+                        <div class="events__event-listing_details col-md-8 col-sm-12 col-12">
+                            10:30am | sing-a-long for kids
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- 05-2. Visiting Hours -->
+            <div id="events-visiting__visiting" class="col-md-6 col-sm-6 col-12">
+                <h2 class="dark-blue">Visiting Hours</h2>
+                <div class="visiting__hour-listing">
+                    <a href="" class="row">
+                        <div class="visiting__hour-listing_title col-md-4 col-sm-12 col-12">
+                            6:00pm - 8:00pm
+                        </div>
+                        <div class="visiting__hour-listing_details col-md-8 col-sm-12 col-12">
+                            People you can see
+                        </div>
+                    </a>
+                </div>
+                <div class="visiting__hour-listing">
+                    <a href="" class="row">
+                        <div class="visiting__hour-listing_title col-md-4 col-sm-12 col-12">
+                            6:00pm - 8:00pm
+                        </div>
+                        <div class="visiting__hour-listing_details col-md-8 col-sm-12 col-12">
+                            People you can see
+                        </div>
+                    </a>
+                </div>
+                <div class="visiting__hour-listing">
+                    <a href="" class="row">
+                        <div class="visiting__hour-listing_title col-md-4 col-sm-12 col-12">
+                            6:00pm - 8:00pm
+                        </div>
+                        <div class="visiting__hour-listing_details col-md-8 col-sm-12 col-12">
+                            People you can see
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- 06. Contact -->
+    <div id="contact-hp" class="row">
+        <!-- 06-1. Map -->
+        <div id="map" class="col-md-6 col-sm-6 col-12">
+        <div id="contact-hp__map"></div>
+        </div>
+        <!-- 06-2. Contact information -->
+        <div id="contact-hp__info" class="col-md-6 col-sm-6 col-12">
+            <div class="wrapper">
+                <h3>Temiskaming Hospital</h3>
+                <div class="info__grouping">
+                    <p>421 Shepherdson Road</p>
+                    <p>New Liskeard ON P0J 1P0</p>
+                </div>
+                <div class="info__grouping">
+                    <p>Telephone:</p>
+                    <p>(705)647-8121</p>
+                    <p>(705)647-1088</p>
+                </div>
+                <div class="info__grouping">
+                    <p>Fax:</p>
+                    <p>(705)647-5800</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 07. Footer -->
+    <div id="footer">
+        <div class="wrapper row">
+            <div class="footer__link-set col-md-4 col-sm-4 col-12">
+                <ul>
+                    <li><a href="">Accessibility Plan</a></li>
+                    <li><a href="">Code of Conduct</a></li>
+                    <li><a href="">Patient Saftey</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer__link-set col-md-4 col-sm-4 col-12">
+                <ul>
+                    <li><a href="">Strategic Plan 2020</a></li>
+                    <li><a href="">Your Rights &amp; Responsibilities</a></li>
+                    <li><a href="">Your Privacy</a></li>
+                </ul>
+            </div>
+            <div class="footer__longin-set col-md-4 col-sm-4 col-12">
+                <ul>
+                    <li><a href="" class="footer__login-btn">Employee Login</a></li>
+                    <li><a href="" class="footer__login-btn">Volunteer Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script type="text/javascript" src="googlemaps.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2SRyJnNBfe6bkp1B4h4iXgEUfyBn370g&callback=initializeMap" async defer></script>
+</html>
