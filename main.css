@@ -352,6 +352,38 @@ p {
     /* 11-3. --Feature Name Here-- */
 
 /* 12. Footer */
+#footer {
+    background: #0d467d;
+    padding: 50px 0px;
+}
+.footer__link-set ul, .footer__longin-set ul{
+    list-style: none;
+}
+.footer__longin-set ul li {
+    padding-top: 15px;
+}
+.footer__longin-set ul li:first-child {
+    padding-top: 0;
+}
+.footer__link-set ul li a {
+    color: #fff;
+    font-size: 1.2em;
+}
+.footer__link-set ul li a:hover, .footer__link-set ul li a:active, .footer__link-set ul li a:focus {
+    color: #f3c728;
+    text-decoration: none;
+}
+.footer__longin-set ul li a {
+    background: #0196da;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 4px 15px;
+}
+.footer__longin-set ul li a:hover, .footer__longin-set ul li a:active, .footer__longin-set ul li a:focus {
+    text-decoration: none;
+    background: #f3c728;
+    color: #0d467d;
+}
 
 /* 13. Media Queries */
 @media only screen and (min-width: 1024px) {
