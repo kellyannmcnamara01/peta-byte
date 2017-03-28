@@ -374,13 +374,16 @@ p {
     color: #f3c728;
     text-decoration: none;
 }
-.footer__longin-set ul li a {
+.footer__login-btn {
     background: #0196da;
     color: #fff;
     font-size: 1.2em;
     padding: 4px 15px;
+    border-radius: 0;
+    border: none;
+    font-weight: lighter;
 }
-.footer__longin-set ul li a:hover, .footer__longin-set ul li a:active, .footer__longin-set ul li a:focus {
+.footer__login-btn:hover, .footer__login-btn:active, .footer__login-btn:focus {
     text-decoration: none;
     background: #f3c728;
     color: #0d467d;
