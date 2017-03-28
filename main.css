@@ -58,6 +58,7 @@
         11-2. --Feature Name Here--
         11-3. --Feature Name Here--
     12. Footer
+        12.1 Login Modals
     13. Media Queries
 
     ____________________________________________
@@ -384,6 +385,7 @@ p {
     background: #f3c728;
     color: #0d467d;
 }
+    /* 12.1 Login Modals */
 
 /* 13. Media Queries */
 @media only screen and (min-width: 1024px) {
