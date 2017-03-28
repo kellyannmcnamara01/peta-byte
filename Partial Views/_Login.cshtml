@@ -1,0 +1,62 @@
+﻿@model sandbox_authorization.Models.user
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <span class="glyphicon glyphicon-remove" data-dismiss="modal"></span>
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <h4 class="signinLbl">Admin Login</h4>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div>
+                            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label signinLbl" })
+                        </div>
+                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "input" } })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label signinLbl" })
+                        </div>
+                            @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "input" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</div>
+
+}
+<style>
+
+    .modal-backdrop {
+        margin-top: 65px;
+        background-color: #0f5185;
+    }
+
+    .input, input[type=password] {
+        border: none;
+        border-bottom: 3px solid #0d467d;
+        background-color: #b6c7d8;
+    }
+
+    form {
+        text-align: center;
+    }
+    
+    .signinLbl {
+        text-transform: uppercase;
+        color: #0d467d;
+    }
+
+</style>
