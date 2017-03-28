@@ -309,13 +309,16 @@
             </div>
             <div class="footer__longin-set col-md-4 col-sm-12 col-12">
                 <ul>
-                    <li><a href="" class="footer__login-btn">Employee Login</a></li>
+                    <li><button type="button" class="btn btn-primary footer__login-btn" data-toggle="modal" data-target="#exampleModal">
+                       Employee Login
+                    </button></li>
                     <li><a href="" class="footer__login-btn">Volunteer Login</a></li>
+
                 </ul>
             </div>
         </div>
     </div>
-
+    @Html.Partial("_Login")
 </body>
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

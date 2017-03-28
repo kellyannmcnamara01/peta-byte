@@ -387,6 +387,26 @@ p {
 }
     /* 12.1 Login Modals */
 
+    .modal-backdrop {
+        margin-top: 65px;
+        background-color: #0f5185;
+    }
+
+    .input, input[type=password] {
+        border: none;
+        border-bottom: 3px solid #0d467d;
+        background-color: #b6c7d8;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    .signinLbl {
+        text-transform: uppercase;
+        color: #0d467d;
+    }
+
 /* 13. Media Queries */
 @media only screen and (min-width: 1024px) {
     #events-curve {
