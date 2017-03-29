@@ -4,13 +4,21 @@ function initializeMap(){
         lng: -79.6955
     };
     var map = new google.maps.Map(document.getElementById('contact-hp__map'), {
-        zoom: 8,
+        zoom: 14,
         center: temiskaming,
         draggable: false,
-        mapTypeControl: false,
+        disableDefaultUI: true,
+        styles: [{
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#9bdffb'}]
+            }]
     });
+    
     var marker = new google.maps.Marker({
         position: temiskaming,
         map: map
     });
 }
+    
+   
