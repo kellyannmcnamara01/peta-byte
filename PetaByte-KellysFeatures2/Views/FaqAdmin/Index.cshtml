@@ -1,5 +1,13 @@
 ﻿@model IEnumerable<PetaByte_KellysFeatures2.Models.Faq>
-
+@*/*
+            Note(Ahmed Selim): Feature 1 Frequently asked questions
+            Team: PetaByte(Temiskaming-hospital-project)
+            Name: Frequently asked questions
+            Description: (Admin Side)This feature is designed to allow users and admin the ability
+            to answer some oftheir questions without having to go all over the website.
+            the FAQ feature will bein the navigation, where users can click it
+            and be navigated to the FAQ page.
+    */*@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -8,21 +16,36 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <h2>@Html.ActionLink("Create New", "Create")</h2>
 </p>
-<table class="table">
+<table class="table container">
     <tr>
+        <th>
+            <h4>@Html.DisplayNameFor(model => model.question)</h4>
+        </th>
+        <th>
+            <h4>@Html.DisplayNameFor(model => model.answer)</h4>
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <h5>@Html.DisplayFor(modelItem => item.question)</h5>
+            </td>
+            <td>
+                <h5>@Html.DisplayFor(modelItem => item.answer)</h5>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-primary", @style = "color:white" })
+                <br></br>
+                @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-primary", @style = "color:white" })
+                <br></br>
+                @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-primary", @style = "color:white" })
+            </td>
+        </tr>
+    }
 
 </table>

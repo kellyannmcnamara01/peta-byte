@@ -27,7 +27,7 @@ namespace PetaByte_KellysFeatures2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Faq faq = db.Faqs.Find(id);
+            Faq faq = db.Faqs.SingleOrDefault(m => m.id == id);
             if (faq == null)
             {
                 return HttpNotFound();
@@ -65,7 +65,7 @@ namespace PetaByte_KellysFeatures2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Faq faq = db.Faqs.Find(id);
+            Faq faq = db.Faqs.SingleOrDefault(m => m.id == id);
             if (faq == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace PetaByte_KellysFeatures2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Faq faq = db.Faqs.Find(id);
+            Faq faq = db.Faqs.SingleOrDefault(m => m.id == id);
             if (faq == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Faq faq = db.Faqs.Find(id);
+            Faq faq = db.Faqs.SingleOrDefault(m => m.id == id);
             db.Faqs.Remove(faq);
             db.SaveChanges();
             return RedirectToAction("Index");

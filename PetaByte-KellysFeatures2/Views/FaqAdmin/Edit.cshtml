@@ -1,25 +1,47 @@
 ﻿@model PetaByte_KellysFeatures2.Models.Faq
-
+@*/*
+        Note(Ahmed Selim): Feature 1 Frequently asked questions
+        Team: PetaByte(Temiskaming-hospital-project)
+        Name: Frequently asked questions
+        Description: (Admin Side)This feature is designed to allow users and admin the ability
+        to answer some oftheir questions without having to go all over the website.
+        the FAQ feature will bein the navigation, where users can click it
+        and be navigated to the FAQ page.
+    */*@
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
 }
 
 <h2>Edit</h2>
 
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Faq</h4>
+
+    <div class="form-horizontal container">
+        <h4>Table</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.id)
 
-        @Html.HiddenFor(model => model.question)
+        <div class="form-group">
+            @Html.LabelFor(model => model.question, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.question, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.question, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-        @Html.HiddenFor(model => model.answer)
+        <div class="form-group">
+            @Html.LabelFor(model => model.answer, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.answer, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.answer, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -29,6 +51,10 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<h4 class="container">
+    @Html.ActionLink("Back to List", "Index", new { id = Model.id }, new { @class = "btn btn-primary", @style = "color:white" })
+</h4>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

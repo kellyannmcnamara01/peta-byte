@@ -1,25 +1,51 @@
 ﻿@model PetaByte_KellysFeatures2.Models.Faq
-
+@*/*
+        Note(Ahmed Selim): Feature 1 Frequently asked questions
+        Team: PetaByte(Temiskaming-hospital-project)
+        Name: Frequently asked questions
+        Description: (Admin Side)This feature is designed to allow users and admin the ability
+        to answer some oftheir questions without having to go all over the website.
+        the FAQ feature will bein the navigation, where users can click it
+        and be navigated to the FAQ page.
+    */*@
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
 }
 
 <h2>Delete</h2>
+<div class="container">
+    <h3>Are you sure you want to delete this?</h3>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Faq</h4>
+
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            <h4>@Html.DisplayNameFor(model => model.question)</h4>
+        </dt>
+
+        <dd>
+            <h4>@Html.DisplayFor(model => model.question)</h4>
+        </dd>
+
+        <dt>
+            <h4>@Html.DisplayNameFor(model => model.answer)</h4>
+        </dt>
+
+        <dd>
+            <h4>@Html.DisplayFor(model => model.answer)</h4>
+        </dd>
+
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-default" /> <p>&nbsp;</p>
+            @Html.ActionLink("Back to List", "Index", new { id = Model.id }, new { @class = "btn btn-primary", @style = "color:white" })       <p>&nbsp;</p>
         </div>
     }
 </div>
