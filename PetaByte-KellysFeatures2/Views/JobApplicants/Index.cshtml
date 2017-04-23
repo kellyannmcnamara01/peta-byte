@@ -1,0 +1,120 @@
+﻿@model IEnumerable<PetaByte_KellysFeatures2.Models.JobApplicant>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Applicants</h2>
+
+
+@foreach (var item in Model)
+{
+    <div class="col-md-12 row appDetails">
+        <h4>Applicant @item.jobAppId for the @item.appJobTitle Position</h4>
+        <div class="col-md-9 row">
+            <div class="col-md-6 padding-bottom-10">
+                <div class="col-md-4 appLabel">@Html.DisplayNameFor(model => model.appFirstName)</div>
+                <div class="col-md-8 appDetailsText">@Html.DisplayFor(modelItem => item.appFirstName)</div>
+            </div>
+            <div class="col-md-6 padding-bottom-10">
+                <div class="col-md-4 appLabel">@Html.DisplayNameFor(model => model.appLastName)</div>
+                <div class="col-md-8 appDetailsText">@Html.DisplayFor(modelItem => item.appLastName)</div>
+            </div>
+            <div class="col-md-6 padding-bottom-10">
+                <div class="col-md-4 appLabel">@Html.DisplayNameFor(model => model.appEmail)</div>
+                <div class="col-md-8 appDetailsText">@Html.DisplayFor(modelItem => item.appEmail)</div>
+            </div>
+            <div class="col-md-6 padding-bottom-10">
+                <div class="col-md-4 appLabel">@Html.DisplayNameFor(model => model.appLinkedIn)</div>
+                <div class="col-md-8 appDetailsText">@Html.DisplayFor(modelItem => item.appLinkedIn)</div>
+            </div>
+            <div class="col-md-12 padding-bottom-10">
+                <div class="col-md-12 appLabel">@Html.DisplayNameFor(model => model.appMessage)</div>
+                <div class="col-md-12 appDetailsText">@Html.DisplayFor(modelItem => item.appMessage)</div>
+            </div>
+            <div class="col-md-6 download">
+                <a href="~/Content/applicants/@item.appCv" download>Download CV</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            @Html.ActionLink("Delete", "Delete", new { id = item.jobAppId }, htmlAttributes: new { @class = "button-delete" })
+        </div>
+    </div>
+}
+
+<!------------------------------->
+<!------------------------------->
+<!------------------------------->
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.appJobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appLinkedIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appMessage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appCv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.appOtherFile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobPosting.jobTitle)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.appJobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appLinkedIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appMessage)
+        </td>
+        <td>
+            <a class="button" href="~/Content/applicants/@item.appCv" download>Download CV</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.appOtherFile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobPosting.jobTitle)
+        </td>
+        <td class="crud">
+            @Html.ActionLink("Edit", "Edit", new { id = item.jobAppId }, htmlAttributes: new { @class = "button-edit" })
+        </td>
+        <td class="crud">
+            @Html.ActionLink("Delete", "Delete", new { id = item.jobAppId }, htmlAttributes: new { @class = "button-delete" })
+        </td>
+    </tr>
+}
+
+</table>*@

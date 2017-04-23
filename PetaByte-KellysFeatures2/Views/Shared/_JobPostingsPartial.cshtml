@@ -1,0 +1,21 @@
+﻿@model IEnumerable<PetaByte_KellysFeatures2.Models.JobPosting>
+
+<div class="panel-group" id="jobposting__group" role="tablist" aria-multiselectable="true">
+    <!---->
+    @foreach (var item in Model)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="jobposting1">
+                    <a class="panel-title" role="button" data-toggle="collapse" data-parent="#accordin" href="#collapse-@item.jobId" aria-expanded="true" aria-controls="collapse-@item.jobId">
+                        @item.jobTitle
+                    </a>
+            </div>
+            <div class="panel-collapse collapse" id="collapse-@item.jobId" role="tabpanel" aria-labelledby="jobposting1">
+                <div class="panel-body">
+                    @item.jobDesc
+                </div>
+            </div>
+        </div>
+    }
+    <!---->
+</div>

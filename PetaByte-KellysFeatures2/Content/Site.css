@@ -1,0 +1,712 @@
+﻿/*
+
+    Project: Temiskaming Hospital Website
+    Team Name: PetaByte
+    Class: Mobile Development
+    Professor: Lee Situ
+
+    Team Members:
+        Bryan Stephens:         Team Lead
+        Kelly Ann McNamara      Assistant Lead & Lead Designer
+        Wei Gao                 Documentation Lead
+        Jessica Sawicz          Designer and Web Developer
+        Mahmud Shakir           Designer and Web Developer
+        Nathan Mante            Web Developer
+        Ahmed Selim             Web Developer
+
+    __________________________________
+
+    INDEX
+    01. Attributes
+    02. Navigation
+    03. Typography
+    04. Homepage
+        04-1. Homepage Opening Img
+        04-2. Homepage Three Callouts
+        04-3. Homepage Donation Section
+        04-4. Homepage Events & Visiting Hours
+            04-4-1. Homepage Events
+            04-4-2. Homepage Visiting Hours
+        04-5. Homepage Contact
+    05. Bryan's Client Facing Features Styling
+        05-1. --Feature Name Here--
+        05-2. --Feature Name Here--
+        05-3. --Feature Name Here--
+    06. Kelly's Client Facing Features Styling
+        06-1. Alert Bar
+        06-2. Page/Navigation
+        06-3. Job Postings
+    07. Wei's Client Facing Features Styling
+        07-1. --Feature Name Here--
+        07-2. --Feature Name Here--
+        07-3. --Feature Name Here--
+    08. Ahmed's Client Facing Features Styling
+        08-1. --Feature Name Here--
+        08-2. --Feature Name Here--
+        08-3. --Feature Name Here--
+    09. Jessica's Client Facing Features Styling
+        09-1. --Feature Name Here--
+        09-2. --Feature Name Here--
+        09-3. --Feature Name Here--
+    10. Mahmud's Client Facing Features Styling
+        10-1. --Feature Name Here--
+        10-2. --Feature Name Here--
+        10-3. --Feature Name Here--
+    11. Nathan's Client Facing Features Styling
+        11-1. --Feature Name Here--
+        11-2. --Feature Name Here--
+        11-3. --Feature Name Here--
+    12. Footer
+        12.1 Login Modals
+    13. Media Queries
+
+    ____________________________________________
+
+    COLOURS:
+    white: #fff;
+    light blue: #01a1ea;
+    med blue: #038fd4;
+    dark blue: #0d467d;
+    blue grey: #316290;
+    gold: #f3c728;
+    pale gold: #fef9e9;
+    green: #65cc89;
+    pale green: #d8f2e1;
+
+
+*/
+
+
+/* 01. Attributes */
+* {
+    margin: 0 auto;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body {
+    font-size: 62.5%;
+    margin: 0 auto;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-rendering: geometricPrecision;
+}
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0px 30px;
+}
+.margin-top-50 {
+    margin-top: 50px;
+}
+.light-blue-bg {
+    background: #01a1ea;
+}
+.med-blue-bg {
+    background: #038fd4;
+}
+.dark-blue-bg{
+    background: #0d467d;
+}
+.blue-grey-bg{
+    background: #316290;
+}
+.gold-bg {
+    background: #f3c728;
+}
+.pale-gold-bg{
+    background: #fef9e9;
+}
+.green-bg{
+    background: #65cc89;
+}
+.pale-green-bg{
+    background: #d8f2e1;
+}
+
+/* Form Styling */
+
+.label {
+    color: #0d467d;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    text-align: left !important;
+}
+
+input[type="text"], input[type="password"], input[type="email"], .drop-down{
+    background: #b6c7d8;
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
+    border-bottom: solid 4px #0d467d;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #0d467d;
+    transition: 0.3s ease all;
+}
+input[type="text"]:hover, input[type="text"]:active, input[type="text"]:focus, input[type="password"]:hover, input[type="password"]:active, input[type="password"]:focus, input[type="email"]:hover, input[type="email"]:active, input[type="email"]:focus, .drop-down:hover, .drop-down:active, .drop-down:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: solid 4px #f3c728;
+    background: #fef9e9;
+}
+.button, input[type="submit"] {
+    font-size: 1.3em;
+    border: 2.5px solid #F1C826;
+    padding: 3px 15px;
+    color: #0d467d;
+    border-radius: 0px;
+    background: none;
+}
+.button:hover, .button:active, .button:hover, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+    border: 2.5px solid #F1C826;
+    background: #F1C826;
+}
+
+/* 02. Navigation */
+.navbar {
+    background: yellow;
+    margin-bottom: 0px !important;
+}
+
+.navbar-fixed-top {
+    background: #fff;
+    box-shadow: 0px 0px 10px 0px lightgrey;
+}
+.nav-logo {
+    padding-top: 10px;
+}
+#main-nav {
+    text-decoration: none;
+    text-align: right;
+    margin-top: 17px;
+}
+#main-nav li {
+    display: inline-block;
+}
+#main-nav li .menu-link{
+    color: #0d467d;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 15px 5px 0px;
+}
+.drop-link {
+    font-size: 1em;
+    padding: 5px;
+    font-weight: 400;
+    text-align: left;
+}
+#main-nav li .menu-link:hover, #main-nav li .menu-link:active, #main-nav li .menu-link:focus {
+    outline: none;
+    color: #f3c728;
+}
+.dropdown-menu {
+    border: none !important;
+    border-radius: 0px !important;
+    margin-top: 10px !important;
+}
+.container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.right {
+    right: 0;
+}
+.navbar-header {
+    display: block;
+}
+.navbar-collapse {
+    display: none;
+    max-height: none !important;
+}
+#mobile-btn {
+    background: none;
+    border: none;
+    color: #0d467d;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 15px 5px 0px;
+    float: right;
+}
+#mobile-btn:hover, #mobile-btn:active, #mobile-btn:focus, .mobile-link a:hover, .mobile-link a:active, .mobile-link a:focus {
+    outline: none;
+    color: #f3c728;
+}
+.width-50 {
+    max-width: 50%;
+}
+.mobile-link {
+    width: 49%;
+    display: inline-block;
+    font-size: 1em;
+    padding: 5px;
+}
+.mobile-link a {
+    font-weight: 400;
+    text-align: left;
+    color: #0d467d;
+}
+
+/* 03. Typography */
+h1 {
+
+}
+h2 {
+    color: #fff;
+    font-size: 2.3em;
+    text-transform: uppercase;
+    text-align: center;
+}
+h3 {
+
+}
+p {
+    font-size: 1.3em;
+    color: #0d467d;
+}
+.dark-blue {
+    color: #0d467d;
+}
+.white {
+    color: #fff;
+}
+
+/* 04. Homepage */
+
+    /* 04-1. Homepage Opening Img */
+    #opening-img {
+        width: 100%;
+        height: 230px;
+        background-image: url(opt-imgs/opening-img-hp.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    /* 04-2. Homepage Three Callouts */
+    #callouts {
+        background: #038fd4;
+    }
+    #callouts p {
+        text-align: center;
+        color: #fff;
+    }
+    #callouts__block-one, #callouts__block-two, #callouts__block-three {
+        padding: 33px 16px;
+    }
+    #callouts__block-two {
+        background: #01a1ea;
+    }
+    .callouts__blocks_line {
+        width: 50px;
+        height: 2px;
+        background: #fff;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    /* 04-3. Homepage Donation Section */
+
+    #donate-hp__button{
+        background-color: #0D467D;
+        padding: 45px 0px;
+    }
+
+    #donate-hp__div{
+        text-align: center;
+        font-size: 2.0em;
+    }
+    #donate-hp__div a {
+        color: #fff;
+        border: 2.5px solid #F1C826;
+        padding: 8px 15px;
+
+    }
+    #donate-hp__story-preview{
+        background-color: #326290;
+        min-height: 180px;
+        padding: 25px 0px 40px;
+    }
+    .carousel-item{
+        color: white;
+        text-align: center;
+    }
+    .carousel-item blockquote{
+        font-size: 1.5em;
+        margin: 20px 0px;
+        padding: 0px 30px;
+        /*max-width: 600px;*/
+        border: none;
+    }
+    .carousel-item p{
+        font-size: 1.5em;
+
+    }
+    .carousel-item__name{
+        color: white;
+        text-align: center;
+    }
+    #story-preview__button{
+        text-align: center;
+        padding-top: 15px;
+    }
+    #story-preview__button a{
+        color: white;
+
+    }
+    #story-preview__button a{
+        font-size: 1.3em;
+        border: 2.5px solid #F1C826;
+        padding: 8px 15px;
+    }
+
+
+    /* 04-4. Homepage Events & Visiting Hours */
+    #events-visiting {
+        position: relative;
+        overflow: hidden;
+    }
+    #events-curve {
+        background: #fff;
+        border-radius: 0px 0px 50% 50%;
+        padding: 50px 0px 15%;
+        width: 115%;
+        margin-left: -7.5%;
+    }
+    #event-content-width {
+        width: 90%;
+        max-width: 1024px;
+    }
+    #events-visiting__events, #events-visiting__visiting {
+        padding: 0px 25px;
+    }
+    #events-visiting__events h2, #events-visiting__visiting h2 {
+        padding: 50px 10px;
+    }
+    .events__event-listing, .visiting__hour-listing {
+        /*margin-bottom: 20px;*/
+    }
+    .events__event-listing a:hover, .events__event-listing a:active, .events__event-listing a:focus, .visiting__hour-listing a:hover, .visiting__hour-listing a:active, .visiting__hour-listing a:focus {
+        text-decoration: none;
+        outline: none;
+    }
+    .events__event-listing a:hover .events__event-listing_title, .events__event-listing a:active .events__event-listing_title, .events__event-listing a:focus .events__event-listing_title, .visiting__hour-listing a:hover .visiting__hour-listing_title, .visiting__hour-listing a:active .visiting__hour-listing_title, .visiting__hour-listing a:focus .visiting__hour-listing_title{
+        background: #0d467d;
+        color: #fff;
+    }
+    .events__event-listing a:hover .events__event-listing_details, .events__event-listing a:active .events__event-listing_details, .events__event-listing a:focus .events__event-listing_details, .visiting__hour-listing a:hover .visiting__hour-listing_details, .visiting__hour-listing a:active .visiting__hour-listing_details, .visiting__hour-listing a:focus .visiting__hour-listing_details{
+        background: #316290;
+        color: #fff;
+    }
+    .events__event-listing_title, .events__event-listing_details, .visiting__hour-listing_title, .visiting__hour-listing_details {
+        padding: 8px 13px 8px 13px;
+        font-size: 1.3em;
+    }
+        /* 04-4-1. Homepage Events */
+        .events__event-listing {
+            margin-right: 20px;
+        }
+        .events__event-listing_title {
+            background: #f3c728;
+            color: #0d467d;
+            /*width: 33.333333%;*/
+        }
+        .events__event-listing_details {
+            background: #fef9e9;
+            color: #666;
+            /*width: 66.666667%*/
+        }
+        /* 04-4-2. Homepage Visiting Hours */
+        .visiting__hour-listing {
+            margin-left: 20px;
+        }
+        .visiting__hour-listing_title {
+            background: #65cc89;
+            color: #0d467d;
+        }
+        .visiting__hour-listing_details {
+            background: #d8f2e1;
+            color: #666;
+        }
+        /* 04-5. Homepage Contact */
+        #contact-hp {
+            background: #9bdffb;
+            padding: 200px 0px;
+            margin-top: -160px;
+        }
+        #map {
+            background: yellow;
+            width: 100%;
+            padding: 0;
+        }
+        #contact-hp__map {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow:visible;
+        }
+        #contact-hp__info {
+        }
+
+/* 05. Bryan's Client Facing Features Styling */
+    /* 05-1. --Feature Name Here-- */
+
+    /* 05-2. --Feature Name Here-- */
+
+    /* 05-3. --Feature Name Here-- */
+
+/* 06. Kelly's Client Facing Features Styling */
+    /* 06-1. Alert Bar */
+    #alert {
+        background: #ed1845;
+        border-radius: 0px !important;
+        overflow: hidden;
+        position: relative;
+    }
+    .alerts {
+        text-transform: uppercase;
+        color: #fff;
+        margin: 12px;
+        font-weight: 700;
+        font-size: 12px;
+        text-align: center;
+    }
+    
+    /* 06-2. Page/Navigation */
+    .navbar-fixed-top {
+        /*top: auto !important;*/
+    }
+    #page-content {
+        padding: 75px 10px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* 06-3. Job Postings */
+    .job-intro {
+        padding: 25px;
+    }
+    .job-intro p {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 25px 0px;
+    }
+    .job-postings {
+        padding: 50px 0px;
+    }
+
+    #jobposting__group {
+        max-width: 500px;
+        margin-top: 50px;
+    }
+    #jobposting__group .panel {
+        background: #fef9e9;
+    }
+    #jobposting__group .panel-group .panel, #jobposting__group .panel {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    #jobposting__group .panel-default {
+        border: none;
+    }
+    #jobposting__group .panel-heading {
+        background: #f3c728;
+        border: none;
+    }
+    #jobposting__group .panel-heading a {
+        color: #0d467d;
+        font-size: 1.3em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    #jobposting__group .panel-default>.panel-heading+.panel-collapse .panel-body {
+        border-top: none;
+    }
+    #jobposting__group .panel-body {
+        color: #0d467d;
+        font-size: 1.3em;
+        padding: 25px 15px 30px;
+    }
+    .panel-title {
+        text-align: left;
+    }
+    #app-form__form {
+        max-width: 500px;
+    }
+    #app-form__form .col-md-6 {
+        padding-right: 0px;
+    }
+
+/* 07. Wei's Client Facing Features Styling */
+    /* 07-1. --Feature Name Here-- */
+
+    /* 07-2. --Feature Name Here-- */
+
+    /* 07-3. --Feature Name Here-- */
+
+/* 08. Ahmed's Client Facing Features Styling */
+    /* 08-1. --Feature Name Here-- */
+
+    /* 08-2. --Feature Name Here-- */
+
+    /* 08-3. --Feature Name Here-- */
+
+/* 09. Jessica's Client Facing Features Styling */
+    /* 09-1. --Feature Name Here-- */
+
+    /* 09-2. --Feature Name Here-- */
+
+    /* 09-3. --Feature Name Here-- */
+
+/* 10. Mahmud's Client Facing Features Styling */
+    /* 10-1. --Feature Name Here-- */
+
+    /* 10-2. --Feature Name Here-- */
+
+    /* 10-3. --Feature Name Here-- */
+
+/* 11. Nathan's Client Facing Features Styling */
+    /* 11-1. --Feature Name Here-- */
+
+    /* 11-2. --Feature Name Here-- */
+
+    /* 11-3. --Feature Name Here-- */
+
+/* 12. Footer */
+#footer {
+    background: #0d467d;
+    padding: 50px 0px;
+}
+.footer__link-set ul, .footer__longin-set ul{
+    list-style: none;
+}
+.footer__longin-set ul li {
+    padding-top: 15px;
+}
+.footer__longin-set ul li:first-child {
+    padding-top: 0;
+}
+.footer__link-set ul li a {
+    color: #fff;
+    font-size: 1.2em;
+}
+.footer__link-set ul li a:hover, .footer__link-set ul li a:active, .footer__link-set ul li a:focus {
+    color: #f3c728;
+    text-decoration: none;
+}
+.footer__login-btn {
+    background: #0196da;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 4px 15px;
+    border-radius: 0;
+    border: none;
+    font-weight: lighter;
+}
+.footer__login-btn:hover, .footer__login-btn:active, .footer__login-btn:focus {
+    text-decoration: none;
+    background: #f3c728;
+    color: #0d467d;
+}
+    /* 12.1 Login Modals */
+
+    .modal-backdrop {
+        margin-top: 65px;
+        background-color: #0f5185;
+    }
+
+    .input, input[type=password] {
+        border: none;
+        border-bottom: 3px solid #0d467d;
+        background-color: #b6c7d8;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    .signinLbl {
+        text-transform: uppercase;
+        color: #0d467d;
+    }
+
+/* 13. Media Queries */
+@media only screen and (min-width: 1024px) {
+    #events-curve {
+        border-radius: 0px 0px 50% 50%;
+        padding: 50px 0px 10%;
+        width: 110%;
+        margin-left: -5%;
+    }
+}
+/*@media only screen and (max-width: 954px) {
+    #callouts h2 {
+        max-width: 175px;
+    }
+}*/
+@media only screen and (max-width: 917px) {
+    .visiting__hour-listing_title, .visiting__hour-listing_details {
+        padding: 8px 5px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    #events-curve {
+        border-radius: 0px 0px 50% 50%;
+        padding: 50px 0px 20%;
+        width: 130%;
+        margin-left: -15%;
+    }
+    #event-content-width {
+        width: 75%;
+        max-width: 1024px;
+    }
+    .events__event-listing {
+        margin-right: 5px;
+    }
+    .visiting__hour-listing {
+        margin-left: 5px;
+    }
+    #callouts h2 {
+        font-size: 1.8em;
+    }
+    .navbar-header {
+        display: none;
+    }
+    .navbar-collapse {
+        display: block;
+    }
+}
+@media only screen and (max-width: 597px) {
+    #events-visiting__events h2, #events-visiting__visiting h2 {
+        padding: 50px 0px;
+    }
+}
+@media only screen and (max-width: 575px) {
+    #events-curve {
+        border-radius: 0px 0px 50% 50%;
+        padding: 50px 0px 15%;
+        width: 200%;
+        margin-left: -50%;
+    }
+    #event-content-width {
+        width: 50%;
+        max-width: 1024px;
+    }
+    .events__event-listing {
+        margin-right: auto;
+    }
+    .visiting__hour-listing {
+        margin-left: auto;
+    }
+}
+
+

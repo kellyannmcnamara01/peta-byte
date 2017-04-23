@@ -1,0 +1,186 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    @*@Html.Action("Alerts")*@
+    <div class="navbar navbar-fixed-top">
+        <div class="">
+            <div class="navbar-header col-md-12 col-sm-12 col-12">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2 col-3">
+                        <a href="#">
+                            <img src="~/Content/opt-imgs/petabyte-h-logo.png" class="nav-logo" />
+                        </a>
+                    </div>
+                    <div class="text-right col-md-10 col-sm-10 col-9">
+                        <ul id="main-nav">
+                            <li class="dropdown nav-item">
+                                <a class="dropdown-toggle menu-link" data-toggle="dropdown" href="#">About Us</a>
+                                <ul class="dropdown-menu">
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">The Team</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">News</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Departments</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Research</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown nav-item">
+                                <a class="dropdown-toggle menu-link" data-toggle="dropdown" href="#">Patients &amp; Visitors</a>
+                                <ul class="dropdown-menu">
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Gift Shop</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">What to Bring To Your Appointment</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown nav-item">
+                                <a class="dropdown-toggle menu-link" data-toggle="dropdown" href="#">Services</a>
+                                <ul class="dropdown-menu">
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Our Services</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Programs</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Wait Times</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Pay Bills</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Bus Schedules</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Parking Lot/Spot Counter</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Cafeteria Menu</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-toggle menu-link" data-toggle="dropdown" href="#">Opportunities</a>
+                                <ul class="dropdown-menu">
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Volunteering &amp; Training</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Careers</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Student Placement</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-toggle menu-link" data-toggle="dropdown" href="#">Donation</a>
+                                <ul class="dropdown-menu">
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Donate Today!</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Donor Profiles</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Community Profile</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Intergration Partnership</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="menu-link" href="#">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-toggle menu-link" data-toggle="dropdown" href="#">Contact</a>
+                                <ul class="dropdown-menu">
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Feedback Form</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Help Form</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Map/Info</a></li>
+                                    <li class="col-md-12 col-sm-12 col-12"><a class="drop-link" href="#">Site Visit</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--end of desktop menu-->
+            <div class="navbar-collapse">
+                <div class="row col-md-12 col-sm-12 col-12">
+                    <a href="#">
+                        <img src="~/Content/opt-imgs/petabyte-h-logo.png" class="nav-logo" width="100" />
+                    </a>
+                    <button id="mobile-btn" data-toggle="collapse" data-target="#mobile-menu">Menu</button>
+                </div>
+                <div class="row">
+                    <div id="mobile-menu" class="collapse">
+                        <!------------------>
+                        <ul class="col-md-6 col-sm-6 col-6">
+                            <li class="mobile-link"><a href="#">About</a></li>
+                            <li class="mobile-link"><a href="#">The Team</a></li>
+                            <li class="mobile-link"><a href="#">News</a></li>
+                            <li class="mobile-link"><a href="#">Departments</a></li>
+                            <li class="mobile-link"><a href="#">Research</a></li>
+                            <li class="mobile-link"><a href="#">Patients &amp; Visitors</a></li>
+                            <li class="mobile-link"><a href="#">Gift Shop</a></li>
+                            <li class="mobile-link"><a href="#">What to Bring To Your Appointment</a></li>
+                            <li class="mobile-link"><a href="#">Services</a></li>
+                            <li class="mobile-link"><a href="#">Our Services</a></li>
+                            <li class="mobile-link"><a href="#">Programs</a></li>
+                            <li class="mobile-link"><a href="#">Wait Times</a></li>
+                            <li class="mobile-link"><a href="#">Pay Bills</a></li>
+                            <li class="mobile-link"><a href="#">Bus Schedules</a></li>
+                            <li class="mobile-link"><a href="#">Parking Lot/Spot Counter</a></li>
+                            <li class="mobile-link"><a href="#">Cafeteria Menu</a></li>
+                        </ul>
+                        <ul class="col-md-6 col-sm-6 col-6">
+                            <li class="mobile-link"><a href="#">Opportunities</a></li>
+                            <li class="mobile-link"><a href="#">Volunteering &amp; Training</a></li>
+                            <li class="mobile-link"><a href="#">Careers</a></li>
+                            <li class="mobile-link"><a href="#">Student Placement</a></li>
+                            <li class="mobile-link"><a href="#">Donation</a></li>
+                            <li class="mobile-link"><a href="#">Donate Today!</a></li>
+                            <li class="mobile-link"><a href="#">Donor Profiles</a></li>
+                            <li class="mobile-link"><a href="#">Community Profile</a></li>
+                            <li class="mobile-link"><a href="#">Intergration Partnership</a></li>
+                            <li class="mobile-link"><a href="#">FAQ</a></li>
+                            <li class="mobile-link"><a href="#">Contact</a></li>
+                            <li class="mobile-link"><a href="#">Feedback Form</a></li>
+                            <li class="mobile-link"><a href="#">Help Form</a></li>
+                            <li class="mobile-link"><a href="#">Map/Info</a></li>
+                            <li class="mobile-link"><a href="#">Site Visit</a></li>
+                        </ul>
+                        <!------------------>
+                    </div>
+                </div>
+            </div>
+            <!--end of mobile menu-->
+        </div>
+    </div>
+    <!------end of nav------->
+
+    <div class="margin-top-50">
+        @RenderBody()
+        <div id="footer">
+            <div class="wrapper row">
+                <div class="footer__link-set row col-md-8 col-sm-12 col-12">
+                    <div class="col-md-6 col-sm-6 col-12">
+                        <ul>
+                            <li><a href="">Accessibility Plan</a></li>
+                            <li><a href="">Code of Conduct</a></li>
+                            <li><a href="">Patient Saftey</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-12">
+                        <ul>
+                            <li><a href="">Strategic Plan 2020</a></li>
+                            <li><a href="">Your Rights &amp; Responsibilities</a></li>
+                            <li><a href="">Your Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__longin-set col-md-4 col-sm-12 col-12">
+                    <ul>
+                        <li>
+                            <button type="button" class="btn btn-primary footer__login-btn" data-toggle="modal" data-target="#employeeLogin">
+                                Employee Login
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-primary footer__login-btn" data-toggle="modal" data-target="#volunteerLogin">
+                                Volunteer Login
+                            </button>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/googlemaps.js"></script>
+</body>
+</html>

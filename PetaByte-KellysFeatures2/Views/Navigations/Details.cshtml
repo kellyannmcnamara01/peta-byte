@@ -1,0 +1,42 @@
+﻿@model PetaByte_KellysFeatures2.Models.Navigation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Navigation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.navTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.navTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.navUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.navUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.firstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.navId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

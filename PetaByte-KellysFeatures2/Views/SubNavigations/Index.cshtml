@@ -1,0 +1,54 @@
+﻿@model IEnumerable<PetaByte_KellysFeatures2.Models.SubNavigation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<h2>Index</h2>
+
+<p class="button">
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.subNavTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subNavUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Navigation.navTitle)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.subNavTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subNavUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Navigation.navTitle)
+        </td>
+        <td class="crud">
+            @Html.ActionLink("Edit", "Edit", new { id = item.subNavId }, htmlAttributes: new { @class = "button-edit" })
+        </td>
+        <td class="crud">
+            @Html.ActionLink("Delete", "Delete", new { id = item.subNavId }, htmlAttributes: new { @class = "button-delete" })
+        </td>
+    </tr>
+}
+
+</table>

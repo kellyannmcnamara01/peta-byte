@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PetaByteModelStoreContainer" CdmEntityContainer="PetaByteContext">
+    <EntitySetMapping Name="Alerts">
+      <EntityTypeMapping TypeName="PetaByteModel.Alert">
+        <MappingFragment StoreEntitySet="Alerts">
+          <ScalarProperty Name="alertId" ColumnName="alertId" />
+          <ScalarProperty Name="alertText" ColumnName="alertText" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="PetaByteModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="contactId" ColumnName="contactId" />
+          <ScalarProperty Name="addressId" ColumnName="addressId" />
+          <ScalarProperty Name="emerageContactID" ColumnName="emerageContactID" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="sinNum" ColumnName="sinNum" />
+          <ScalarProperty Name="schedule" ColumnName="schedule" />
+          <ScalarProperty Name="admin" ColumnName="admin" />
+          <ScalarProperty Name="employeeStatusId" ColumnName="employeeStatusId" />
+          <ScalarProperty Name="insuranceId" ColumnName="insuranceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobApplicants">
+      <EntityTypeMapping TypeName="PetaByteModel.JobApplicant">
+        <MappingFragment StoreEntitySet="JobApplicants">
+          <ScalarProperty Name="jobAppId" ColumnName="jobAppId" />
+          <ScalarProperty Name="jobId" ColumnName="jobId" />
+          <ScalarProperty Name="appJobTitle" ColumnName="appJobTitle" />
+          <ScalarProperty Name="appFirstName" ColumnName="appFirstName" />
+          <ScalarProperty Name="appLastName" ColumnName="appLastName" />
+          <ScalarProperty Name="appEmail" ColumnName="appEmail" />
+          <ScalarProperty Name="appLinkedIn" ColumnName="appLinkedIn" />
+          <ScalarProperty Name="appMessage" ColumnName="appMessage" />
+          <ScalarProperty Name="appCv" ColumnName="appCv" />
+          <ScalarProperty Name="appOtherFile" ColumnName="appOtherFile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobPostings">
+      <EntityTypeMapping TypeName="PetaByteModel.JobPosting">
+        <MappingFragment StoreEntitySet="JobPostings">
+          <ScalarProperty Name="jobId" ColumnName="jobId" />
+          <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+          <ScalarProperty Name="jobDesc" ColumnName="jobDesc" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Navigations">
+      <EntityTypeMapping TypeName="PetaByteModel.Navigation">
+        <MappingFragment StoreEntitySet="Navigation">
+          <ScalarProperty Name="navId" ColumnName="navId" />
+          <ScalarProperty Name="navTitle" ColumnName="navTitle" />
+          <ScalarProperty Name="navUrl" ColumnName="navUrl" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="PetaByteModel.Page">
+        <MappingFragment StoreEntitySet="Pages">
+          <ScalarProperty Name="pageUrl" ColumnName="pageUrl" />
+          <ScalarProperty Name="pageId" ColumnName="pageId" />
+          <ScalarProperty Name="pageTitle" ColumnName="pageTitle" />
+          <ScalarProperty Name="pageContent" ColumnName="pageContent" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubNavigations">
+      <EntityTypeMapping TypeName="PetaByteModel.SubNavigation">
+        <MappingFragment StoreEntitySet="SubNavigation">
+          <ScalarProperty Name="subNavId" ColumnName="subNavId" />
+          <ScalarProperty Name="navId" ColumnName="navId" />
+          <ScalarProperty Name="subNavTitle" ColumnName="subNavTitle" />
+          <ScalarProperty Name="subNavUrl" ColumnName="subNavUrl" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,310 @@
+﻿/* 01. Attributes */
+
+* {
+    margin: 0 auto;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+body {
+    font-size: 62.5%;
+    margin: 0 atuo;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-rendering: geometricPrecision;
+    background: #f2f2f2;
+}
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 60px 30px 0px;
+}
+
+/* Navigation */
+
+.navbar-fixed-top {
+    background: #fff;
+    box-shadow: 0px 0px 10px 0px lightgrey;
+}
+.nav-logo {
+    padding-top: 10px;
+}
+#main-nav {
+    text-decoration: none;
+    text-align: right;
+    margin-top: 17px;
+}
+#main-nav li {
+    display: inline-block;
+}
+#main-nav li .menu-link{
+    color: #0d467d;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 15px 5px 0px;
+}
+.drop-link {
+    font-size: 1em;
+    padding: 5px;
+    font-weight: 400;
+    text-align: left;
+}
+#main-nav li .menu-link:hover, #main-nav li .menu-link:active, #main-nav li .menu-link:focus {
+    outline: none;
+    color: #f3c728;
+}
+.dropdown-menu {
+    border: none !important;
+    border-radius: 0px !important;
+    margin-top: 10px !important;
+}
+.container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.right {
+    right: 0;
+}
+.navbar-header {
+    display: block;
+}
+.navbar-collapse {
+    display: none;
+    max-height: none !important;
+}
+#mobile-btn {
+    background: none;
+    border: none;
+    color: #0d467d;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 15px 5px 0px;
+    float: right;
+}
+#mobile-btn:hover, #mobile-btn:active, #mobile-btn:focus, .mobile-link a:hover, .mobile-link a:active, .mobile-link a:focus
+.dashboard-link:hover, .dashboard-link:active, .dashboard-link:focus {
+    outline: none;
+    color: #f3c728;
+}
+.width-50 {
+    max-width: 50%;
+}
+.mobile-link {
+    width: 49%;
+    display: inline-block;
+    font-size: 1em;
+    padding: 5px;
+}
+.mobile-link a {
+    font-weight: 400;
+    text-align: left;
+    color: #0d467d;
+}
+.dashboard-link {
+    color: #0d467d;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 15px 5px 0px;
+    float: right;
+}
+
+/* Typography */
+
+h1 {
+
+}
+h2 {
+    color: #0d467d;
+    font-size: 2.3em;
+    text-transform: uppercase;
+}
+h3 {
+    color: #f36128;
+    font-size: 1.7em;
+    font-weight: 700;
+    background-color: #fff;
+    padding: 25px;
+}
+h4 {
+    
+}
+
+/* Form Styling */
+
+.form-horizontal {
+    background: #fff;
+    padding: 25px;
+}
+.form-control {
+    border-radius: 0;
+    border: solid 2px #efefef;
+    outline: none;
+    box-shadow: none;
+    background-color: #fff;
+}
+.form-control::after hover, .form-control:active, .form-control:focus {
+    outline: none;
+    box-shadow: none !important;
+}
+label {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: #0d467d;
+    font-weight: 400;
+    padding: 15px 15px 5px;
+}
+.btn-default, .button a {
+    background-color: #038fd4;
+    border: none;
+    color: #fff;
+    border-radius: 0;
+    padding: 5px 25px;
+    margin-top: 10px;
+    transition: 0.4s ease all;
+}
+.button {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.button a {
+    font-size: 1.4em;
+    margin-top: 25px;
+    padding: 11px 25px;
+}
+.btn-default:hover, .btn-default:active, .btn-default:focus {
+    background-color: #0d467d;
+    color: #fff;
+}
+.button a:hover, .button a:active, .button a:focus {
+    background-color: #0d467d;
+    color: #fff;
+    text-decoration: none;
+}
+textarea.form-control{
+    min-height: 250px !important;
+}
+
+/* Table Styling */
+
+table {
+    background: #fff;
+    font-size: 1.3em;
+    color: #0d467d;
+}
+.table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td {
+    border-top: none;
+    padding: 10px 20px;
+    border-bottom: 1px solid #f1f2f2;
+}
+tr:nth-child(2n+1){
+}
+th {
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+th, td {
+    border-right: 1px solid #f6f6f6;
+}
+th:last-child, td:last-child, td:nth-last-child(2) {
+    border-right: none;
+}
+.button-edit, .button-delete {
+    background-color: #038fd4;
+    border: none;
+    color: #fff;
+    border-radius: 0;
+    padding: 5px 25px;
+    font-size: .9em;
+    transition: 0.4s ease all;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    padding: 9px 25px;
+}
+.button-delete {
+    margin-right: 15px;
+    background-color: #f3c728;
+}
+.button-edit:hover, .button-edit:active, .button-edit:focus, .button-delete:hover, .button-delete:active, .button-delete:focus {
+    background-color: #0d467d;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+}
+.button-delete:hover, .button-delete:active, .button-delete:focus{
+    background-color: #f36128;
+}
+.crud {
+    padding: 15px 5px !important;
+}
+input[type="submit"] {
+    font-size: 1.4em;
+}
+
+/* Delete styling */
+.dl-horizontal {
+    background: #fff;
+    padding: 25px;
+    font-size: 1.5em;
+    color: #0d467d;
+}
+dd {
+    padding-bottom: 15px;
+}
+
+/* Job Apps Styling for Admin */
+
+.appDetails {
+    background: #fff;
+    padding: 15px 20px 25px;
+    margin-bottom: 15px;
+    color: #0d467d;
+}
+.appDetails h4 {
+    padding-left: 30px;
+}
+.appDetails .button-delete {
+    font-size: 1.1em;
+}
+.padding-bottom-10 {
+    padding-bottom: 10px;
+}
+.appLabel, .appDetailsText {
+    font-size: 1.3em;
+}
+.appLabel {
+    font-weight: 700;
+}
+.download {
+     margin-top: 10px;
+}
+.download a {
+    background-color: #038fd4;
+    color: #fff;
+    padding: 5px 25px;
+    transition: 0.4s ease all;
+    font-size: 1.3em;
+    margin-left: 15px;
+}
+.download a:hover, .download a:active, .download a:focus {
+    background-color: #0d467d;
+    outline: none;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .navbar-header {
+        display: none;
+    }
+    .navbar-collapse {
+        display: block;
+    }
+}

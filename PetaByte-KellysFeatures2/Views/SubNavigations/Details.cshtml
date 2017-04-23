@@ -1,0 +1,50 @@
+﻿@model PetaByte_KellysFeatures2.Models.SubNavigation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SubNavigation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.subNavTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subNavTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subNavUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subNavUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Navigation.navTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Navigation.navTitle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.subNavId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

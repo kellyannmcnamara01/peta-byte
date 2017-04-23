@@ -1,0 +1,97 @@
+﻿@model PetaByte_KellysFeatures2.Models.JobApplicant
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.appJobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appJobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appLinkedIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appLinkedIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appMessage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appCv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appCv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appOtherFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appOtherFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobPosting.jobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobPosting.jobTitle)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default button" />
+        </div>
+        <div class="button">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

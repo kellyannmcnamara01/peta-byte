@@ -1,0 +1,10 @@
+﻿@model IEnumerable<PetaByte_KellysFeatures2.Models.Alert>
+
+<div id="alert">
+    @foreach (var item in Model)
+    {
+        <div class="alerts">
+            @Html.DisplayFor(modelItem => item.alertText)
+        </div>
+    }
+</div>

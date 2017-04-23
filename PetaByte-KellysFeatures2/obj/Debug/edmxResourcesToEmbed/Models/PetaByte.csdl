@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetaByteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Alert">
+    <Key>
+      <PropertyRef Name="alertId" />
+    </Key>
+    <Property Name="alertId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="alertText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Alerts_Employees" FromRole="Alerts" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="employeeId" />
+    </Key>
+    <Property Name="employeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="departmentId" Type="Int32" Nullable="false" />
+    <Property Name="contactId" Type="Int32" />
+    <Property Name="addressId" Type="Int32" />
+    <Property Name="emerageContactID" Type="Int32" />
+    <Property Name="birthDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="sinNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="schedule" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="employeeStatusId" Type="Int32" />
+    <Property Name="insuranceId" Type="Int32" />
+    <NavigationProperty Name="Alerts" Relationship="Self.FK_Alerts_Employees" FromRole="Employees" ToRole="Alerts" />
+    <NavigationProperty Name="JobPostings" Relationship="Self.FK_JobPostings_Employees" FromRole="Employees" ToRole="JobPostings" />
+    <NavigationProperty Name="Navigations" Relationship="Self.FK_Navigation_Employees" FromRole="Employees" ToRole="Navigation" />
+    <NavigationProperty Name="Pages" Relationship="Self.FK_Pages_Employees" FromRole="Employees" ToRole="Pages" />
+    <NavigationProperty Name="SubNavigations" Relationship="Self.FK_SubNavigation_Employees" FromRole="Employees" ToRole="SubNavigation" />
+  </EntityType>
+  <EntityType Name="JobApplicant">
+    <Key>
+      <PropertyRef Name="jobAppId" />
+    </Key>
+    <Property Name="jobAppId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="jobId" Type="Int32" Nullable="false" />
+    <Property Name="appJobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="appFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appLinkedIn" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="appCv" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="appOtherFile" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="JobPosting" Relationship="Self.FK_JobApplicants_JobPostings" FromRole="JobApplicants" ToRole="JobPostings" />
+  </EntityType>
+  <EntityType Name="JobPosting">
+    <Key>
+      <PropertyRef Name="jobId" />
+    </Key>
+    <Property Name="jobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="jobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="jobDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int32" Nullable="false" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_JobPostings_Employees" FromRole="JobPostings" ToRole="Employees" />
+    <NavigationProperty Name="JobApplicants" Relationship="Self.FK_JobApplicants_JobPostings" FromRole="JobPostings" ToRole="JobApplicants" />
+  </EntityType>
+  <EntityType Name="Navigation">
+    <Key>
+      <PropertyRef Name="navId" />
+    </Key>
+    <Property Name="navId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="navTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="navUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Navigation_Employees" FromRole="Navigation" ToRole="Employees" />
+    <NavigationProperty Name="SubNavigations" Relationship="Self.FK_SubNavigation_Navigation" FromRole="Navigation" ToRole="SubNavigation" />
+  </EntityType>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="pageId" />
+    </Key>
+    <Property Name="pageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pageTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pageContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Pages_Employees" FromRole="Pages" ToRole="Employees" />
+    <Property Name="pageUrl" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SubNavigation">
+    <Key>
+      <PropertyRef Name="subNavId" />
+    </Key>
+    <Property Name="subNavId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="navId" Type="Int32" Nullable="false" />
+    <Property Name="subNavTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="subNavUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employeeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_SubNavigation_Employees" FromRole="SubNavigation" ToRole="Employees" />
+    <NavigationProperty Name="Navigation" Relationship="Self.FK_SubNavigation_Navigation" FromRole="SubNavigation" ToRole="Navigation" />
+  </EntityType>
+  <Association Name="FK_Alerts_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Alerts" Type="Self.Alert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="Alerts">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobPostings_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="JobPostings" Type="Self.JobPosting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="JobPostings">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Navigation_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Navigation" Type="Self.Navigation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="Navigation">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Pages" Type="Self.Page" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubNavigation_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="SubNavigation" Type="Self.SubNavigation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="SubNavigation">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobApplicants_JobPostings">
+    <End Role="JobPostings" Type="Self.JobPosting" Multiplicity="1" />
+    <End Role="JobApplicants" Type="Self.JobApplicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobPostings">
+        <PropertyRef Name="jobId" />
+      </Principal>
+      <Dependent Role="JobApplicants">
+        <PropertyRef Name="jobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubNavigation_Navigation">
+    <End Role="Navigation" Type="Self.Navigation" Multiplicity="1" />
+    <End Role="SubNavigation" Type="Self.SubNavigation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Navigation">
+        <PropertyRef Name="navId" />
+      </Principal>
+      <Dependent Role="SubNavigation">
+        <PropertyRef Name="navId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PetaByteContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Alerts" EntityType="Self.Alert" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="JobApplicants" EntityType="Self.JobApplicant" />
+    <EntitySet Name="JobPostings" EntityType="Self.JobPosting" />
+    <EntitySet Name="Navigations" EntityType="Self.Navigation" />
+    <EntitySet Name="Pages" EntityType="Self.Page" />
+    <EntitySet Name="SubNavigations" EntityType="Self.SubNavigation" />
+    <AssociationSet Name="FK_Alerts_Employees" Association="Self.FK_Alerts_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Alerts" EntitySet="Alerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobPostings_Employees" Association="Self.FK_JobPostings_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="JobPostings" EntitySet="JobPostings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Navigation_Employees" Association="Self.FK_Navigation_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Navigation" EntitySet="Navigations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_Employees" Association="Self.FK_Pages_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubNavigation_Employees" Association="Self.FK_SubNavigation_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="SubNavigation" EntitySet="SubNavigations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobApplicants_JobPostings" Association="Self.FK_JobApplicants_JobPostings">
+      <End Role="JobPostings" EntitySet="JobPostings" />
+      <End Role="JobApplicants" EntitySet="JobApplicants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubNavigation_Navigation" Association="Self.FK_SubNavigation_Navigation">
+      <End Role="Navigation" EntitySet="Navigations" />
+      <End Role="SubNavigation" EntitySet="SubNavigations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,90 @@
+﻿@model PetaByte_KellysFeatures2.Models.JobApplicant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>JobApplicant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.appJobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appJobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appLinkedIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appLinkedIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appMessage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appCv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appCv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.appOtherFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appOtherFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobPosting.jobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobPosting.jobTitle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.jobAppId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

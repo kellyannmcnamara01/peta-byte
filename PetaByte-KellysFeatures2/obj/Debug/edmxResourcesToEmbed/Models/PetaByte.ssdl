@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PetaByteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Alerts">
+    <Key>
+      <PropertyRef Name="alertId" />
+    </Key>
+    <Property Name="alertId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="alertText" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="timestamp" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="employeeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="employeeId" />
+    </Key>
+    <Property Name="employeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="position" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="departmentId" Type="int" Nullable="false" />
+    <Property Name="contactId" Type="int" />
+    <Property Name="addressId" Type="int" />
+    <Property Name="emerageContactID" Type="int" />
+    <Property Name="birthDate" Type="datetime" Nullable="false" />
+    <Property Name="sinNum" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="schedule" Type="text" />
+    <Property Name="admin" Type="varchar" MaxLength="50" />
+    <Property Name="employeeStatusId" Type="int" />
+    <Property Name="insuranceId" Type="int" />
+  </EntityType>
+  <EntityType Name="JobApplicants">
+    <Key>
+      <PropertyRef Name="jobAppId" />
+    </Key>
+    <Property Name="jobAppId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jobId" Type="int" Nullable="false" />
+    <Property Name="appJobTitle" Type="varchar" MaxLength="50" />
+    <Property Name="appFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="appLastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="appEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="appLinkedIn" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="appMessage" Type="text" />
+    <Property Name="appCv" Type="varchar" MaxLength="200" />
+    <Property Name="appOtherFile" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="JobPostings">
+    <Key>
+      <PropertyRef Name="jobId" />
+    </Key>
+    <Property Name="jobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jobTitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="jobDesc" Type="text" Nullable="false" />
+    <Property Name="employeeId" Type="int" Nullable="false" />
+    <Property Name="timestamp" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Navigation">
+    <Key>
+      <PropertyRef Name="navId" />
+    </Key>
+    <Property Name="navId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="navTitle" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="navUrl" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="employeeId" Type="int" />
+  </EntityType>
+  <EntityType Name="Pages">
+    <Key>
+      <PropertyRef Name="pageId" />
+    </Key>
+    <Property Name="pageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pageTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="pageContent" Type="text" Nullable="false" />
+    <Property Name="timestamp" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="employeeId" Type="int" Nullable="false" />
+    <Property Name="pageUrl" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubNavigation">
+    <Key>
+      <PropertyRef Name="subNavId" />
+    </Key>
+    <Property Name="subNavId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="navId" Type="int" Nullable="false" />
+    <Property Name="subNavTitle" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="subNavUrl" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="employeeId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Alerts_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Alerts" Type="Self.Alerts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="Alerts">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobApplicants_JobPostings">
+    <End Role="JobPostings" Type="Self.JobPostings" Multiplicity="1" />
+    <End Role="JobApplicants" Type="Self.JobApplicants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobPostings">
+        <PropertyRef Name="jobId" />
+      </Principal>
+      <Dependent Role="JobApplicants">
+        <PropertyRef Name="jobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobPostings_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="JobPostings" Type="Self.JobPostings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="JobPostings">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Navigation_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Navigation" Type="Self.Navigation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="Navigation">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubNavigation_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="SubNavigation" Type="Self.SubNavigation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="SubNavigation">
+        <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubNavigation_Navigation">
+    <End Role="Navigation" Type="Self.Navigation" Multiplicity="1" />
+    <End Role="SubNavigation" Type="Self.SubNavigation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Navigation">
+        <PropertyRef Name="navId" />
+      </Principal>
+      <Dependent Role="SubNavigation">
+        <PropertyRef Name="navId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PetaByteModelStoreContainer">
+    <EntitySet Name="Alerts" EntityType="Self.Alerts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobApplicants" EntityType="Self.JobApplicants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobPostings" EntityType="Self.JobPostings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Navigation" EntityType="Self.Navigation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pages" EntityType="Self.Pages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubNavigation" EntityType="Self.SubNavigation" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Alerts_Employees" Association="Self.FK_Alerts_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Alerts" EntitySet="Alerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobApplicants_JobPostings" Association="Self.FK_JobApplicants_JobPostings">
+      <End Role="JobPostings" EntitySet="JobPostings" />
+      <End Role="JobApplicants" EntitySet="JobApplicants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobPostings_Employees" Association="Self.FK_JobPostings_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="JobPostings" EntitySet="JobPostings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Navigation_Employees" Association="Self.FK_Navigation_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Navigation" EntitySet="Navigation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_Employees" Association="Self.FK_Pages_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubNavigation_Employees" Association="Self.FK_SubNavigation_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="SubNavigation" EntitySet="SubNavigation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubNavigation_Navigation" Association="Self.FK_SubNavigation_Navigation">
+      <End Role="Navigation" EntitySet="Navigation" />
+      <End Role="SubNavigation" EntitySet="SubNavigation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
