@@ -16,7 +16,7 @@
 
 <div class="wrapper">
     <div id="page-content">
-        <h2 class="text-center dark-blue">Details</h2>
+        <h2 class="text-center dark-blue">@Html.Raw(Model.pageTitle)</h2>
         @*displays the htlm that was entered into the database.*@
         @Html.Raw(Model.pageContent)
     </div>
