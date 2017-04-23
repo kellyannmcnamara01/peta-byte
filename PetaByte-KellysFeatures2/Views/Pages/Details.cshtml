@@ -4,9 +4,20 @@
     ViewBag.Title = "Details";
 }
 
+@*
+    Project: Temiskaming Hospital Website
+    Team Name: PetaByte
+    Class: Mobile Development
+    Professor: Lee Situ
+    Author: Kelly Ann McNamara
+    File Description: This file displays the custom page made by the user.
+    Note: Views do not have many comments, they were mostly edited within small details.
+*@
+
 <div class="wrapper">
     <div id="page-content">
         <h2 class="text-center dark-blue">Details</h2>
+        @*displays the htlm that was entered into the database.*@
         @Html.Raw(Model.pageContent)
     </div>
 </div>
