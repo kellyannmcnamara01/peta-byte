@@ -20,6 +20,7 @@ namespace PetaByte_KellysFeatures2.Models
             this.Feeedbacks = new HashSet<Feeedback>();
             this.GiftBills = new HashSet<GiftBill>();
             this.PatientsRooms = new HashSet<PatientsRoom>();
+            this.Requests = new HashSet<Request>();
         }
     
         public int patientId { get; set; }
@@ -35,6 +36,10 @@ namespace PetaByte_KellysFeatures2.Models
         public string healthCardNum { get; set; }
         public Nullable<int> emerageContactID { get; set; }
         public Nullable<int> insuranceId { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public string Allergies { get; set; }
     
         public virtual Addresses1 Addresses1 { get; set; }
         public virtual Contact Contact { get; set; }
@@ -46,5 +51,7 @@ namespace PetaByte_KellysFeatures2.Models
         public virtual Insurance Insurance { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PatientsRoom> PatientsRooms { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Request> Requests { get; set; }
     }
 }

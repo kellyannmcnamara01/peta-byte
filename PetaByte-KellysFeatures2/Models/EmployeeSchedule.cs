@@ -12,19 +12,18 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class JobApplicant
+    public partial class EmployeeSchedule
     {
-        public int jobAppId { get; set; }
-        public int jobId { get; set; }
-        public string appJobTitle { get; set; }
-        public string appFirstName { get; set; }
-        public string appLastName { get; set; }
-        public string appEmail { get; set; }
-        public string appLinkedIn { get; set; }
-        public string appMessage { get; set; }
-        public string appCv { get; set; }
-        public string appOtherFile { get; set; }
+        public int id { get; set; }
+        public string Day { get; set; }
+        public System.TimeSpan StartTime { get; set; }
+        public System.TimeSpan BreakTimeBegin { get; set; }
+        public System.TimeSpan BreakTimeend { get; set; }
+        public System.TimeSpan EndTime { get; set; }
+        public int EmployeeId { get; set; }
+        public string EmployeeFirstName { get; set; }
+        public string EmployeeLastName { get; set; }
     
-        public virtual JobPosting JobPosting { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

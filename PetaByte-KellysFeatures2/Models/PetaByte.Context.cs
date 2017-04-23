@@ -64,6 +64,8 @@ namespace PetaByte_KellysFeatures2.Models
         public virtual DbSet<VolunteerApplicant> VolunteerApplicants { get; set; }
         public virtual DbSet<Volunteer> Volunteers { get; set; }
         public virtual DbSet<WhatToBring> WhatToBrings { get; set; }
+        public virtual DbSet<EmployeeSchedule> EmployeeSchedules { get; set; }
         public virtual DbSet<Faq> Faqs { get; set; }
+        public virtual DbSet<Request> Requests { get; set; }
     }
 }

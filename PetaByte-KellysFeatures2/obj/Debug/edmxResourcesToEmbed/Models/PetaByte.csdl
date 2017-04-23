@@ -312,8 +312,8 @@
     <Property Name="appEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="appLinkedIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="appMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="appCv" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="appOtherFile" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="appCv" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="appOtherFile" Type="Binary" MaxLength="50" FixedLength="false" />
     <NavigationProperty Name="JobPosting" Relationship="Self.FK_JobApplicants_JobPostings" FromRole="JobApplicants" ToRole="JobPostings" />
   </EntityType>
   <EntityType Name="JobPosting">
