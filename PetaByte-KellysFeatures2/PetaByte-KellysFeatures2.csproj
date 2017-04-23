@@ -358,7 +358,6 @@
     <Compile Include="Controllers\JobPostingsController.cs" />
     <Compile Include="Controllers\NavigationsController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
-    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\SubNavigationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -396,7 +395,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PetaByte.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\SubNavigation.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
@@ -420,7 +418,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Alerts\Create.cshtml" />
     <Content Include="Views\Alerts\Delete.cshtml" />
-    <Content Include="Views\Alerts\Details.cshtml" />
     <Content Include="Views\Alerts\Edit.cshtml" />
     <Content Include="Views\Alerts\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />

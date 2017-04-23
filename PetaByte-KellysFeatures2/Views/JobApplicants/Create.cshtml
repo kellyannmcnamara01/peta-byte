@@ -3,10 +3,24 @@
 @{
     ViewBag.Title = "Create";
 }
+
+@*
+    Project: Temiskaming Hospital Website
+    Team Name: PetaByte
+    Class: Mobile Development
+    Professor: Lee Situ
+    Author: Kelly Ann McNamara
+    File Description: This file is the view for creating a job app fromt the jobs feature.
+*@
+
 <div class="job-intro med-blue-bg">
     <div class="wrapper">
         <h2>Jobs</h2>
-        <p class="white">Welcome to our job postings and applications page. Below you will find any available job positions. If there is a job you are interested in please still send us your information to jobs@petabye-hospital.com. We are always looking for new employees and if we feel like you're the right fit we will find a job for you. If you have any questions about working at the hospital or about the below job postings please also email jobs@petabye-hospital.com.</p>
+        <p class="white">Welcome to our job postings and applications page. 
+        Below you will find any available job positions. 
+        If there is a job you are interested in please still send us your information to <a class="white" href="mailto:jobs@petabye-hospital.com">jobs@petabye-hospital.com</a>. 
+        We are always looking for new employees and if we feel like you're the right fit we will find a job for you. 
+        If you have any questions about working at the hospital or about the below job postings please also email <a class="white" href="mailto:jobs@petabye-hospital.com">jobs@petabye-hospital.com</a>.</p>
     </div>
 </div>
 <div class="job-postings">
@@ -99,14 +113,6 @@
                         @Html.ValidationMessageFor(model => model.appCv, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
-                @*<div class="form-group">
-                        @Html.LabelFor(model => model.appOtherFile, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <input name="appOtherFileFile" type="file" />
-                            @Html.ValidationMessageFor(model => model.appOtherFile, "", new { @class = "text-danger" })
-                        </div>
-                    </div>*@
 
                 <div class="form-group">
                     <div class="col-md-12">
