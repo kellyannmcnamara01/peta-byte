@@ -12,21 +12,24 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Navigation
+    public partial class Department
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Navigation()
+        public Department()
         {
-            this.SubNavigations = new HashSet<SubNavigation>();
+            this.Feeedbacks = new HashSet<Feeedback>();
+            this.WhatToBrings = new HashSet<WhatToBring>();
         }
     
-        public int navId { get; set; }
-        public string navTitle { get; set; }
-        public string navUrl { get; set; }
-        public Nullable<int> employeeId { get; set; }
+        public int departmentsId { get; set; }
+        public string dptName { get; set; }
+        public string dptDesc { get; set; }
+        public int symptomsId { get; set; }
     
-        public virtual Employee Employee { get; set; }
+        public virtual Symptom Symptom { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SubNavigation> SubNavigations { get; set; }
+        public virtual ICollection<Feeedback> Feeedbacks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WhatToBring> WhatToBrings { get; set; }
     }
 }

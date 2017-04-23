@@ -12,14 +12,18 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Alert
+    public partial class EmployeeStatu
     {
-        public int akertId { get; set; }
-        public string alertText { get; set; }
-        public System.DateTime timestamp { get; set; }
-        public string status { get; set; }
-        public int employeeId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public EmployeeStatu()
+        {
+            this.Employees = new HashSet<Employee>();
+        }
     
-        public virtual Employee Employee { get; set; }
+        public int employeeStatusId { get; set; }
+        public string status { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

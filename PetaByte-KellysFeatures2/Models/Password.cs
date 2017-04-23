@@ -12,21 +12,20 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Navigation
+    public partial class Password
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Navigation()
+        public Password()
         {
-            this.SubNavigations = new HashSet<SubNavigation>();
+            this.Users = new HashSet<User>();
         }
     
-        public int navId { get; set; }
-        public string navTitle { get; set; }
-        public string navUrl { get; set; }
-        public Nullable<int> employeeId { get; set; }
+        public int loginId { get; set; }
+        public string password1 { get; set; }
+        public string email { get; set; }
+        public string passwordReset { get; set; }
     
-        public virtual Employee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SubNavigation> SubNavigations { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

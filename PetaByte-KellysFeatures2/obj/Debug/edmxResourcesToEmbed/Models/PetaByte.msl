@@ -1,14 +1,148 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="PetaByteModelStoreContainer" CdmEntityContainer="PetaByteContext">
+    <EntitySetMapping Name="AddressDates">
+      <EntityTypeMapping TypeName="PetaByteModel.AddressDate">
+        <MappingFragment StoreEntitySet="AddressDates">
+          <ScalarProperty Name="addressDateId" ColumnName="addressDateId" />
+          <ScalarProperty Name="addressDateFrom" ColumnName="addressDateFrom" />
+          <ScalarProperty Name="addressDateTo" ColumnName="addressDateTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="PetaByteModel.Address">
+        <MappingFragment StoreEntitySet="Addresses">
+          <ScalarProperty Name="addressId" ColumnName="addressId" />
+          <ScalarProperty Name="addressStreet" ColumnName="addressStreet" />
+          <ScalarProperty Name="addressProv" ColumnName="addressProv" />
+          <ScalarProperty Name="addressCountry" ColumnName="addressCountry" />
+          <ScalarProperty Name="postal" ColumnName="postal" />
+          <ScalarProperty Name="addressDateId" ColumnName="addressDateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Addresses1">
+      <EntityTypeMapping TypeName="PetaByteModel.Addresses1">
+        <MappingFragment StoreEntitySet="Addresses1">
+          <ScalarProperty Name="addressId" ColumnName="addressId" />
+          <ScalarProperty Name="addressStreet" ColumnName="addressStreet" />
+          <ScalarProperty Name="addressProv" ColumnName="addressProv" />
+          <ScalarProperty Name="addressCountry" ColumnName="addressCountry" />
+          <ScalarProperty Name="postal" ColumnName="postal" />
+          <ScalarProperty Name="addressDateId" ColumnName="addressDateId" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="poBox" ColumnName="poBox" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Alerts">
       <EntityTypeMapping TypeName="PetaByteModel.Alert">
         <MappingFragment StoreEntitySet="Alerts">
-          <ScalarProperty Name="alertId" ColumnName="alertId" />
+          <ScalarProperty Name="akertId" ColumnName="akertId" />
           <ScalarProperty Name="alertText" ColumnName="alertText" />
           <ScalarProperty Name="timestamp" ColumnName="timestamp" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cafeterias">
+      <EntityTypeMapping TypeName="PetaByteModel.Cafeteria">
+        <MappingFragment StoreEntitySet="Cafeterias">
+          <ScalarProperty Name="cafeteriaId" ColumnName="cafeteriaId" />
+          <ScalarProperty Name="soup" ColumnName="soup" />
+          <ScalarProperty Name="breakfast" ColumnName="breakfast" />
+          <ScalarProperty Name="lunch" ColumnName="lunch" />
+          <ScalarProperty Name="dinner" ColumnName="dinner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="PetaByteModel.Contact">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="contactId" ColumnName="contactId" />
+          <ScalarProperty Name="mobileNum" ColumnName="mobileNum" />
+          <ScalarProperty Name="homeNum" ColumnName="homeNum" />
+          <ScalarProperty Name="homeEmail" ColumnName="homeEmail" />
+          <ScalarProperty Name="workEmail" ColumnName="workEmail" />
+          <ScalarProperty Name="pagersNum" ColumnName="pagersNum" />
+          <ScalarProperty Name="workNum" ColumnName="workNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="PetaByteModel.Department">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="departmentsId" ColumnName="departmentsId" />
+          <ScalarProperty Name="dptName" ColumnName="dptName" />
+          <ScalarProperty Name="dptDesc" ColumnName="dptDesc" />
+          <ScalarProperty Name="symptomsId" ColumnName="symptomsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonationHonours">
+      <EntityTypeMapping TypeName="PetaByteModel.DonationHonour">
+        <MappingFragment StoreEntitySet="DonationHonours">
+          <ScalarProperty Name="donationHonourId" ColumnName="donationHonourId" />
+          <ScalarProperty Name="donorsId" ColumnName="donorsId" />
+          <ScalarProperty Name="donationsId" ColumnName="donationsId" />
+          <ScalarProperty Name="honFirstName" ColumnName="honFirstName" />
+          <ScalarProperty Name="honLastName" ColumnName="honLastName" />
+          <ScalarProperty Name="honType" ColumnName="honType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonationOccurences">
+      <EntityTypeMapping TypeName="PetaByteModel.DonationOccurence">
+        <MappingFragment StoreEntitySet="DonationOccurences">
+          <ScalarProperty Name="donationOccurenceId" ColumnName="donationOccurenceId" />
+          <ScalarProperty Name="donationFreq" ColumnName="donationFreq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donations">
+      <EntityTypeMapping TypeName="PetaByteModel.Donation">
+        <MappingFragment StoreEntitySet="Donations">
+          <ScalarProperty Name="donationsId" ColumnName="donationsId" />
+          <ScalarProperty Name="donationAmount" ColumnName="donationAmount" />
+          <ScalarProperty Name="occurenceId" ColumnName="occurenceId" />
+          <ScalarProperty Name="donationDate" ColumnName="donationDate" />
+          <ScalarProperty Name="donorsId" ColumnName="donorsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donors">
+      <EntityTypeMapping TypeName="PetaByteModel.Donor">
+        <MappingFragment StoreEntitySet="Donors">
+          <ScalarProperty Name="donorsId" ColumnName="donorsId" />
+          <ScalarProperty Name="addressId" ColumnName="addressId" />
+          <ScalarProperty Name="contactId" ColumnName="contactId" />
+          <ScalarProperty Name="donorFirstName" ColumnName="donorFirstName" />
+          <ScalarProperty Name="donorLastName" ColumnName="donorLastName" />
+          <ScalarProperty Name="company" ColumnName="company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonorsProfiles">
+      <EntityTypeMapping TypeName="PetaByteModel.DonorsProfile">
+        <MappingFragment StoreEntitySet="DonorsProfiles">
+          <ScalarProperty Name="donorProfileId" ColumnName="donorProfileId" />
+          <ScalarProperty Name="donorsId" ColumnName="donorsId" />
+          <ScalarProperty Name="donorsMessage" ColumnName="donorsMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmerageContacts">
+      <EntityTypeMapping TypeName="PetaByteModel.EmerageContact">
+        <MappingFragment StoreEntitySet="EmerageContacts">
+          <ScalarProperty Name="emerageContactId" ColumnName="emerageContactId" />
+          <ScalarProperty Name="emergeFirstName" ColumnName="emergeFirstName" />
+          <ScalarProperty Name="emergeLastName" ColumnName="emergeLastName" />
+          <ScalarProperty Name="addressId" ColumnName="addressId" />
+          <ScalarProperty Name="emergePhone" ColumnName="emergePhone" />
+          <ScalarProperty Name="emergeRelationship" ColumnName="emergeRelationship" />
+          <ScalarProperty Name="emergeEmail" ColumnName="emergeEmail" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -29,6 +163,108 @@
           <ScalarProperty Name="admin" ColumnName="admin" />
           <ScalarProperty Name="employeeStatusId" ColumnName="employeeStatusId" />
           <ScalarProperty Name="insuranceId" ColumnName="insuranceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeStatus">
+      <EntityTypeMapping TypeName="PetaByteModel.EmployeeStatu">
+        <MappingFragment StoreEntitySet="EmployeeStatus">
+          <ScalarProperty Name="employeeStatusId" ColumnName="employeeStatusId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feeedbacks">
+      <EntityTypeMapping TypeName="PetaByteModel.Feeedback">
+        <MappingFragment StoreEntitySet="Feeedbacks">
+          <ScalarProperty Name="feedbackId" ColumnName="feedbackId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="volunteerId" ColumnName="volunteerId" />
+          <ScalarProperty Name="patientId" ColumnName="patientId" />
+          <ScalarProperty Name="feedback" ColumnName="feedback" />
+          <ScalarProperty Name="deptId" ColumnName="deptId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GetHelps">
+      <EntityTypeMapping TypeName="PetaByteModel.GetHelp">
+        <MappingFragment StoreEntitySet="GetHelps">
+          <ScalarProperty Name="getHelpId" ColumnName="getHelpId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="postalcode" ColumnName="postalcode" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="symptoms" ColumnName="symptoms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiftBills">
+      <EntityTypeMapping TypeName="PetaByteModel.GiftBill">
+        <MappingFragment StoreEntitySet="GiftBills">
+          <ScalarProperty Name="billId" ColumnName="billId" />
+          <ScalarProperty Name="patientId" ColumnName="patientId" />
+          <ScalarProperty Name="totalAmountDue" ColumnName="totalAmountDue" />
+          <ScalarProperty Name="billPayDate" ColumnName="billPayDate" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiftItemCategories">
+      <EntityTypeMapping TypeName="PetaByteModel.GiftItemCategory">
+        <MappingFragment StoreEntitySet="GiftItemCategories">
+          <ScalarProperty Name="giftCategoryId" ColumnName="giftCategoryId" />
+          <ScalarProperty Name="giftDescription" ColumnName="giftDescription" />
+          <ScalarProperty Name="giftUrl" ColumnName="giftUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiftItems">
+      <EntityTypeMapping TypeName="PetaByteModel.GiftItem">
+        <MappingFragment StoreEntitySet="GiftItems">
+          <ScalarProperty Name="giftId" ColumnName="giftId" />
+          <ScalarProperty Name="giftBillId" ColumnName="giftBillId" />
+          <ScalarProperty Name="giftCategoryId" ColumnName="giftCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiftOrders">
+      <EntityTypeMapping TypeName="PetaByteModel.GiftOrder">
+        <MappingFragment StoreEntitySet="GiftOrders">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="GiftBillId" ColumnName="GiftBillId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HospitalEvents">
+      <EntityTypeMapping TypeName="PetaByteModel.HospitalEvent">
+        <MappingFragment StoreEntitySet="HospitalEvents">
+          <ScalarProperty Name="eventsId" ColumnName="eventsId" />
+          <ScalarProperty Name="evntName" ColumnName="evntName" />
+          <ScalarProperty Name="evntDesc" ColumnName="evntDesc" />
+          <ScalarProperty Name="evntLoc" ColumnName="evntLoc" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="evntDate" ColumnName="evntDate" />
+          <ScalarProperty Name="evntTimebg" ColumnName="evntTimebg" />
+          <ScalarProperty Name="evntTimefn" ColumnName="evntTimefn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Insurances">
+      <EntityTypeMapping TypeName="PetaByteModel.Insurance">
+        <MappingFragment StoreEntitySet="Insurances">
+          <ScalarProperty Name="insuranceId" ColumnName="insuranceId" />
+          <ScalarProperty Name="insuranceProiver" ColumnName="insuranceProiver" />
+          <ScalarProperty Name="policyNum" ColumnName="policyNum" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -62,7 +298,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="Navigations">
       <EntityTypeMapping TypeName="PetaByteModel.Navigation">
-        <MappingFragment StoreEntitySet="Navigation">
+        <MappingFragment StoreEntitySet="Navigations">
           <ScalarProperty Name="navId" ColumnName="navId" />
           <ScalarProperty Name="navTitle" ColumnName="navTitle" />
           <ScalarProperty Name="navUrl" ColumnName="navUrl" />
@@ -70,27 +306,175 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="OnCalls">
+      <EntityTypeMapping TypeName="PetaByteModel.OnCall">
+        <MappingFragment StoreEntitySet="OnCalls">
+          <ScalarProperty Name="onCallId" ColumnName="onCallId" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+          <ScalarProperty Name="volunteerId" ColumnName="volunteerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Pages">
       <EntityTypeMapping TypeName="PetaByteModel.Page">
         <MappingFragment StoreEntitySet="Pages">
-          <ScalarProperty Name="pageUrl" ColumnName="pageUrl" />
           <ScalarProperty Name="pageId" ColumnName="pageId" />
           <ScalarProperty Name="pageTitle" ColumnName="pageTitle" />
           <ScalarProperty Name="pageContent" ColumnName="pageContent" />
           <ScalarProperty Name="timestamp" ColumnName="timestamp" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="pageUrl" ColumnName="pageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Passwords">
+      <EntityTypeMapping TypeName="PetaByteModel.Password">
+        <MappingFragment StoreEntitySet="Passwords">
+          <ScalarProperty Name="loginId" ColumnName="loginId" />
+          <ScalarProperty Name="password1" ColumnName="password1" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="passwordReset" ColumnName="passwordReset" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="PetaByteModel.Patient">
+        <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="patientId" ColumnName="patientId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="middleName" ColumnName="middleName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="physican" ColumnName="physican" />
+          <ScalarProperty Name="joinDate" ColumnName="joinDate" />
+          <ScalarProperty Name="contactId" ColumnName="contactId" />
+          <ScalarProperty Name="addressId" ColumnName="addressId" />
+          <ScalarProperty Name="healthCardNum" ColumnName="healthCardNum" />
+          <ScalarProperty Name="emerageContactID" ColumnName="emerageContactID" />
+          <ScalarProperty Name="insuranceId" ColumnName="insuranceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatientsRooms">
+      <EntityTypeMapping TypeName="PetaByteModel.PatientsRoom">
+        <MappingFragment StoreEntitySet="PatientsRooms">
+          <ScalarProperty Name="roomId" ColumnName="roomId" />
+          <ScalarProperty Name="patientId" ColumnName="patientId" />
+          <ScalarProperty Name="entryDate" ColumnName="entryDate" />
+          <ScalarProperty Name="exitDate" ColumnName="exitDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="PetaByteModel.Position">
+        <MappingFragment StoreEntitySet="Positions">
+          <ScalarProperty Name="roleId" ColumnName="roleId" />
+          <ScalarProperty Name="roleDescription" ColumnName="roleDescription" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SubNavigations">
       <EntityTypeMapping TypeName="PetaByteModel.SubNavigation">
-        <MappingFragment StoreEntitySet="SubNavigation">
+        <MappingFragment StoreEntitySet="SubNavigations">
           <ScalarProperty Name="subNavId" ColumnName="subNavId" />
           <ScalarProperty Name="navId" ColumnName="navId" />
           <ScalarProperty Name="subNavTitle" ColumnName="subNavTitle" />
           <ScalarProperty Name="subNavUrl" ColumnName="subNavUrl" />
           <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Symptoms">
+      <EntityTypeMapping TypeName="PetaByteModel.Symptom">
+        <MappingFragment StoreEntitySet="Symptoms">
+          <ScalarProperty Name="symptomsId" ColumnName="symptomsId" />
+          <ScalarProperty Name="symptName" ColumnName="symptName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="PetaByteModel.Ticket">
+        <MappingFragment StoreEntitySet="Tickets">
+          <ScalarProperty Name="ticketId" ColumnName="ticketId" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="ticketStatu" ColumnName="ticketStatu" />
+          <ScalarProperty Name="getHelpId" ColumnName="getHelpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PetaByteModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="joinDate" ColumnName="joinDate" />
+          <ScalarProperty Name="roleId" ColumnName="roleId" />
+          <ScalarProperty Name="loginId" ColumnName="loginId" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VolunteerApplicants">
+      <EntityTypeMapping TypeName="PetaByteModel.VolunteerApplicant">
+        <MappingFragment StoreEntitySet="VolunteerApplicants">
+          <ScalarProperty Name="volunteerApplicantsId" ColumnName="volunteerApplicantsId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="postal" ColumnName="postal" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="startingDate" ColumnName="startingDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="available" ColumnName="available" />
+          <ScalarProperty Name="decision" ColumnName="decision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Volunteers">
+      <EntityTypeMapping TypeName="PetaByteModel.Volunteer">
+        <MappingFragment StoreEntitySet="Volunteers">
+          <ScalarProperty Name="volunteerId" ColumnName="volunteerId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="contactId" ColumnName="contactId" />
+          <ScalarProperty Name="addressId" ColumnName="addressId" />
+          <ScalarProperty Name="emerageContactID" ColumnName="emerageContactID" />
+          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="schedule" ColumnName="schedule" />
+          <ScalarProperty Name="tasks" ColumnName="tasks" />
+          <ScalarProperty Name="onCall" ColumnName="onCall" />
+          <ScalarProperty Name="insuranceId" ColumnName="insuranceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WhatToBrings">
+      <EntityTypeMapping TypeName="PetaByteModel.WhatToBring">
+        <MappingFragment StoreEntitySet="WhatToBrings">
+          <ScalarProperty Name="whatToBringId" ColumnName="whatToBringId" />
+          <ScalarProperty Name="itemName" ColumnName="itemName" />
+          <ScalarProperty Name="departmentsId" ColumnName="departmentsId" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faqs">
+      <EntityTypeMapping TypeName="PetaByteModel.Faq">
+        <MappingFragment StoreEntitySet="Faq">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

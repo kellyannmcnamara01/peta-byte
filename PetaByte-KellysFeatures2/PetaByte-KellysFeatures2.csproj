@@ -140,6 +140,17 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <EntityDeploy Include="Models\PetaByte.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PetaByte.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PetaByte.edmx.diagram">
+      <DependentUpon>PetaByte.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Models\PetaByte.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PetaByte.edmx</DependentUpon>
@@ -150,10 +161,6 @@
       <DependentUpon>PetaByte.edmx</DependentUpon>
       <LastGenOutput>PetaByte.cs</LastGenOutput>
     </Content>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -362,10 +369,76 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Address.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AddressDate.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Addresses1.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Alert.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cafeteria.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Donation.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DonationHonour.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DonationOccurence.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Donor.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DonorsProfile.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmerageContact.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Employee.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeStatu.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Faq.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Feeedback.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHelp.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GiftBill.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GiftItem.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GiftItemCategory.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GiftOrder.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HospitalEvent.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Insurance.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\JobApplicant.cs">
@@ -377,7 +450,19 @@
     <Compile Include="Models\Navigation.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\OnCall.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Page.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Password.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Patient.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PatientsRoom.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PetaByte.Context.cs">
@@ -395,10 +480,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PetaByte.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Position.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SubNavigation.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Symptom.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ticket.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\UrlFriendly.cs" />
+    <Compile Include="Models\User.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Volunteer.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VolunteerApplicant.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WhatToBring.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -406,13 +512,6 @@
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="Models\PetaByte.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PetaByte.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\PetaByte.edmx.diagram">
-      <DependentUpon>PetaByte.edmx</DependentUpon>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

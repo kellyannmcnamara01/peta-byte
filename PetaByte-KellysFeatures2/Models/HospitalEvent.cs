@@ -12,15 +12,17 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SubNavigation
+    public partial class HospitalEvent
     {
-        public int subNavId { get; set; }
-        public int navId { get; set; }
-        public string subNavTitle { get; set; }
-        public string subNavUrl { get; set; }
+        public int eventsId { get; set; }
+        public string evntName { get; set; }
+        public string evntDesc { get; set; }
+        public string evntLoc { get; set; }
         public int employeeId { get; set; }
+        public System.DateTime evntDate { get; set; }
+        public System.TimeSpan evntTimebg { get; set; }
+        public System.TimeSpan evntTimefn { get; set; }
     
         public virtual Employee Employee { get; set; }
-        public virtual Navigation Navigation { get; set; }
     }
 }

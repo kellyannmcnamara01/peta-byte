@@ -12,15 +12,18 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SubNavigation
+    public partial class Position
     {
-        public int subNavId { get; set; }
-        public int navId { get; set; }
-        public string subNavTitle { get; set; }
-        public string subNavUrl { get; set; }
-        public int employeeId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Position()
+        {
+            this.Users = new HashSet<User>();
+        }
     
-        public virtual Employee Employee { get; set; }
-        public virtual Navigation Navigation { get; set; }
+        public int roleId { get; set; }
+        public string roleDescription { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

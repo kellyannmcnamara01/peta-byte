@@ -12,15 +12,16 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SubNavigation
+    public partial class OnCall
     {
-        public int subNavId { get; set; }
-        public int navId { get; set; }
-        public string subNavTitle { get; set; }
-        public string subNavUrl { get; set; }
-        public int employeeId { get; set; }
+        public int onCallId { get; set; }
+        public System.DateTime date { get; set; }
+        public Nullable<int> employeeId { get; set; }
+        public System.DateTime startTime { get; set; }
+        public System.DateTime endTime { get; set; }
+        public Nullable<int> volunteerId { get; set; }
     
         public virtual Employee Employee { get; set; }
-        public virtual Navigation Navigation { get; set; }
+        public virtual Volunteer Volunteer { get; set; }
     }
 }

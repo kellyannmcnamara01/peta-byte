@@ -12,21 +12,18 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Navigation
+    public partial class DonationOccurence
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Navigation()
+        public DonationOccurence()
         {
-            this.SubNavigations = new HashSet<SubNavigation>();
+            this.Donations = new HashSet<Donation>();
         }
     
-        public int navId { get; set; }
-        public string navTitle { get; set; }
-        public string navUrl { get; set; }
-        public Nullable<int> employeeId { get; set; }
+        public int donationOccurenceId { get; set; }
+        public int donationFreq { get; set; }
     
-        public virtual Employee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SubNavigation> SubNavigations { get; set; }
+        public virtual ICollection<Donation> Donations { get; set; }
     }
 }

@@ -12,15 +12,14 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SubNavigation
+    public partial class Ticket
     {
-        public int subNavId { get; set; }
-        public int navId { get; set; }
-        public string subNavTitle { get; set; }
-        public string subNavUrl { get; set; }
-        public int employeeId { get; set; }
+        public int ticketId { get; set; }
+        public Nullable<int> employeeId { get; set; }
+        public string ticketStatu { get; set; }
+        public int getHelpId { get; set; }
     
         public virtual Employee Employee { get; set; }
-        public virtual Navigation Navigation { get; set; }
+        public virtual GetHelp GetHelp { get; set; }
     }
 }

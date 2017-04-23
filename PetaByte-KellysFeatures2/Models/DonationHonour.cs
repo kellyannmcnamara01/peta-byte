@@ -12,15 +12,16 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SubNavigation
+    public partial class DonationHonour
     {
-        public int subNavId { get; set; }
-        public int navId { get; set; }
-        public string subNavTitle { get; set; }
-        public string subNavUrl { get; set; }
-        public int employeeId { get; set; }
+        public int donationHonourId { get; set; }
+        public Nullable<int> donorsId { get; set; }
+        public Nullable<int> donationsId { get; set; }
+        public string honFirstName { get; set; }
+        public string honLastName { get; set; }
+        public string honType { get; set; }
     
-        public virtual Employee Employee { get; set; }
-        public virtual Navigation Navigation { get; set; }
+        public virtual Donation Donation { get; set; }
+        public virtual Donor Donor { get; set; }
     }
 }
