@@ -368,6 +368,10 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Allergies" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="relationship" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="postal" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="PatientsRooms">
     <Key>

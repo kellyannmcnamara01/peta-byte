@@ -40,6 +40,10 @@ namespace PetaByte_KellysFeatures2.Models
         public string City { get; set; }
         public string Country { get; set; }
         public string Allergies { get; set; }
+        public string relationship { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
+        public string postal { get; set; }
     
         public virtual Addresses1 Addresses1 { get; set; }
         public virtual Contact Contact { get; set; }

@@ -6,18 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Selim_Features.Models;
+using PetaByte_KellysFeatures2.Models;
 
-namespace Selim_Features.Controllers
+namespace PetaByte_KellysFeatures2.Controllers
 {
     public class FaqController : Controller
     {
-        private FaqContextEntities db = new FaqContextEntities();
+        private PetaByteContext db = new PetaByteContext();
 
         // GET: Faq
         public ActionResult Index()
         {
-            return View(db.Tables.ToList());
+            return View(db.Faqs.ToList());
         }
 
         // GET: Faq/Details/5
@@ -27,7 +27,7 @@ namespace Selim_Features.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table table = db.Tables.Find(id);
+            Faq table = db.Faqs.Find(id);
             if (table == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace Selim_Features.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Question,Answer")] Table table)
+        public ActionResult Create([Bind(Include = "Id,Question,Answer")] Faq table)
         {
             if (ModelState.IsValid)
             {
-                db.Tables.Add(table);
+                db.Faqs.Add(table);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace Selim_Features.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table table = db.Tables.Find(id);
+            Faq table = db.Faqs.Find(id);
             if (table == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace Selim_Features.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Question,Answer")] Table table)
+        public ActionResult Edit([Bind(Include = "Id,Question,Answer")] Faq table)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace Selim_Features.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Table table = db.Tables.Find(id);
+            Faq table = db.Faqs.Find(id);
             if (table == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace Selim_Features.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Table table = db.Tables.Find(id);
-            db.Tables.Remove(table);
+            Faq table = db.Faqs.Find(id);
+            db.Faqs.Remove(table);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

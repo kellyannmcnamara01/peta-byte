@@ -344,6 +344,10 @@
     <EntitySetMapping Name="Patients">
       <EntityTypeMapping TypeName="PetaByteModel.Patient">
         <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="postal" ColumnName="postal" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="relationship" ColumnName="relationship" />
           <ScalarProperty Name="patientId" ColumnName="patientId" />
           <ScalarProperty Name="firstName" ColumnName="firstName" />
           <ScalarProperty Name="middleName" ColumnName="middleName" />
