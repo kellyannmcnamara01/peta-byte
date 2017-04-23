@@ -1,14 +1,23 @@
 ﻿@model PetaByte_KellysFeatures2.Models.JobPosting
 
+@* NOTE (Kelly Ann McNamara): add the adminlayout shared view to style the page correctly *@
+
 @{
     ViewBag.Title = "Details";
 }
 
+@*
+    Project: Temiskaming Hospital Website
+    Team Name: PetaByte
+    Class: Mobile Development
+    Professor: Lee Situ
+    Author: Kelly Ann McNamara
+    File Description: This file is the view for displaying details of a job postings from the jobs feature.
+*@
+
 <h2>Details</h2>
 
 <div>
-    <h4>JobPosting</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.jobTitle)

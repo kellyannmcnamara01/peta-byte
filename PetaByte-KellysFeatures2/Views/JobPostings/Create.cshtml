@@ -1,9 +1,20 @@
 ﻿@model PetaByte_KellysFeatures2.Models.JobPosting
 
+@* NOTE (Kelly Ann McNamara): add the adminlayout shared view to style the page correctly *@
+
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
+@*
+    Project: Temiskaming Hospital Website
+    Team Name: PetaByte
+    Class: Mobile Development
+    Professor: Lee Situ
+    Author: Kelly Ann McNamara
+    File Description: This file is the view for creating a job postings from the jobs feature.
+*@
 
 <h2>Create</h2>
 
@@ -51,6 +62,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.status, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                @* NOTE (Kelly Ann McNamara): add a dropdown list for the user to select a status *@
                 @Html.DropDownList("Status", new List<SelectListItem>
                 {
                     new SelectListItem { Text = "Draft", Value = "Draft", Selected = true },

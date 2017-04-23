@@ -1,15 +1,25 @@
 ﻿@model PetaByte_KellysFeatures2.Models.JobPosting
 
+@* NOTE (Kelly Ann McNamara): add the adminlayout shared view to style the page correctly *@
+
 @{
     ViewBag.Title = "Delete";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@*
+    Project: Temiskaming Hospital Website
+    Team Name: PetaByte
+    Class: Mobile Development
+    Professor: Lee Situ
+    Author: Kelly Ann McNamara
+    File Description: This file is the view for deleting a job postings from the jobs feature.
+*@
+
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.jobTitle)
