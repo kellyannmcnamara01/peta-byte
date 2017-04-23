@@ -16,7 +16,7 @@ namespace PetaByte_KellysFeatures2.Models
     {
         public int akertId { get; set; }
         public string alertText { get; set; }
-        public System.DateTime timestamp { get; set; }
+        public Nullable<System.DateTime> timestamp { get; set; }
         public string status { get; set; }
         public int employeeId { get; set; }
     
