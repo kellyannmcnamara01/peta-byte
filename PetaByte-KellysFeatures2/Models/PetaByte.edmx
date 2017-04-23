@@ -297,8 +297,8 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
           <Property Name="appEmail" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="appLinkedIn" Type="varchar" MaxLength="50" />
           <Property Name="appMessage" Type="varchar(max)" />
-          <Property Name="appCv" Type="varchar" MaxLength="50" />
-          <Property Name="appOtherFile" Type="varchar" MaxLength="50" />
+          <Property Name="appCv" Type="varchar" MaxLength="200" />
+          <Property Name="appOtherFile" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="JobPostings">
           <Key>
@@ -360,7 +360,7 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
           <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="middleName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="birthDate" Type="datetime" Nullable="false" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
           <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="physican" Type="varchar" MaxLength="100" />
           <Property Name="joinDate" Type="datetime" Nullable="false" />
@@ -1658,8 +1658,8 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
           <Property Name="appEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="appLinkedIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="appMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="appCv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="appOtherFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="appCv" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="appOtherFile" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="JobPosting" Relationship="Self.FK_JobApplicants_JobPostings" FromRole="JobApplicants" ToRole="JobPostings" />
         </EntityType>
         <EntityType Name="JobPosting">
@@ -1730,7 +1730,7 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
           <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="middleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="birthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="physican" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="joinDate" Type="DateTime" Nullable="false" Precision="3" />
@@ -3084,7 +3084,7 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
                 <ScalarProperty Name="middleName" ColumnName="middleName" />
                 <ScalarProperty Name="lastName" ColumnName="lastName" />
-                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
                 <ScalarProperty Name="gender" ColumnName="gender" />
                 <ScalarProperty Name="physican" ColumnName="physican" />
                 <ScalarProperty Name="joinDate" ColumnName="joinDate" />
