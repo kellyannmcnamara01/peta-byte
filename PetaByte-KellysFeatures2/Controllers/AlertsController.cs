@@ -40,7 +40,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "alertId,alertText,timestamp,status,employeeId")] Alert alert)
+        public ActionResult Create([Bind(Include = "akertId,alertText,timestamp,status,employeeId")] Alert alert)
         {
             //NOTE (Kelly Ann McNamara): place action into a try catch to validate and display errors
             try
@@ -85,7 +85,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "alertId,alertText,timestamp,status,employeeId")] Alert alert)
+        public ActionResult Edit([Bind(Include = "akertId,alertText,timestamp,status,employeeId")] Alert alert)
         {
             //NOTE (Kelly Ann McNamara): place ation into a try catch to validate and throw errors
             try
