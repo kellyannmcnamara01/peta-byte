@@ -411,6 +411,9 @@
     <Compile Include="Models\Employee.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmployeeSchedule.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EmployeeStatu.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
@@ -481,6 +484,9 @@
       <DependentUpon>PetaByte.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Position.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Request.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SubNavigation.cs">

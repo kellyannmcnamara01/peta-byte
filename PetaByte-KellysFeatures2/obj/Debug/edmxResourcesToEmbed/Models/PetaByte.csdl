@@ -181,11 +181,13 @@
     <NavigationProperty Name="EmerageContact" Relationship="Self.FK_Employees_EmerageContacts" FromRole="Employees" ToRole="EmerageContacts" />
     <NavigationProperty Name="EmployeeStatu" Relationship="Self.FK_Employees_EmployeeStatus" FromRole="Employees" ToRole="EmployeeStatus" />
     <NavigationProperty Name="Insurance" Relationship="Self.FK_Employees_Insurance" FromRole="Employees" ToRole="Insurances" />
+    <NavigationProperty Name="EmployeeSchedules" Relationship="Self.FK_EmployeeSchedule_Employeeid" FromRole="Employees" ToRole="EmployeeSchedule" />
     <NavigationProperty Name="HospitalEvents" Relationship="Self.FK_HospitalEvents_Employees" FromRole="Employees" ToRole="HospitalEvents" />
     <NavigationProperty Name="JobPostings" Relationship="Self.FK_JobPostings_Employees" FromRole="Employees" ToRole="JobPostings" />
     <NavigationProperty Name="Navigations" Relationship="Self.FK_Navigation_Employees" FromRole="Employees" ToRole="Navigations" />
     <NavigationProperty Name="OnCalls" Relationship="Self.FK_OnCall_Employees" FromRole="Employees" ToRole="OnCalls" />
     <NavigationProperty Name="Pages" Relationship="Self.FK_Pages_Employees" FromRole="Employees" ToRole="Pages" />
+    <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_employeeId" FromRole="Employees" ToRole="Requests" />
     <NavigationProperty Name="SubNavigations" Relationship="Self.FK_SubNavigation_Employees" FromRole="Employees" ToRole="SubNavigations" />
     <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_Employees" FromRole="Employees" ToRole="Tickets" />
   </EntityType>
@@ -312,8 +314,8 @@
     <Property Name="appEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="appLinkedIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="appMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="appCv" Type="Binary" MaxLength="50" FixedLength="false" />
-    <Property Name="appOtherFile" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="appCv" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="appOtherFile" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="JobPosting" Relationship="Self.FK_JobApplicants_JobPostings" FromRole="JobApplicants" ToRole="JobPostings" />
   </EntityType>
   <EntityType Name="JobPosting">
@@ -384,7 +386,7 @@
     <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="middleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="birthDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="physican" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="joinDate" Type="DateTime" Nullable="false" Precision="3" />
@@ -393,6 +395,10 @@
     <Property Name="healthCardNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="emerageContactID" Type="Int32" />
     <Property Name="insuranceId" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Allergies" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Addresses1" Relationship="Self.FK_Patients_Addresses" FromRole="Patients" ToRole="Addresses1" />
     <NavigationProperty Name="Contact" Relationship="Self.FK_Patients_Contact" FromRole="Patients" ToRole="Contacts" />
     <NavigationProperty Name="EmerageContact" Relationship="Self.FK_Patients_EmerageContacts" FromRole="Patients" ToRole="EmerageContacts" />
@@ -400,6 +406,7 @@
     <NavigationProperty Name="GiftBills" Relationship="Self.FK_GiftBills_Patients" FromRole="Patients" ToRole="GiftBills" />
     <NavigationProperty Name="Insurance" Relationship="Self.FK_Patients_Insurance" FromRole="Patients" ToRole="Insurances" />
     <NavigationProperty Name="PatientsRooms" Relationship="Self.FK_PatientsRooms_Patients" FromRole="Patients" ToRole="PatientsRooms" />
+    <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_patientId" FromRole="Patients" ToRole="Requests" />
   </EntityType>
   <EntityType Name="PatientsRoom">
     <Key>
@@ -517,6 +524,29 @@
     <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Department" Relationship="Self.FK_WhatToBring_Departments" FromRole="WhatToBrings" ToRole="Departments" />
   </EntityType>
+  <EntityType Name="EmployeeSchedule">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Day" />
+      <PropertyRef Name="StartTime" />
+      <PropertyRef Name="BreakTimeBegin" />
+      <PropertyRef Name="BreakTimeend" />
+      <PropertyRef Name="EndTime" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="EmployeeFirstName" />
+      <PropertyRef Name="EmployeeLastName" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="BreakTimeBegin" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="BreakTimeend" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeSchedule_Employeeid" FromRole="EmployeeSchedule" ToRole="Employees" />
+  </EntityType>
   <EntityType Name="Faq">
     <Key>
       <PropertyRef Name="id" />
@@ -526,6 +556,40 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="question" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="PurposeOfVisit" />
+      <PropertyRef Name="HealthCardNum" />
+      <PropertyRef Name="PatientFirstName" />
+      <PropertyRef Name="PatientLastName" />
+      <PropertyRef Name="PatientId" />
+      <PropertyRef Name="PhysicianName" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="DateofAppointment" />
+      <PropertyRef Name="PreferredAppTime" />
+      <PropertyRef Name="PreferredDate" />
+      <PropertyRef Name="DateofRequest" />
+      <PropertyRef Name="DateApproved" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PurposeOfVisit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HealthCardNum" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatientFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatientLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatientId" Type="Int32" Nullable="false" />
+    <Property Name="PhysicianName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="DateofAppointment" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PreferredAppTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PreferredDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateofRequest" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateApproved" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Requests_employeeId" FromRole="Requests" ToRole="Employees" />
+    <NavigationProperty Name="Patient" Relationship="Self.FK_Requests_patientId" FromRole="Requests" ToRole="Patients" />
   </EntityType>
   <Association Name="FK_Addresses_AddressDates">
     <End Role="AddressDates" Type="Self.AddressDate" Multiplicity="0..1" />
@@ -779,6 +843,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_EmployeeSchedule_Employeeid">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="EmployeeSchedule" Type="Self.EmployeeSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="EmployeeSchedule">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_HospitalEvents_Employees">
     <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
     <End Role="HospitalEvents" Type="Self.HospitalEvent" Multiplicity="*" />
@@ -836,6 +912,18 @@
       </Principal>
       <Dependent Role="Pages">
         <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requests_employeeId">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Requests" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="Requests">
+        <PropertyRef Name="EmployeeId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1043,6 +1131,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Requests_patientId">
+    <End Role="Patients" Type="Self.Patient" Multiplicity="1" />
+    <End Role="Requests" Type="Self.Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="patientId" />
+      </Principal>
+      <Dependent Role="Requests">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Users_Positions">
     <End Role="Positions" Type="Self.Position" Multiplicity="1" />
     <End Role="Users" Type="Self.User" Multiplicity="*" />
@@ -1095,7 +1195,9 @@
     <EntitySet Name="VolunteerApplicants" EntityType="Self.VolunteerApplicant" />
     <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
     <EntitySet Name="WhatToBrings" EntityType="Self.WhatToBring" />
+    <EntitySet Name="EmployeeSchedules" EntityType="Self.EmployeeSchedule" />
     <EntitySet Name="Faqs" EntityType="Self.Faq" />
+    <EntitySet Name="Requests" EntityType="Self.Request" />
     <AssociationSet Name="FK_Addresses_AddressDates" Association="Self.FK_Addresses_AddressDates">
       <End Role="AddressDates" EntitySet="AddressDates" />
       <End Role="Addresses1" EntitySet="Addresses1" />
@@ -1180,6 +1282,10 @@
       <End Role="Insurances" EntitySet="Insurances" />
       <End Role="Employees" EntitySet="Employees" />
     </AssociationSet>
+    <AssociationSet Name="FK_EmployeeSchedule_Employeeid" Association="Self.FK_EmployeeSchedule_Employeeid">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeeSchedule" EntitySet="EmployeeSchedules" />
+    </AssociationSet>
     <AssociationSet Name="FK_HospitalEvents_Employees" Association="Self.FK_HospitalEvents_Employees">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="HospitalEvents" EntitySet="HospitalEvents" />
@@ -1199,6 +1305,10 @@
     <AssociationSet Name="FK_Pages_Employees" Association="Self.FK_Pages_Employees">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requests_employeeId" Association="Self.FK_Requests_employeeId">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Requests" EntitySet="Requests" />
     </AssociationSet>
     <AssociationSet Name="FK_SubNavigation_Employees" Association="Self.FK_SubNavigation_Employees">
       <End Role="Employees" EntitySet="Employees" />
@@ -1267,6 +1377,10 @@
     <AssociationSet Name="FK_PatientsRooms_Patients" Association="Self.FK_PatientsRooms_Patients">
       <End Role="Patients" EntitySet="Patients" />
       <End Role="PatientsRooms" EntitySet="PatientsRooms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requests_patientId" Association="Self.FK_Requests_patientId">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Requests" EntitySet="Requests" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Positions" Association="Self.FK_Users_Positions">
       <End Role="Positions" EntitySet="Positions" />

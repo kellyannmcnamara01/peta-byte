@@ -348,7 +348,7 @@
           <ScalarProperty Name="firstName" ColumnName="firstName" />
           <ScalarProperty Name="middleName" ColumnName="middleName" />
           <ScalarProperty Name="lastName" ColumnName="lastName" />
-          <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
           <ScalarProperty Name="gender" ColumnName="gender" />
           <ScalarProperty Name="physican" ColumnName="physican" />
           <ScalarProperty Name="joinDate" ColumnName="joinDate" />
@@ -357,6 +357,10 @@
           <ScalarProperty Name="healthCardNum" ColumnName="healthCardNum" />
           <ScalarProperty Name="emerageContactID" ColumnName="emerageContactID" />
           <ScalarProperty Name="insuranceId" ColumnName="insuranceId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Allergies" ColumnName="Allergies" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -469,12 +473,47 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeSchedules">
+      <EntityTypeMapping TypeName="PetaByteModel.EmployeeSchedule">
+        <MappingFragment StoreEntitySet="EmployeeSchedule">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="BreakTimeBegin" ColumnName="BreakTimeBegin" />
+          <ScalarProperty Name="BreakTimeend" ColumnName="BreakTimeend" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeeFirstName" ColumnName="EmployeeFirstName" />
+          <ScalarProperty Name="EmployeeLastName" ColumnName="EmployeeLastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Faqs">
       <EntityTypeMapping TypeName="PetaByteModel.Faq">
         <MappingFragment StoreEntitySet="Faq">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="question" ColumnName="question" />
           <ScalarProperty Name="answer" ColumnName="answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="PetaByteModel.Request">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PurposeOfVisit" ColumnName="PurposeOfVisit" />
+          <ScalarProperty Name="HealthCardNum" ColumnName="HealthCardNum" />
+          <ScalarProperty Name="PatientFirstName" ColumnName="PatientFirstName" />
+          <ScalarProperty Name="PatientLastName" ColumnName="PatientLastName" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="PhysicianName" ColumnName="PhysicianName" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="DateofAppointment" ColumnName="DateofAppointment" />
+          <ScalarProperty Name="PreferredAppTime" ColumnName="PreferredAppTime" />
+          <ScalarProperty Name="PreferredDate" ColumnName="PreferredDate" />
+          <ScalarProperty Name="DateofRequest" ColumnName="DateofRequest" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
