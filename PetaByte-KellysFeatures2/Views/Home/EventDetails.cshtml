@@ -1,0 +1,77 @@
+﻿@model PetaByte_KellysFeatures2.Models.HospitalEvent
+
+@{
+    ViewBag.Title = "Event Details";
+}
+<script>
+    $(document).ready(function() {
+        $('.footer_back').css('color', 'white');
+        $('.footer_back, a').css('color', 'white');
+        $('.event__namefor').css('color', '#0d467d');
+        $('.event__displayfor').css({ 'color': 'black', 'font-size': '24px' });
+        $('.event__desc').css({ 'font-size': '21px' });
+        $('.event__loc').css({ 'font-size': '17px' });
+
+
+    });
+</script>
+<div class="container">
+    <h2>Event Details</h2>
+
+    <div style="margin-top: 100px; margin-left: 30px; ">
+        <h4 style="margin-top: 70px; font-size: 38px; color: #0d467d; border-bottom: 3px solid #0d467d">Hospital Events</h4>
+        <hr />
+        <dl class="dl-horizontal float left" style="font-size: 16px; max-width: 600px; ">
+            <dt class="event__namefor">
+                @Html.DisplayNameFor(model => model.evntName)
+            </dt>
+
+            <dd class="event__displayfor">
+                @Html.DisplayFor(model => model.evntName)
+            </dd>
+
+            <dt class="event__namefor">
+                @Html.DisplayNameFor(model => model.evntDate)
+            </dt>
+
+            <dd class="event__displayfor">
+                @Html.DisplayFor(model => model.evntDate)
+            </dd>
+
+            <dt class="event__namefor">
+                @Html.DisplayNameFor(model => model.evntTimebg)
+            </dt>
+            <dd class="event__displayfor">
+                @Html.DisplayFor(model => model.evntTimebg)
+            </dd>
+            <dt class="event__namefor">
+                @Html.DisplayNameFor(model => model.evntTimefn)
+            </dt>
+            <dd class="event__displayfor">
+                @Html.DisplayFor(model => model.evntTimefn)
+            </dd>
+            <dt class="event__namefor">
+                @Html.DisplayNameFor(model => model.evntDesc)
+            </dt>
+
+            <dd class="event__desc">
+                @Html.DisplayFor(model => model.evntDesc)
+            </dd>
+
+            <dt class="event__namefor">
+                @Html.DisplayNameFor(model => model.evntLoc)
+            </dt>
+
+            <dd class="event__loc">
+                @Html.DisplayFor(model => model.evntLoc)
+            </dd>
+
+        </dl>
+    </div>
+    <div>
+        <p class="footer__login-btn footer__back" style="max-width: 150px;margin-left: 50px;">@Html.ActionLink("Back to Homepage", "Index")</p>
+    </div>
+    <div>
+        <p class="footer__login-btn" style="max-width: 150px;margin-left: 50px;">@Html.ActionLink("Back to Events", "Allevents")</p>
+    </div>
+</div>

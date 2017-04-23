@@ -1,0 +1,66 @@
+﻿@using PetaByte_KellysFeatures2.Models
+@model IEnumerable<PetaByte_KellysFeatures2.Models.HospitalEvent>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Events</h2>
+
+<p class="button">
+    @Html.ActionLink("Add Event", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.evntName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.evntDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.evntTimebg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.evntTimefn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.evntDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.evntLoc)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.evntName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.evntDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.evntTimebg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.evntTimefn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.evntDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.evntLoc)
+            </td>
+            <td class="crud">
+                @Html.ActionLink("Edit", "Edit", new { id=item.eventsId}, htmlAttributes: new { @class = "button-edit" })
+            </td>
+            <td class="crud">
+                @Html.ActionLink("Delete", "Delete", new { id = item.eventsId},htmlAttributes: new { @class = "button-delete" })
+            </td>
+        </tr>
+    }
+
+</table>

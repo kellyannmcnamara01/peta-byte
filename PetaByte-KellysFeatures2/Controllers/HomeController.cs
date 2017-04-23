@@ -20,7 +20,20 @@ namespace PetaByte_KellysFeatures2.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            List<HospitalEvent> events = db.HospitalEvents.Take(3).ToList();
+            return View(events);
+        }
+
+        public ActionResult EventDetails(int? id)
+        {
+            HospitalEvent events = db.HospitalEvents.Single(evnt => evnt.eventsId == id);
+
+            return View(events);
+        }
+
+        public ActionResult Allevents()
+        {
+            return View(db.HospitalEvents.ToList());
         }
 
         public PartialViewResult Alerts()

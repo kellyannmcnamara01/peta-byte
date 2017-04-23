@@ -1,4 +1,6 @@
-﻿
+﻿@using PetaByte_KellysFeatures2.Models
+@model IEnumerable<PetaByte_KellysFeatures2.Models.HospitalEvent> 
+
 @{
     ViewBag.Title = "Index";
 }
@@ -70,7 +72,7 @@
         </div>
     </div>
 </div>
-<!-- 05. Events & Visiting Hours By: Kelly Ann McNamara -->
+<!-- 05. Events & Visiting Hours By: Done by Mahmud Shakir, styled by Kelly Ann McNamara -->
 <div id="events-visiting">
     <div id="events-curve">
         <div id="event-content-width" class="wrapper row">
@@ -78,15 +80,22 @@
             <div id="events-visiting__events" class="col-md-6 col-sm-6 col-12">
                 <h2 class="dark-blue">Upcoming Events</h2>
                 <div class="events__event-listing">
-                    <a href="" class="row">
+                @*<a href="" class="row">
                         <div class="events__event-listing_title col-md-4 col-sm-12 col-12">
                             March 2017
-                        </div>
-                        <div class="events__event-listing_details col-md-8 col-sm-12 col-12">
-                            10:30am | sing-a-long for kids
-                        </div>
-                    </a>
-                </div>
+                        </div>*@
+                    @foreach (HospitalEvent events in Model.Take(3))
+                    {
+                        <a href="/Home/EventDetails/@events.eventsId" class="row">
+                            <div class="events__event-listing_title col-md-4 col-sm-12 col-12" >
+                                @events.evntDate 
+                            </div>
+                            <div class="events__event-listing_details col-md-8 col-sm-12 col-12" >
+                                @events.evntTimebg | @events.evntName
+                            </div>
+                        </a>
+                    }
+                @*</div>
                 <div class="events__event-listing">
                     <a href="" class="row">
                         <div class="events__event-listing_title col-md-4 col-sm-12 col-12">
@@ -105,7 +114,7 @@
                         <div class="events__event-listing_details col-md-8 col-sm-12 col-12">
                             10:30am | sing-a-long for kids
                         </div>
-                    </a>
+                    </a>*@
                 </div>
             </div>
             <!-- 05-2. Visiting Hours -->

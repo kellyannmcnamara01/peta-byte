@@ -52,8 +52,43 @@
         09-2. --Feature Name Here--
         09-3. --Feature Name Here--
     10. Mahmud's Client Facing Features Styling
-        10-1. --Feature Name Here--
-        10-2. --Feature Name Here--
+        10-1. --Hospital Events*/
+        .bluebtn {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .bluebtn a {
+            font-size: 1.4em;
+            margin-top: 25px;
+            padding: 11px 25px;
+        }
+        .bluebtn:hover, .bluebtn:active, .bluebtn:focus {
+            background-color: #0d467d;
+            color: #fff;
+        }
+
+        #calendar {
+            width: 75%;
+            height: 65%;
+            margin: 0 auto;
+            background-color: whitesmoke;
+        }
+
+        .event__Title {
+            font-size: 22px;
+            color: #0D467D;
+        }
+
+        #event__cntnr {
+            margin-top: 40px;
+        }
+        /*#events__inro {
+    margin-top: 30px;
+}*/
+
+        
+        
+        /*10-2. --Feature Name Here--
         10-3. --Feature Name Here--
     11. Nathan's Client Facing Features Styling
         11-1. --Feature Name Here--
