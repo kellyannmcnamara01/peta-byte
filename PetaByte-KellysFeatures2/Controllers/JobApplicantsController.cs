@@ -9,6 +9,14 @@ using System.Web.Mvc;
 using PetaByte_KellysFeatures2.Models;
 using System.IO;
 
+//  Project: Temiskaming Hospital Website
+//  Team Name: PetaByte
+//  Class: Mobile Development
+//  Professor: Lee Situ
+//  Author: Kelly Ann McNamara
+//  File Description: This file sets the outlining functionality for the Job Applicants feature. Please see other comments below for specific details.
+
+
 namespace PetaByte_KellysFeatures2.Controllers
 {
     public class JobApplicantsController : Controller
@@ -22,9 +30,10 @@ namespace PetaByte_KellysFeatures2.Controllers
             return View(jobApplicants.ToList());
         }
 
-        //Partial view for job postings
+        //NOTE (Kelly Ann McNamara): Partial view for job postings
         public PartialViewResult JobPosting()
         {
+            //NOTE (Kelly Ann McNamara):  Populate a list to display all of the job postings that have the status of "Published" from the db
             List<JobPosting> postings = db.JobPostings.Where(jp => jp.status == "Published").ToList();
             return PartialView("_JobPostingsPartial", postings);
         }
@@ -60,13 +69,13 @@ namespace PetaByte_KellysFeatures2.Controllers
         {
             if (ModelState.IsValid)
             {
-                //if statement for file upload
-                //create var that returns the file name and extention
-                //have the getter and setter for appCV to equal the fileName the user uploads
-                //add all the user input to the db
-                //save changes
-                //create a file path to the uploaded content
-                //save said path
+                //NOTE (Kelly Ann McNamara): if statement for file upload
+                //NOTE (Kelly Ann McNamara): create var that returns the file name and extention
+                //NOTE (Kelly Ann McNamara): have the getter and setter for appCV to equal the fileName the user uploads
+                //NOTE (Kelly Ann McNamara): add all the user input to the db
+                //NOTE (Kelly Ann McNamara): save changes
+                //NOTE (Kelly Ann McNamara): create a file path to the uploaded content
+                //NOTE (Kelly Ann McNamara): save said path
                 if (file.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(file.FileName);
@@ -78,8 +87,6 @@ namespace PetaByte_KellysFeatures2.Controllers
                     var path = Path.Combine(Server.MapPath("~/Content/applicants/") + fileName);
                     file.SaveAs(path);
                 }
-                //db.JobApplicants.Add(jobApplicant);
-                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 

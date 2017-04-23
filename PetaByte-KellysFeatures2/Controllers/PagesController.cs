@@ -8,6 +8,14 @@ using System.Web;
 using System.Web.Mvc;
 using PetaByte_KellysFeatures2.Models;
 
+//  Project: Temiskaming Hospital Website
+//  Team Name: PetaByte
+//  Class: Mobile Development
+//  Professor: Lee Situ
+//  Author: Kelly Ann McNamara
+//  File Description: This file sets the outlining functionality for the Pages feature. Please see other comments below for specific details.
+
+
 namespace PetaByte_KellysFeatures2.Controllers
 {
     public class PagesController : Controller
@@ -25,16 +33,15 @@ namespace PetaByte_KellysFeatures2.Controllers
         [Route("{controller}/{action}/{pageUrl}")]
         public ActionResult Details(string pageUrl)
         {
-            //if (pageUrl == null)
             if (string.IsNullOrWhiteSpace(pageUrl))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //make sure it looks for the pageUrl as the url not the id
-            // pages/pageUrl
+            //NOTE (Kelly Ann McNamara): make sure it looks for the pageUrl as the url not the id
+            //NOTE (Kelly Ann McNamara):  pages/details/pageUrl
 
-            //I changed out the below commented line to the one on line 39. I had to compare the string I was calling with the string that I wanted to use as the url
-            //Page page = db.Pages.Single( p => p.pageUrl == pageUrl);
+            //NOTE (Kelly Ann McNamara): I changed out the below commented line to the one on line 39. I had to compare the string I was calling with the string that I wanted to use as the url
+            //NOTE (Kelly Ann McNamara): Page page = db.Pages.Single( p => p.pageUrl == pageUrl);
 
             Page page = db.Pages.Where(p => p.pageUrl.Equals(pageUrl, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
             if (page == null)

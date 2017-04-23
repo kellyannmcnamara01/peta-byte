@@ -8,6 +8,14 @@ using System.Web;
 using System.Web.Mvc;
 using PetaByte_KellysFeatures2.Models;
 
+//  Project: Temiskaming Hospital Website
+//  Team Name: PetaByte
+//  Class: Mobile Development
+//  Professor: Lee Situ
+//  Author: Kelly Ann McNamara
+//  File Description: This file sets the outlining functionality for the Job Postings feature. Please see other comments below for specific details.
+
+
 namespace PetaByte_KellysFeatures2.Controllers
 {
     public class JobPostingsController : Controller
@@ -20,21 +28,6 @@ namespace PetaByte_KellysFeatures2.Controllers
             var jobPostings = db.JobPostings.Include(j => j.Employee);
             return View(jobPostings.ToList());
         }
-
-        //// GET: JobPostings/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    JobPosting jobPosting = db.JobPostings.Find(id);
-        //    if (jobPosting == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(jobPosting);
-        //}
 
         // GET: JobPostings/Create
         public ActionResult Create()
@@ -50,10 +43,11 @@ namespace PetaByte_KellysFeatures2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "jobId,jobTitle,jobDesc,employeeId,timestamp,status")] JobPosting jobPosting)
         {
-            try
+            try //NOTE (Kelly Ann McNamara): add a try catch to display any errs and otherwise run the code
             {
                 if (ModelState.IsValid)
                 {
+                    //NOTE (Kelly Ann McNamara): place in the current date time to the db when the data is saved
                     jobPosting.timestamp = DateTime.Now;
                     db.JobPostings.Add(jobPosting);
                     db.SaveChanges();
@@ -93,7 +87,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "jobId,jobTitle,jobDesc,employeeId,timestamp,status")] JobPosting jobPosting)
         {
-            try
+            try //NOTE (Kelly Ann McNamara): Run a try catch to display any errs otherwise run the below code
             {
                 if (ModelState.IsValid)
                 {

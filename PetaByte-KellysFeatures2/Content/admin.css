@@ -1,4 +1,29 @@
-﻿/* 01. Attributes */
+﻿/*
+    
+    Project: Temiskaming Hospital Website
+    File Name: Admin Side CSS
+    Team Name: PetaByte
+    Class: Mobile Development
+    Professor: Lee Situ
+    Main Author: Kelly Ann McNamara
+    File Description: This file will set the styling parameters for the admin side within the site. 
+
+    _____________________________________________
+
+    INDEX
+    01. Attributes
+    02. Navigation
+    03. Typography
+    04. Form Styling
+    05. Table Styling
+    06. Delete styling
+    07. Job Apps Styling for Admin
+    08. Media Query 
+
+    */
+
+
+/* 01. Attributes */
 
 * {
     margin: 0 auto;
@@ -12,7 +37,7 @@ html {
 }
 body {
     font-size: 62.5%;
-    margin: 0 atuo;
+    margin: 0 auto;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-rendering: geometricPrecision;
     background: #f2f2f2;
@@ -299,6 +324,8 @@ dd {
     outline: none;
     text-decoration: none;
 }
+
+/* Media Query */
 
 @media (max-width: 767px) {
     .navbar-header {

@@ -8,6 +8,15 @@ using System.Web;
 using System.Web.Mvc;
 using PetaByte_KellysFeatures2.Models;
 
+
+//  Project: Temiskaming Hospital Website
+//  Team Name: PetaByte
+//  Class: Mobile Development
+//  Professor: Lee Situ
+//  Author: Kelly Ann McNamara
+//  File Description: This feature is incomplete at the moment.
+
+
 namespace PetaByte_KellysFeatures2.Controllers
 {
     public class NavigationsController : Controller 
