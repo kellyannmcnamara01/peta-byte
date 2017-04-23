@@ -151,6 +151,30 @@
     <Property Name="employeeStatusId" Type="int" />
     <Property Name="insuranceId" Type="int" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PetaByte.dbo.EmployeeSchedule' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="EmployeeSchedule">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Day" />
+      <PropertyRef Name="StartTime" />
+      <PropertyRef Name="BreakTimeBegin" />
+      <PropertyRef Name="BreakTimeend" />
+      <PropertyRef Name="EndTime" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="EmployeeFirstName" />
+      <PropertyRef Name="EmployeeLastName" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Day" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="BreakTimeBegin" Type="time" Precision="7" Nullable="false" />
+    <Property Name="BreakTimeend" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="EmployeeFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmployeeLastName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="EmployeeStatus">
     <Key>
       <PropertyRef Name="employeeStatusId" />
@@ -268,8 +292,8 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="appEmail" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="appLinkedIn" Type="varchar" MaxLength="50" />
     <Property Name="appMessage" Type="varchar(max)" />
-    <Property Name="appCv" Type="varchar" MaxLength="50" />
-    <Property Name="appOtherFile" Type="varchar" MaxLength="50" />
+    <Property Name="appCv" Type="varchar" MaxLength="200" />
+    <Property Name="appOtherFile" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="JobPostings">
     <Key>
@@ -331,7 +355,7 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="middleName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="birthDate" Type="datetime" Nullable="false" />
+    <Property Name="DOB" Type="datetime" Nullable="false" />
     <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="physican" Type="varchar" MaxLength="100" />
     <Property Name="joinDate" Type="datetime" Nullable="false" />
@@ -340,6 +364,10 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="healthCardNum" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="emerageContactID" Type="int" />
     <Property Name="insuranceId" Type="int" />
+    <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Allergies" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="PatientsRooms">
     <Key>
@@ -356,6 +384,40 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     </Key>
     <Property Name="roleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="roleDescription" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="PurposeOfVisit" />
+      <PropertyRef Name="HealthCardNum" />
+      <PropertyRef Name="PatientFirstName" />
+      <PropertyRef Name="PatientLastName" />
+      <PropertyRef Name="PatientId" />
+      <PropertyRef Name="PhysicianName" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="DateofAppointment" />
+      <PropertyRef Name="PreferredAppTime" />
+      <PropertyRef Name="PreferredDate" />
+      <PropertyRef Name="DateofRequest" />
+      <PropertyRef Name="DateApproved" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PurposeOfVisit" Type="varchar(max)" Nullable="false" />
+    <Property Name="HealthCardNum" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="PatientFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientLastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientId" Type="int" Nullable="false" />
+    <Property Name="PhysicianName" Type="varchar(max)" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="DateofAppointment" Type="datetime" Nullable="false" />
+    <Property Name="PreferredAppTime" Type="datetime" Nullable="false" />
+    <Property Name="PreferredDate" Type="datetime" Nullable="false" />
+    <Property Name="DateofRequest" Type="datetime" Nullable="false" />
+    <Property Name="DateApproved" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="SubNavigations">
     <Key>
@@ -597,6 +659,18 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_EmployeeSchedule_Employeeid">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="EmployeeSchedule" Type="Self.EmployeeSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="EmployeeSchedule">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Feeedbacks_Patients">
     <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
     <End Role="Feeedbacks" Type="Self.Feeedbacks" Multiplicity="*" />
@@ -825,6 +899,30 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Requests_employeeId">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="employeeId" />
+      </Principal>
+      <Dependent Role="Requests">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requests_patientId">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="patientId" />
+      </Principal>
+      <Dependent Role="Requests">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_SubNavigation_Employees">
     <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
     <End Role="SubNavigations" Type="Self.SubNavigations" Multiplicity="*" />
@@ -1009,12 +1107,43 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <EntitySet Name="VolunteerApplicants" EntityType="Self.VolunteerApplicants" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteers" EntityType="Self.Volunteers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="WhatToBrings" EntityType="Self.WhatToBrings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeSchedule" EntityType="Self.EmployeeSchedule" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EmployeeSchedule].[id] AS [id], 
+    [EmployeeSchedule].[Day] AS [Day], 
+    [EmployeeSchedule].[StartTime] AS [StartTime], 
+    [EmployeeSchedule].[BreakTimeBegin] AS [BreakTimeBegin], 
+    [EmployeeSchedule].[BreakTimeend] AS [BreakTimeend], 
+    [EmployeeSchedule].[EndTime] AS [EndTime], 
+    [EmployeeSchedule].[EmployeeId] AS [EmployeeId], 
+    [EmployeeSchedule].[EmployeeFirstName] AS [EmployeeFirstName], 
+    [EmployeeSchedule].[EmployeeLastName] AS [EmployeeLastName]
+    FROM [dbo].[EmployeeSchedule] AS [EmployeeSchedule]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="Faq" EntityType="Self.Faq" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [Faq].[id] AS [id], 
     [Faq].[question] AS [question], 
     [Faq].[answer] AS [answer]
     FROM [dbo].[Faq] AS [Faq]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Requests" EntityType="Self.Requests" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Requests].[id] AS [id], 
+    [Requests].[Status] AS [Status], 
+    [Requests].[PurposeOfVisit] AS [PurposeOfVisit], 
+    [Requests].[HealthCardNum] AS [HealthCardNum], 
+    [Requests].[PatientFirstName] AS [PatientFirstName], 
+    [Requests].[PatientLastName] AS [PatientLastName], 
+    [Requests].[PatientId] AS [PatientId], 
+    [Requests].[PhysicianName] AS [PhysicianName], 
+    [Requests].[EmployeeId] AS [EmployeeId], 
+    [Requests].[DateofAppointment] AS [DateofAppointment], 
+    [Requests].[PreferredAppTime] AS [PreferredAppTime], 
+    [Requests].[PreferredDate] AS [PreferredDate], 
+    [Requests].[DateofRequest] AS [DateofRequest], 
+    [Requests].[DateApproved] AS [DateApproved]
+    FROM [dbo].[Requests] AS [Requests]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_Addresses_AddressDates" Association="Self.FK_Addresses_AddressDates">
       <End Role="AddressDates" EntitySet="AddressDates" />
@@ -1067,6 +1196,10 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <AssociationSet Name="FK_Employees_Insurance" Association="Self.FK_Employees_Insurance">
       <End Role="Insurances" EntitySet="Insurances" />
       <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeSchedule_Employeeid" Association="Self.FK_EmployeeSchedule_Employeeid">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeeSchedule" EntitySet="EmployeeSchedule" />
     </AssociationSet>
     <AssociationSet Name="FK_Feeedbacks_Patients" Association="Self.FK_Feeedbacks_Patients">
       <End Role="Patients" EntitySet="Patients" />
@@ -1143,6 +1276,14 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <AssociationSet Name="FK_PatientsRooms_Patients" Association="Self.FK_PatientsRooms_Patients">
       <End Role="Patients" EntitySet="Patients" />
       <End Role="PatientsRooms" EntitySet="PatientsRooms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requests_employeeId" Association="Self.FK_Requests_employeeId">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Requests" EntitySet="Requests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requests_patientId" Association="Self.FK_Requests_patientId">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="Requests" EntitySet="Requests" />
     </AssociationSet>
     <AssociationSet Name="FK_SubNavigation_Employees" Association="Self.FK_SubNavigation_Employees">
       <End Role="Employees" EntitySet="Employees" />
