@@ -101,6 +101,7 @@
 D:\Humber\Semester 2\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.csprojResolveAssemblyReference.cache
 D:\Humber\Semester 2\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.dll
 D:\Humber\Semester 2\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.pdb
+<<<<<<< Updated upstream
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\bin\ApplicationInsights.config
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\bin\roslyn\csc.exe
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -151,3 +152,55 @@ D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\bin\System.We
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.csprojResolveAssemblyReference.cache
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.dll
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.pdb
+=======
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\ApplicationInsights.config
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\csc.exe
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\vbc.exe
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\VBCSCompiler.exe
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\PetaByte-KellysFeatures2.dll.config
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\PetaByte-KellysFeatures2.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\PetaByte-KellysFeatures2.pdb
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\EntityFramework.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\EntityFramework.SqlServer.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.AI.Web.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.ApplicationInsights.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Helpers.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Mvc.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Razor.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Webpages.Deployment.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Webpages.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Webpages.Razor.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\EntityFramework.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\EntityFramework.SqlServer.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.AI.Web.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.ApplicationInsights.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Razor.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Webpages.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Webpages.Deployment.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Webpages.Razor.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Helpers.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\System.Web.Mvc.xml
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.csprojResolveAssemblyReference.cache
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.dll
+C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.pdb
+>>>>>>> Stashed changes

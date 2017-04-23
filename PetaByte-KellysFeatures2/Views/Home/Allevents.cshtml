@@ -1,0 +1,110 @@
+﻿@using PetaByte_KellysFeatures2.Models
+@model IEnumerable<PetaByte_KellysFeatures2.Models.HospitalEvent>
+
+@{
+    ViewBag.Title = "Allevents";
+}
+
+<script>
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            defaultDate: '2017-04-01',
+            defaultView: 'month',
+            editable: true,
+            events: [
+                @foreach (var item in Model)
+                {
+                    <text>
+                        {
+                            title: '@Html.DisplayFor(modelItem => item.evntName)',
+                            start: '@Html.DisplayFor(modelItem => item.evntDate).ToString().Substring(0,10)',
+                            url: ' @Url.Action("EventDetails", "Home",  new { id = item.eventsId })'
+                        },
+                    </text>
+                }
+                {
+                    title: 'Click for Google',
+                    url: 'http://google.com/',
+                    start: '2050-06-28'
+                }
+
+            ],
+            eventColor: '#0D467D',
+            textColor: '#222222'
+
+        });
+
+        $('').css({'':''});
+        $('h2').css({ 'color': '#0D467D', 'font-weight': 'bold' });
+        $(".fc-title").css('font-size', '16px');
+        $('.fc-day-number').css({ 'font-weight': 'bold', 'color': '##0D467D', 'font-size': '12px' });
+        $('.fc-view-container').css('border', '3px solid #FFFF00');
+        $('.event__Title').css({ 'font-size': '18px' });
+        $('.event__click').css({ 'font-size': '25px' });
+        $('.event_bg').css({ 'background-color': 'white', 'border-top': '8px inset #DFDFEB', 'border-left': '8px inset #DFDFEB' });
+        $('#event__cntnr2').css({ 'background-color': '#F8F8FA' });
+        $(".hover").click(function (e) {
+            e.preventDefault();
+            $(this).find(".event_bg").fadeIn("slow");
+        });
+
+    });
+
+</script>
+
+<div id="event__cntnr" style="margin-top: 100px;">
+    <div class="container" id="event__cntnr2">
+        <h1 id="events__inro" style="margin-top: 70px; font-size: 38px; color: #0d467d; border-bottom: 3px solid #0d467d">Hospital Events</h1>
+        <div class="row" style="margin-top: 100px; margin-bottom: 100px;">
+
+            <div class="col-md-6">
+                @foreach (HospitalEvent events in Model)
+                {
+                    <table class='table table-triped' id=''>
+                        <tbody>
+                            <tr>
+                                <td class="event_bg">
+                                    <div>
+                                        <p class="event__Title">@Html.DisplayNameFor(model => model.evntName)</p>
+                                    </div>
+                                    <div class="event__click">
+                                        <a href="/Home/EventDetails/@events.eventsId"> @Html.DisplayFor(modelItem => events.evntName)</a>
+                                    </div>
+                                    <div>
+                                        <p class="event__Title">@Html.DisplayNameFor(model => model.evntDate)</p>
+                                    </div>
+                                    <div>
+                                        <p class="event__click"> @Html.DisplayFor(modelItem => events.evntDate)</p>
+                                    </div>
+                                    <div>
+                                        <p class="event__Title">@Html.DisplayNameFor(model => model.evntTimebg)</p>
+                                    </div>
+                                    <div>
+                                        <p class="event__click"> @Html.DisplayFor(modelItem => events.evntTimebg)</p>
+                                    </div>
+                                    <div>
+                                        <p class="event__Title">@Html.DisplayNameFor(model => model.evntTimefn)</p>
+                                    </div>
+                                    <div>
+                                        <p class="event__click"> @Html.DisplayFor(modelItem => events.evntTimefn)</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            </div>
+
+            <div class="col-md-6">
+                <div id="calendar" style="margin: 10px auto;"></div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

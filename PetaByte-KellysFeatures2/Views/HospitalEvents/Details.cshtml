@@ -1,0 +1,67 @@
+﻿@model PetaByte_KellysFeatures2.Models.HospitalEvent
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Event Details</h2>
+
+<div>
+    <h4>Hospital Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.evntName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.evntName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.evntDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.evntDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.evntTimebg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.evntTimebg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.evntTimefn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.evntTimefn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.evntDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.evntDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.evntLoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.evntLoc)
+        </dd>
+
+    </dl>
+</div>
+<p class="button">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.eventsId }, new { @class = "button-delete" })
+    @Html.ActionLink("Back to List", "Index", new { @class = "button" })
+</p>
