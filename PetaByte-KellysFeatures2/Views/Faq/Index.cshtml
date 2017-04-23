@@ -23,7 +23,7 @@
 <p>&nbsp;</p>
 
 <div class="container">
-    <h3><b>Frequently Asked @Html.DisplayNameFor(model => model.Question)s:</b></h3>
+    <h3><b>Frequently Asked @Html.DisplayNameFor(model => model.question)s:</b></h3>
     <p>&nbsp;</p>
     @{int i = 0;}
     @foreach (var item in Model)
@@ -33,13 +33,13 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-target="#collapseOne_@i" href="#collapseOne_@i">
-                  <h4>@Html.DisplayFor(modelItem => item.Question)</h4>
+                  <h4>@Html.DisplayFor(modelItem => item.question)</h4>
                     </a>
                 </h4>
             </div>
             <div id="collapseOne_@i" class="panel-collapse collapse">
                 <div class="panel-body">
-                   <h4>@Html.DisplayFor(modelItem => item.Answer)</h4>
+                   <h4>@Html.DisplayFor(modelItem => item.answer)</h4>
                 </div>
             </div>
         </div>
