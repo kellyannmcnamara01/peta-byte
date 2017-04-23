@@ -147,8 +147,23 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PetaByte.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Models\Faq.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Faq.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Faq.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Faq1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\PetaByte.edmx.diagram">
       <DependentUpon>PetaByte.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Faq.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Faq.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Faq.edmx.diagram">
+      <DependentUpon>Faq.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Models\PetaByte.Context.tt">
@@ -415,8 +430,24 @@
     <Compile Include="Models\EmployeeStatu.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Faq.Context.cs" />
+    <Compile Include="Models\Faq.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Faq.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Faq.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Faq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Faq.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Faq1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Faq.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Feeedback.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
@@ -489,6 +520,9 @@
     </Compile>
     <Compile Include="Models\Symptom.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Table.cs">
+      <DependentUpon>Faq.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Ticket.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
