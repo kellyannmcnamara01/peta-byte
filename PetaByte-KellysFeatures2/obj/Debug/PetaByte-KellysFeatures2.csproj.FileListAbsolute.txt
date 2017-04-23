@@ -102,6 +102,7 @@ D:\Humber\Semester 2\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-Kellys
 D:\Humber\Semester 2\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.dll
 D:\Humber\Semester 2\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.pdb
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\bin\ApplicationInsights.config
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\bin\roslyn\csc.exe
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -153,6 +154,8 @@ D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\obj\Debug\Pet
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.dll
 D:\Humber\Semester 2\ASP\Project\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.pdb
 =======
+=======
+>>>>>>> Stashed changes
 C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\ApplicationInsights.config
 C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\csc.exe
 C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -203,4 +206,7 @@ C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-Kellys
 C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.csprojResolveAssemblyReference.cache
 C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.dll
 C:\Users\IFneeded\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\obj\Debug\PetaByte-KellysFeatures2.pdb
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

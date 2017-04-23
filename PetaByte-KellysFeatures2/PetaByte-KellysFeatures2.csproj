@@ -688,12 +688,15 @@
     <Content Include="Views\Index.cshtml" />
     <Content Include="Views\Faq\Index.cshtml" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <Content Include="Views\FaqAdmin\Create.cshtml" />
     <Content Include="Views\FaqAdmin\Delete.cshtml" />
     <Content Include="Views\FaqAdmin\Details.cshtml" />
     <Content Include="Views\FaqAdmin\Edit.cshtml" />
     <Content Include="Views\FaqAdmin\Index.cshtml" />
 =======
+=======
+>>>>>>> Stashed changes
     <Content Include="Views\HospitalEvents\Create.cshtml" />
     <Content Include="Views\HospitalEvents\Delete.cshtml" />
     <Content Include="Views\HospitalEvents\Details.cshtml" />
@@ -701,6 +704,9 @@
     <Content Include="Views\HospitalEvents\Index.cshtml" />
     <Content Include="Views\Home\Allevents.cshtml" />
     <Content Include="Views\Home\EventDetails.cshtml" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
