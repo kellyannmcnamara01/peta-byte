@@ -1,0 +1,76 @@
+﻿
+@*/*
+        Note(Ahmed Selim): Feature 1 Frequently asked questions
+        Team: PetaByte(Temiskaming-hospital-project)
+        Name: Frequently asked questions
+        Description: (Client Side)This feature is designed to allow users and admin the ability
+        to answer some oftheir questions without having to go all over the website. 
+        the FAQ feature will bein the navigation, where users can click it 
+        and be navigated to the FAQ page.
+    */*@
+
+
+@model IEnumerable<Selim_Features.Models.Table>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div class="container">
+    <h3><b>Frequently Asked @Html.DisplayNameFor(model => model.Question)s:</b></h3>
+    <p>&nbsp;</p>
+    @{int i = 0;}
+    @foreach (var item in Model)
+    {
+    <div class="panel-group" id="accordion_@i">
+        <div class="panel panel-default" id="panel_@i">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-target="#collapseOne_@i" href="#collapseOne_@i">
+                  <h4>@Html.DisplayFor(modelItem => item.Question)</h4>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne_@i" class="panel-collapse collapse">
+                <div class="panel-body">
+                   <h4>@Html.DisplayFor(modelItem => item.Answer)</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+            i++;
+    }
+
+</div>
+@*<table class="container table">
+    <tr>
+        <th>
+           <h4><b>@Html.DisplayNameFor(model => model.Question)</b></h4> 
+        </th>
+        <th>
+           <h4><b>@Html.DisplayNameFor(model => model.Answer)</b></h4> 
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <h4>@Html.DisplayFor(modelItem => item.Question)</h4> 
+        </td>
+        <td>
+            <h4>@Html.DisplayFor(modelItem => item.Answer)</h4> 
+        </td>
+       
+    </tr>
+}
+</table>*@
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

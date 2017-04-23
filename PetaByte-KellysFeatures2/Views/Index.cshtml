@@ -1,0 +1,183 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@*<marquee id="alert" direction="left" loop="7" scrollamount="7" scrolldelay="2">
+        @foreach (var item in Model)
+            {
+            <div class="alerts">
+                @Html.DisplayFor(modelItem => item.alertText)
+            </div>
+        }
+    </marquee>*@
+
+
+<!--------------------------------------->
+<!-- 02. Opening Image -->
+<div id="opening-img"></div>
+<!-- 03. Three Callouts -->
+<div id="callouts" class="row">
+    <div class="wrapper">
+        <!-- 03-1. Callout One -->
+        <div id="callouts__block-one" class="col-md-4 col-sm-4 col-12">
+            <h2>Request Appointment</h2>
+            <div class="callouts__blocks_line"></div>
+            <p>It'sas easy as pie. Just simply fill out our form and we will be in touch.</p>
+        </div>
+        <!-- 03-2. Callout Two -->
+        <div id="callouts__block-two" class="col-md-4 col-sm-4 col-12">
+            <h2>Volunteer</h2>
+            <div class="callouts__blocks_line"></div>
+            <p>We are always looking for those in our community who want to help. Check out the current openings.</p>
+        </div>
+        <!-- 03-3. Callout Three -->
+        <div id="callouts__block-three" class="col-md-4 col-sm-4 col-12">
+            <h2>Online Payments</h2>
+            <div class="callouts__blocks_line"></div>
+            <p>You can now easily pay any outstanding dues directly online.</p>
+        </div>
+    </div>
+</div>
+<!-- 04. Donate -->
+<div id="donate-hp">
+    <!-- 04-1. Donate Button Callout -->
+    <div id="donate-hp__button">
+        <div class="wrapper">
+            <div id="donate-hp__div">
+                <a href="">Help save lives. Donate today.</a>
+            </div>
+        </div>
+    </div>
+    <!-- 04-2. Donor Story Preview -->
+    <div id="donate-hp__story-preview">
+        <div class="wrapper">
+            <div id="carouselExampleControls story-preview__carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <blockquote class="col-md-12 col-sm-12 col-12">"Temiskaming was fantasic when my gradma got sick. They were kind and helpful. They kept her company when she was scared aswell. It was hard for her since my grandpa passed away last year, but they were amazing. My donation is to thank them for their great work."</blockquote>
+                        <p class="col-md-12 col-sm-12 col-12 white">- Jane Smith</p>
+                    </div>
+                    <!--
+                     <div class="carousel-item row">
+                         <blockquote class="col-md-12 col-sm-12 col-12">"Another Comment."</blockquote>
+                         <p class="col-md-12 col-sm-12 col-12 white">- Jane Smith</p>
+                     </div>
+                     <div class="carousel-item row">
+                         <blockquote class="col-md-12 col-sm-12 col-12">Third Example</blockquote>
+                         <p class="col-md-12 col-sm-12 col-12 white">- Jane Smith</p>
+                     </div>
+                        -->
+                </div>
+                <!--<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>-->
+            </div>
+            <div id="story-preview__button">
+                <a href="">View More Donor Stories</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 05. Events & Visiting Hours -->
+<div id="events-visiting">
+    <div id="events-curve">
+        <div id="event-content-width" class="wrapper row">
+            <!-- 05-1. Events -->
+            <div id="events-visiting__events" class="col-md-6 col-sm-6 col-12">
+                <h2 class="dark-blue">Upcoming Events</h2>
+                <div class="events__event-listing">
+                    <a href="" class="row">
+                        <div class="events__event-listing_title col-md-4 col-sm-12 col-12">
+                            March 2017
+                        </div>
+                        <div class="events__event-listing_details col-md-8 col-sm-12 col-12">
+                            10:30am | sing-a-long for kids
+                        </div>
+                    </a>
+                </div>
+                <div class="events__event-listing">
+                    <a href="" class="row">
+                        <div class="events__event-listing_title col-md-4 col-sm-12 col-12">
+                            March 2017
+                        </div>
+                        <div class="events__event-listing_details col-md-8 col-sm-12 col-12">
+                            10:30am | sing-a-long for kids
+                        </div>
+                    </a>
+                </div>
+                <div class="events__event-listing">
+                    <a href="" class="row">
+                        <div class="events__event-listing_title col-md-4 col-sm-12 col-12">
+                            March 2017
+                        </div>
+                        <div class="events__event-listing_details col-md-8 col-sm-12 col-12">
+                            10:30am | sing-a-long for kids
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- 05-2. Visiting Hours -->
+            <div id="events-visiting__visiting" class="col-md-6 col-sm-6 col-12">
+                <h2 class="dark-blue">Visiting Hours</h2>
+                <div class="visiting__hour-listing">
+                    <a href="" class="row">
+                        <div class="visiting__hour-listing_title col-md-4 col-sm-12 col-12">
+                            6:00pm - 8:00pm
+                        </div>
+                        <div class="visiting__hour-listing_details col-md-8 col-sm-12 col-12">
+                            People you can see
+                        </div>
+                    </a>
+                </div>
+                <div class="visiting__hour-listing">
+                    <a href="" class="row">
+                        <div class="visiting__hour-listing_title col-md-4 col-sm-12 col-12">
+                            6:00pm - 8:00pm
+                        </div>
+                        <div class="visiting__hour-listing_details col-md-8 col-sm-12 col-12">
+                            People you can see
+                        </div>
+                    </a>
+                </div>
+                <div class="visiting__hour-listing">
+                    <a href="" class="row">
+                        <div class="visiting__hour-listing_title col-md-4 col-sm-12 col-12">
+                            6:00pm - 8:00pm
+                        </div>
+                        <div class="visiting__hour-listing_details col-md-8 col-sm-12 col-12">
+                            People you can see
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 06. Contact -->
+<div id="contact-hp" class="row">
+    <!-- 06-1. Map -->
+    <div id="map" class="col-md-6 col-sm-6 col-12">
+        <div id="contact-hp__map"></div>
+    </div>
+    <!-- 06-2. Contact information -->
+    <div id="contact-hp__info" class="col-md-6 col-sm-6 col-12">
+        <h3>Temiskaming Hospital</h3>
+        <div class="info__grouping">
+            <p>421 Shepherdson Road</p>
+            <p>New Liskeard ON P0J 1P0</p>
+        </div>
+        <div class="info__grouping">
+            <p>Telephone:</p>
+            <p>(705)647-8121</p>
+            <p>(705)647-1088</p>
+        </div>
+        <div class="info__grouping">
+            <p>Fax:</p>
+            <p>(705)647-5800</p>
+        </div>
+    </div>
+</div>
