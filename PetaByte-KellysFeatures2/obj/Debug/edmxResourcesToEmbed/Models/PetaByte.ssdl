@@ -38,7 +38,7 @@
     </Key>
     <Property Name="akertId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="alertText" Type="varchar" MaxLength="200" Nullable="false" />
-    <Property Name="timestamp" Type="datetime" Nullable="false" />
+    <Property Name="timestamp" Type="datetime" />
     <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="employeeId" Type="int" Nullable="false" />
   </EntityType>
