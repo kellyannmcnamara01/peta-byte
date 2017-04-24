@@ -506,6 +506,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AlertsController.cs" />
     <Compile Include="Controllers\EmployeeSchedulesController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
@@ -737,6 +738,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\applicants\" />
+    <Folder Include="Views\Account\" />
     <Folder Include="Views\Post\" />
   </ItemGroup>
   <ItemGroup>
