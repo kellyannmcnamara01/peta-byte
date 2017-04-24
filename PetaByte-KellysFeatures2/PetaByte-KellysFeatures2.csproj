@@ -668,6 +668,7 @@
     <Compile Include="Models\WhatToBring.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
+    <Compile Include="MyRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
