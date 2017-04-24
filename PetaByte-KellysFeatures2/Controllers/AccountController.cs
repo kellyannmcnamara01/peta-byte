@@ -61,14 +61,6 @@ namespace PetaByte_KellysFeatures2.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            public ActionResult getPassword()
-            {
-                return View();
-            }
-            public ActionResult ResetPassword()
-            {
-                return View();
-            }
 
             [HttpPost]
             [ValidateAntiForgeryToken]

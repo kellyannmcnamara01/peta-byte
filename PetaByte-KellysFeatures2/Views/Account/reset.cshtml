@@ -1,0 +1,55 @@
+﻿@model PetaByte_KellysFeatures2.Models.PasswordReset
+
+@{
+    ViewBag.Title = "Reset";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section Login
+{
+    @* Don't want user to see Header on Login, request password reset or password reset page *@
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal text-center mx-auto">
+        <h2 class="signinLbl">Password Reset</h2>
+        @if (ViewBag.Results != null)
+        {
+            <p class="alert alert-success">@Html.Raw(ViewBag.Results);</p>
+        }
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <div>
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+            </div>
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "input" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <div>
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label" })
+            </div>
+            @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "input" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <div>
+                @Html.LabelFor(model => model.ComparePassword, htmlAttributes: new { @class = "control-label" })
+            </div>
+            @Html.PasswordFor(model => model.ComparePassword, new { htmlAttributes = new { @class = "input" } })
+            @Html.ValidationMessageFor(model => model.ComparePassword, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <div class="">
+                <input type="submit" value="Reset" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
