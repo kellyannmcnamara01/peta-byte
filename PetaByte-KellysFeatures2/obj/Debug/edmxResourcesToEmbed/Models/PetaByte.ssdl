@@ -354,23 +354,23 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="middleName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="DOB" Type="datetime" Nullable="false" />
-    <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
     <Property Name="physican" Type="varchar" MaxLength="100" />
-    <Property Name="joinDate" Type="datetime" Nullable="false" />
+    <Property Name="joinDate" Type="datetime" />
     <Property Name="contactId" Type="int" />
     <Property Name="addressId" Type="int" />
-    <Property Name="healthCardNum" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="healthCardNum" Type="varchar" MaxLength="50" />
     <Property Name="emerageContactID" Type="int" />
     <Property Name="insuranceId" Type="int" />
-    <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Allergies" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="relationship" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="postal" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="Allergies" Type="varchar" MaxLength="50" />
+    <Property Name="relationship" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="postal" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="PatientsRooms">
     <Key>
