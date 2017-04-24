@@ -137,6 +137,10 @@
     <Content Include="Content\fullcalendar.css" />
     <Content Include="Content\fullcalendar.min.css" />
     <Content Include="Content\fullcalendar.print.css" />
+    <Content Include="Content\opt-imgs\codepen.svg" />
+    <Content Include="Content\opt-imgs\email.svg" />
+    <Content Include="Content\opt-imgs\link.svg" />
+    <Content Include="Content\opt-imgs\linkedin.svg" />
     <Content Include="Content\opt-imgs\nav-logo.jpg" />
     <Content Include="Content\opt-imgs\opening-img-hp.jpg" />
     <Content Include="Content\opt-imgs\petabyte-h-logo.png" />

@@ -214,7 +214,7 @@ input[type="text"]:hover, input[type="text"]:active, input[type="text"]:focus, i
 
 .navbar-fixed-top {
     background: #fff;
-    box-shadow: 0px 0px 10px 0px lightgrey;
+    border-bottom: solid 2px #01a1ea;
 }
 .nav-logo {
     padding-top: 10px;
@@ -316,6 +316,9 @@ p {
 }
 .white {
     color: #fff;
+}
+.light-blue {
+    color: #01a1ea;
 }
 
 /* 04. Homepage */
@@ -502,6 +505,16 @@ p {
     /* 05-3. --Feature Name Here-- */
 
 /* 06. Kelly's Client Facing Features Styling */
+.profile {
+    margin-bottom: 75px;
+    text-align: center;
+}
+.profile p {
+    margin: 0;
+    padding: 0;
+    max-width: 85%;
+    margin: 0 auto;
+}
     /* 06-1. Alert Bar */
     #alert {
         background: #ed1845;
@@ -516,6 +529,14 @@ p {
         font-weight: 700;
         font-size: 12px;
         text-align: center;
+    }
+
+    .large-txt {
+        font-size: 2em;
+        font-weight: 400;
+        line-height: 30px;
+        max-width: 750px;
+        padding: 75px 0px;
     }
     
     /* 06-2. Page/Navigation */
@@ -536,7 +557,7 @@ p {
         max-width: 600px;
         margin: 0 auto;
         text-align: center;
-        padding: 25px 0px;
+        padding: 75px 0px;
     }
     .job-postings {
         padding: 50px 0px;
