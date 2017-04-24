@@ -18,11 +18,8 @@ namespace PetaByte_KellysFeatures2.Models
         public string evntName { get; set; }
         public string evntDesc { get; set; }
         public string evntLoc { get; set; }
-        public int employeeId { get; set; }
         public System.DateTime evntDate { get; set; }
         public System.TimeSpan evntTimebg { get; set; }
         public System.TimeSpan evntTimefn { get; set; }
-    
-        public virtual Employee Employee { get; set; }
     }
 }

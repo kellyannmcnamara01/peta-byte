@@ -252,7 +252,6 @@
           <ScalarProperty Name="evntName" ColumnName="evntName" />
           <ScalarProperty Name="evntDesc" ColumnName="evntDesc" />
           <ScalarProperty Name="evntLoc" ColumnName="evntLoc" />
-          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
           <ScalarProperty Name="evntDate" ColumnName="evntDate" />
           <ScalarProperty Name="evntTimebg" ColumnName="evntTimebg" />
           <ScalarProperty Name="evntTimefn" ColumnName="evntTimefn" />
@@ -344,10 +343,6 @@
     <EntitySetMapping Name="Patients">
       <EntityTypeMapping TypeName="PetaByteModel.Patient">
         <MappingFragment StoreEntitySet="Patients">
-          <ScalarProperty Name="postal" ColumnName="postal" />
-          <ScalarProperty Name="phone" ColumnName="phone" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="relationship" ColumnName="relationship" />
           <ScalarProperty Name="patientId" ColumnName="patientId" />
           <ScalarProperty Name="firstName" ColumnName="firstName" />
           <ScalarProperty Name="middleName" ColumnName="middleName" />
@@ -365,6 +360,10 @@
           <ScalarProperty Name="City" ColumnName="City" />
           <ScalarProperty Name="Country" ColumnName="Country" />
           <ScalarProperty Name="Allergies" ColumnName="Allergies" />
+          <ScalarProperty Name="relationship" ColumnName="relationship" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="postal" ColumnName="postal" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

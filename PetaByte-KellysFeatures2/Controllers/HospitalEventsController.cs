@@ -17,8 +17,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // GET: HospitalEvents
         public ActionResult Index()
         {
-            var hospitalEvents = db.HospitalEvents.Include(h => h.Employee);
-            return View(hospitalEvents.ToList());
+            return View(db.HospitalEvents.ToList());
         }
 
         // GET: HospitalEvents/Details/5
@@ -39,7 +38,6 @@ namespace PetaByte_KellysFeatures2.Controllers
         // GET: HospitalEvents/Create
         public ActionResult Create()
         {
-            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "eventsId,evntName,evntDesc,evntLoc,employeeId,evntDate,evntTimebg,evntTimefn")] HospitalEvent hospitalEvent)
+        public ActionResult Create([Bind(Include = "eventsId,evntName,evntDatetime,evntDesc,evntLoc")] HospitalEvent hospitalEvent)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace PetaByte_KellysFeatures2.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName", hospitalEvent.employeeId);
             return View(hospitalEvent);
         }
 
@@ -73,7 +70,6 @@ namespace PetaByte_KellysFeatures2.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName", hospitalEvent.employeeId);
             return View(hospitalEvent);
         }
 
@@ -82,7 +78,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "eventsId,evntName,evntDesc,evntLoc,employeeId,evntDate,evntTimebg,evntTimefn")] HospitalEvent hospitalEvent)
+        public ActionResult Edit([Bind(Include = "eventsId,evntName,evntDatetime,evntDesc,evntLoc")] HospitalEvent hospitalEvent)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace PetaByte_KellysFeatures2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName", hospitalEvent.employeeId);
             return View(hospitalEvent);
         }
 
@@ -130,3 +125,4 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
     }
 }
+

@@ -182,7 +182,6 @@
     <NavigationProperty Name="EmployeeStatu" Relationship="Self.FK_Employees_EmployeeStatus" FromRole="Employees" ToRole="EmployeeStatus" />
     <NavigationProperty Name="Insurance" Relationship="Self.FK_Employees_Insurance" FromRole="Employees" ToRole="Insurances" />
     <NavigationProperty Name="EmployeeSchedules" Relationship="Self.FK_EmployeeSchedule_Employeeid" FromRole="Employees" ToRole="EmployeeSchedule" />
-    <NavigationProperty Name="HospitalEvents" Relationship="Self.FK_HospitalEvents_Employees" FromRole="Employees" ToRole="HospitalEvents" />
     <NavigationProperty Name="JobPostings" Relationship="Self.FK_JobPostings_Employees" FromRole="Employees" ToRole="JobPostings" />
     <NavigationProperty Name="Navigations" Relationship="Self.FK_Navigation_Employees" FromRole="Employees" ToRole="Navigations" />
     <NavigationProperty Name="OnCalls" Relationship="Self.FK_OnCall_Employees" FromRole="Employees" ToRole="OnCalls" />
@@ -285,11 +284,9 @@
     <Property Name="evntName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="evntDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="evntLoc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="employeeId" Type="Int32" Nullable="false" />
     <Property Name="evntDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="evntTimebg" Type="Time" Nullable="false" Precision="7" />
     <Property Name="evntTimefn" Type="Time" Nullable="false" Precision="7" />
-    <NavigationProperty Name="Employee" Relationship="Self.FK_HospitalEvents_Employees" FromRole="HospitalEvents" ToRole="Employees" />
   </EntityType>
   <EntityType Name="Insurance">
     <Key>
@@ -399,6 +396,10 @@
     <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Allergies" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="postal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Addresses1" Relationship="Self.FK_Patients_Addresses" FromRole="Patients" ToRole="Addresses1" />
     <NavigationProperty Name="Contact" Relationship="Self.FK_Patients_Contact" FromRole="Patients" ToRole="Contacts" />
     <NavigationProperty Name="EmerageContact" Relationship="Self.FK_Patients_EmerageContacts" FromRole="Patients" ToRole="EmerageContacts" />
@@ -407,10 +408,6 @@
     <NavigationProperty Name="Insurance" Relationship="Self.FK_Patients_Insurance" FromRole="Patients" ToRole="Insurances" />
     <NavigationProperty Name="PatientsRooms" Relationship="Self.FK_PatientsRooms_Patients" FromRole="Patients" ToRole="PatientsRooms" />
     <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_patientId" FromRole="Patients" ToRole="Requests" />
-    <Property Name="relationship" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="postal" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="PatientsRoom">
     <Key>
@@ -859,18 +856,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_HospitalEvents_Employees">
-    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
-    <End Role="HospitalEvents" Type="Self.HospitalEvent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Employees">
-        <PropertyRef Name="employeeId" />
-      </Principal>
-      <Dependent Role="HospitalEvents">
-        <PropertyRef Name="employeeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_JobPostings_Employees">
     <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
     <End Role="JobPostings" Type="Self.JobPosting" Multiplicity="*" />
@@ -1289,10 +1274,6 @@
     <AssociationSet Name="FK_EmployeeSchedule_Employeeid" Association="Self.FK_EmployeeSchedule_Employeeid">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="EmployeeSchedule" EntitySet="EmployeeSchedules" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HospitalEvents_Employees" Association="Self.FK_HospitalEvents_Employees">
-      <End Role="Employees" EntitySet="Employees" />
-      <End Role="HospitalEvents" EntitySet="HospitalEvents" />
     </AssociationSet>
     <AssociationSet Name="FK_JobPostings_Employees" Association="Self.FK_JobPostings_Employees">
       <End Role="Employees" EntitySet="Employees" />

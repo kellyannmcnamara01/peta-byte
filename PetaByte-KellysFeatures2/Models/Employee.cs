@@ -19,7 +19,6 @@ namespace PetaByte_KellysFeatures2.Models
         {
             this.Alerts = new HashSet<Alert>();
             this.EmployeeSchedules = new HashSet<EmployeeSchedule>();
-            this.HospitalEvents = new HashSet<HospitalEvent>();
             this.JobPostings = new HashSet<JobPosting>();
             this.Navigations = new HashSet<Navigation>();
             this.OnCalls = new HashSet<OnCall>();
@@ -53,8 +52,6 @@ namespace PetaByte_KellysFeatures2.Models
         public virtual Insurance Insurance { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EmployeeSchedule> EmployeeSchedules { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HospitalEvent> HospitalEvents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<JobPosting> JobPostings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

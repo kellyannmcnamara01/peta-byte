@@ -267,7 +267,6 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="evntName" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="evntDesc" Type="varchar(max)" Nullable="false" />
     <Property Name="evntLoc" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="employeeId" Type="int" Nullable="false" />
     <Property Name="evntDate" Type="date" Nullable="false" />
     <Property Name="evntTimebg" Type="time" Precision="7" Nullable="false" />
     <Property Name="evntTimefn" Type="time" Precision="7" Nullable="false" />
@@ -759,18 +758,6 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_HospitalEvents_Employees">
-    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
-    <End Role="HospitalEvents" Type="Self.HospitalEvents" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Employees">
-        <PropertyRef Name="employeeId" />
-      </Principal>
-      <Dependent Role="HospitalEvents">
-        <PropertyRef Name="employeeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_JobApplicants_JobPostings">
     <End Role="JobPostings" Type="Self.JobPostings" Multiplicity="1" />
     <End Role="JobApplicants" Type="Self.JobApplicants" Multiplicity="*" />
@@ -1232,10 +1219,6 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <AssociationSet Name="FK_GiftOrder_productID" Association="Self.FK_GiftOrder_productID">
       <End Role="GiftItemCategories" EntitySet="GiftItemCategories" />
       <End Role="GiftOrders" EntitySet="GiftOrders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HospitalEvents_Employees" Association="Self.FK_HospitalEvents_Employees">
-      <End Role="Employees" EntitySet="Employees" />
-      <End Role="HospitalEvents" EntitySet="HospitalEvents" />
     </AssociationSet>
     <AssociationSet Name="FK_JobApplicants_JobPostings" Association="Self.FK_JobApplicants_JobPostings">
       <End Role="JobPostings" EntitySet="JobPostings" />
