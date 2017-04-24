@@ -502,6 +502,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlertsController.cs" />
+    <Compile Include="Controllers\EmployeeSchedulesController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\FaqAdminController.cs" />
     <Compile Include="Controllers\FaqController.cs" />
@@ -713,6 +714,11 @@
     <Content Include="Views\Patients\Details.cshtml" />
     <Content Include="Views\Patients\Edit.cshtml" />
     <Content Include="Views\Patients\Index.cshtml" />
+    <Content Include="Views\EmployeeSchedules\Create.cshtml" />
+    <Content Include="Views\EmployeeSchedules\Delete.cshtml" />
+    <Content Include="Views\EmployeeSchedules\Details.cshtml" />
+    <Content Include="Views\EmployeeSchedules\Edit.cshtml" />
+    <Content Include="Views\EmployeeSchedules\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
