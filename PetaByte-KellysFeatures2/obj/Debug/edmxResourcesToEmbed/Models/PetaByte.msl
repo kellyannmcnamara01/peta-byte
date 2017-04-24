@@ -39,7 +39,7 @@
     <EntitySetMapping Name="Alerts">
       <EntityTypeMapping TypeName="PetaByteModel.Alert">
         <MappingFragment StoreEntitySet="Alerts">
-          <ScalarProperty Name="akertId" ColumnName="akertId" />
+          <ScalarProperty Name="alertId" ColumnName="alertId" />
           <ScalarProperty Name="alertText" ColumnName="alertText" />
           <ScalarProperty Name="timestamp" ColumnName="timestamp" />
           <ScalarProperty Name="status" ColumnName="status" />
@@ -202,46 +202,6 @@
           <ScalarProperty Name="postalcode" ColumnName="postalcode" />
           <ScalarProperty Name="province" ColumnName="province" />
           <ScalarProperty Name="symptoms" ColumnName="symptoms" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="GiftBills">
-      <EntityTypeMapping TypeName="PetaByteModel.GiftBill">
-        <MappingFragment StoreEntitySet="GiftBills">
-          <ScalarProperty Name="billId" ColumnName="billId" />
-          <ScalarProperty Name="patientId" ColumnName="patientId" />
-          <ScalarProperty Name="totalAmountDue" ColumnName="totalAmountDue" />
-          <ScalarProperty Name="billPayDate" ColumnName="billPayDate" />
-          <ScalarProperty Name="Count" ColumnName="Count" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="GiftItemCategories">
-      <EntityTypeMapping TypeName="PetaByteModel.GiftItemCategory">
-        <MappingFragment StoreEntitySet="GiftItemCategories">
-          <ScalarProperty Name="giftCategoryId" ColumnName="giftCategoryId" />
-          <ScalarProperty Name="giftDescription" ColumnName="giftDescription" />
-          <ScalarProperty Name="giftUrl" ColumnName="giftUrl" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="GiftItems">
-      <EntityTypeMapping TypeName="PetaByteModel.GiftItem">
-        <MappingFragment StoreEntitySet="GiftItems">
-          <ScalarProperty Name="giftId" ColumnName="giftId" />
-          <ScalarProperty Name="giftBillId" ColumnName="giftBillId" />
-          <ScalarProperty Name="giftCategoryId" ColumnName="giftCategoryId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="GiftOrders">
-      <EntityTypeMapping TypeName="PetaByteModel.GiftOrder">
-        <MappingFragment StoreEntitySet="GiftOrders">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-          <ScalarProperty Name="GiftBillId" ColumnName="GiftBillId" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

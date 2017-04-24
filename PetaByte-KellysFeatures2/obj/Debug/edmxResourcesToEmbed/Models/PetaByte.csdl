@@ -40,6 +40,7 @@
   <EntityType Name="Alert">
     <Key>
       <PropertyRef Name="akertId" />
+      <PropertyRef Name="alertId" />
     </Key>
     <Property Name="akertId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="alertText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
@@ -47,6 +48,7 @@
     <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="employeeId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Employee" Relationship="Self.FK_Alerts_Employees" FromRole="Alerts" ToRole="Employees" />
+    <Property Name="alertId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="Cafeteria">
     <Key>

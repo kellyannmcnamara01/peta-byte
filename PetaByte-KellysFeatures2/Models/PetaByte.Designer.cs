@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Nate\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\Models\PetaByte.edmx'. 
+﻿// T4 code generation is enabled for model '\\Mac\Home\Documents\Visual Studio 2015\Projects\petabyte\PetaByte-KellysFeatures2\Models\PetaByte.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

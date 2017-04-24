@@ -4,49 +4,50 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0bf63470b33a470184c61b9959708bb0" Name="Diagram1">
-        <EntityTypeShape EntityType="PetaByteModel.AddressDate" Width="1.5" PointX="1.5" PointY="16.5" IsExpanded="true" />
+      <Diagram DiagramId="7102214ca2b8473587ada816a847bb6e" Name="Diagram1">
+        <EntityTypeShape EntityType="PetaByteModel.AddressDate" Width="1.5" PointX="1.5" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PetaByteModel.Address" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Addresses1" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Alert" Width="1.5" PointX="5.25" PointY="17.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Cafeteria" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Contact" Width="1.5" PointX="0.75" PointY="24.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Department" Width="1.5" PointX="12" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Addresses1" Width="1.5" PointX="0.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Alert" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Cafeteria" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.cart" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Contact" Width="1.5" PointX="0.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Department" Width="1.5" PointX="12" PointY="12.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PetaByteModel.DonationHonour" Width="1.5" PointX="11" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="PetaByteModel.DonationOccurence" Width="1.5" PointX="11.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PetaByteModel.Donation" Width="1.5" PointX="14" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="PetaByteModel.Donor" Width="1.5" PointX="8.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.DonorsProfile" Width="1.5" PointX="11" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.EmerageContact" Width="1.5" PointX="0.75" PointY="28.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Employee" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.EmployeeStatu" Width="1.5" PointX="0.75" PointY="32.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Feeedback" Width="1.5" PointX="14.25" PointY="24.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.GetHelp" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.GiftBill" Width="1.5" PointX="8.25" PointY="29.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.GiftItemCategory" Width="1.5" PointX="11.25" PointY="35.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.GiftItem" Width="1.5" PointX="10.5" PointY="32.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.GiftOrder" Width="1.5" PointX="13.5" PointY="29.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.HospitalEvent" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Insurance" Width="1.5" PointX="0.75" PointY="34.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.JobApplicant" Width="1.5" PointX="7.5" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.JobPosting" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Navigation" Width="1.5" PointX="5.25" PointY="30.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.OnCall" Width="1.5" PointX="11.25" PointY="24.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Page" Width="1.5" PointX="5.25" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.DonorsProfile" Width="1.5" PointX="11" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.EmerageContact" Width="1.5" PointX="0.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Employee" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.EmployeeSchedule" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.EmployeeStatu" Width="1.5" PointX="0.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Feeedback" Width="1.5" PointX="14.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.GetHelp" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.giftItem" Width="1.5" PointX="16" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.giftType" Width="1.5" PointX="13.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.HospitalEvent" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Insurance" Width="1.5" PointX="0.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.JobApplicant" Width="1.5" PointX="7.5" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.JobPosting" Width="1.5" PointX="5.25" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Navigation" Width="1.5" PointX="5.25" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.OnCall" Width="1.5" PointX="11.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.orderDetail" Width="1.5" PointX="13.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.orderPlaced" Width="1.5" PointX="18.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Page" Width="1.5" PointX="5.25" PointY="34.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PetaByteModel.Password" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Patient" Width="1.5" PointX="6" PointY="22.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.PatientsRoom" Width="1.5" PointX="8.25" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Patient" Width="1.5" PointX="6" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.PatientsRoom" Width="1.5" PointX="8.25" PointY="32" IsExpanded="true" />
         <EntityTypeShape EntityType="PetaByteModel.Position" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.SubNavigation" Width="1.5" PointX="10.5" PointY="29.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Symptom" Width="1.5" PointX="9.75" PointY="16" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Ticket" Width="1.5" PointX="8.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.SubNavigation" Width="1.5" PointX="10.5" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Symptom" Width="1.5" PointX="9.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Ticket" Width="1.5" PointX="8.25" PointY="16.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PetaByteModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.VolunteerApplicant" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Volunteer" Width="1.5" PointX="9" PointY="23.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.WhatToBring" Width="1.5" PointX="14.25" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.EmployeeSchedule" Width="1.5" PointX="5.25" PointY="38.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Faq" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PetaByteModel.Request" Width="1.5" PointX="11.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.VolunteerApplicant" Width="1.5" PointX="15.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Volunteer" Width="1.5" PointX="9" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.WhatToBring" Width="1.5" PointX="14.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Faq" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PetaByteModel.Request" Width="1.5" PointX="11.25" PointY="15.625" IsExpanded="true" />
         <AssociationConnector Association="PetaByteModel.FK_Addresses_AddressDates" ManuallyRouted="false" />
         <AssociationConnector Association="PetaByteModel.FK_Employees_Addresses" ManuallyRouted="false" />
         <AssociationConnector Association="PetaByteModel.FK_Patients_Addresses" ManuallyRouted="false" />
@@ -79,11 +80,8 @@
         <AssociationConnector Association="PetaByteModel.FK_Feeedbacks_Patients" ManuallyRouted="false" />
         <AssociationConnector Association="PetaByteModel.FK_Feeedbacks_Volunteers" ManuallyRouted="false" />
         <AssociationConnector Association="PetaByteModel.FK_Ticket_getHelpId" ManuallyRouted="false" />
-        <AssociationConnector Association="PetaByteModel.FK_GiftBills_Patients" ManuallyRouted="false" />
-        <AssociationConnector Association="PetaByteModel.FK_GiftItems_GiftBills" ManuallyRouted="false" />
-        <AssociationConnector Association="PetaByteModel.FK_GiftOrder_giftbillid" ManuallyRouted="false" />
-        <AssociationConnector Association="PetaByteModel.FK_GiftItems_GiftItemCategories" ManuallyRouted="false" />
-        <AssociationConnector Association="PetaByteModel.FK_GiftOrder_productID" ManuallyRouted="false" />
+        <AssociationConnector Association="PetaByteModel.FK_giftItem_giftTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="PetaByteModel.FK_orderPlaced_productId" ManuallyRouted="false" />
         <AssociationConnector Association="PetaByteModel.FK_Patients_Insurance" ManuallyRouted="false" />
         <AssociationConnector Association="PetaByteModel.FK_Volunteers_Insurance" ManuallyRouted="false" />
         <AssociationConnector Association="PetaByteModel.FK_JobApplicants_JobPostings" ManuallyRouted="false" />

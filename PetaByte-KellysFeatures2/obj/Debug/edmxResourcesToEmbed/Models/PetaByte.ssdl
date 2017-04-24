@@ -34,9 +34,9 @@
   </EntityType>
   <EntityType Name="Alerts">
     <Key>
-      <PropertyRef Name="akertId" />
+      <PropertyRef Name="alertId" />
     </Key>
-    <Property Name="akertId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="alertId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="alertText" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="timestamp" Type="datetime" />
     <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
@@ -151,19 +151,9 @@
     <Property Name="employeeStatusId" Type="int" />
     <Property Name="insuranceId" Type="int" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'PetaByte.dbo.EmployeeSchedule' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="EmployeeSchedule">
     <Key>
       <PropertyRef Name="id" />
-      <PropertyRef Name="Day" />
-      <PropertyRef Name="StartTime" />
-      <PropertyRef Name="BreakTimeBegin" />
-      <PropertyRef Name="BreakTimeend" />
-      <PropertyRef Name="EndTime" />
-      <PropertyRef Name="EmployeeId" />
-      <PropertyRef Name="EmployeeFirstName" />
-      <PropertyRef Name="EmployeeLastName" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Day" Type="varchar" MaxLength="50" Nullable="false" />
@@ -222,42 +212,6 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="postalcode" Type="varchar" MaxLength="50" />
     <Property Name="province" Type="varchar" MaxLength="50" />
     <Property Name="symptoms" Type="varchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="GiftBills">
-    <Key>
-      <PropertyRef Name="billId" />
-    </Key>
-    <Property Name="billId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="patientId" Type="int" Nullable="false" />
-    <Property Name="totalAmountDue" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="billPayDate" Type="datetime" Nullable="false" />
-    <Property Name="Count" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="GiftItemCategories">
-    <Key>
-      <PropertyRef Name="giftCategoryId" />
-    </Key>
-    <Property Name="giftCategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="giftDescription" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="giftUrl" Type="varchar" MaxLength="50" Nullable="false" />
-  </EntityType>
-  <EntityType Name="GiftItems">
-    <Key>
-      <PropertyRef Name="giftId" />
-    </Key>
-    <Property Name="giftId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="giftBillId" Type="int" Nullable="false" />
-    <Property Name="giftCategoryId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="GiftOrders">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProductId" Type="int" Nullable="false" />
-    <Property Name="GiftBillId" Type="int" Nullable="false" />
-    <Property Name="Quantity" Type="int" Nullable="false" />
-    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
   </EntityType>
   <EntityType Name="HospitalEvents">
     <Key>
@@ -698,66 +652,6 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_GiftBills_Patients">
-    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
-    <End Role="GiftBills" Type="Self.GiftBills" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Patients">
-        <PropertyRef Name="patientId" />
-      </Principal>
-      <Dependent Role="GiftBills">
-        <PropertyRef Name="patientId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_GiftItems_GiftBills">
-    <End Role="GiftBills" Type="Self.GiftBills" Multiplicity="1" />
-    <End Role="GiftItems" Type="Self.GiftItems" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GiftBills">
-        <PropertyRef Name="billId" />
-      </Principal>
-      <Dependent Role="GiftItems">
-        <PropertyRef Name="giftBillId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_GiftItems_GiftItemCategories">
-    <End Role="GiftItemCategories" Type="Self.GiftItemCategories" Multiplicity="1" />
-    <End Role="GiftItems" Type="Self.GiftItems" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GiftItemCategories">
-        <PropertyRef Name="giftCategoryId" />
-      </Principal>
-      <Dependent Role="GiftItems">
-        <PropertyRef Name="giftCategoryId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_GiftOrder_giftbillid">
-    <End Role="GiftBills" Type="Self.GiftBills" Multiplicity="1" />
-    <End Role="GiftOrders" Type="Self.GiftOrders" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GiftBills">
-        <PropertyRef Name="billId" />
-      </Principal>
-      <Dependent Role="GiftOrders">
-        <PropertyRef Name="GiftBillId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_GiftOrder_productID">
-    <End Role="GiftItemCategories" Type="Self.GiftItemCategories" Multiplicity="1" />
-    <End Role="GiftOrders" Type="Self.GiftOrders" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GiftItemCategories">
-        <PropertyRef Name="giftCategoryId" />
-      </Principal>
-      <Dependent Role="GiftOrders">
-        <PropertyRef Name="ProductId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_JobApplicants_JobPostings">
     <End Role="JobPostings" Type="Self.JobPostings" Multiplicity="1" />
     <End Role="JobApplicants" Type="Self.JobApplicants" Multiplicity="*" />
@@ -1073,13 +967,10 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <EntitySet Name="DonorsProfiles" EntityType="Self.DonorsProfiles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EmerageContacts" EntityType="Self.EmerageContacts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeSchedule" EntityType="Self.EmployeeSchedule" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EmployeeStatus" EntityType="Self.EmployeeStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Feeedbacks" EntityType="Self.Feeedbacks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GetHelps" EntityType="Self.GetHelps" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GiftBills" EntityType="Self.GiftBills" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GiftItemCategories" EntityType="Self.GiftItemCategories" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GiftItems" EntityType="Self.GiftItems" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GiftOrders" EntityType="Self.GiftOrders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HospitalEvents" EntityType="Self.HospitalEvents" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Insurances" EntityType="Self.Insurances" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="JobApplicants" EntityType="Self.JobApplicants" Schema="dbo" store:Type="Tables" />
@@ -1098,19 +989,6 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <EntitySet Name="VolunteerApplicants" EntityType="Self.VolunteerApplicants" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteers" EntityType="Self.Volunteers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="WhatToBrings" EntityType="Self.WhatToBrings" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="EmployeeSchedule" EntityType="Self.EmployeeSchedule" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [EmployeeSchedule].[id] AS [id], 
-    [EmployeeSchedule].[Day] AS [Day], 
-    [EmployeeSchedule].[StartTime] AS [StartTime], 
-    [EmployeeSchedule].[BreakTimeBegin] AS [BreakTimeBegin], 
-    [EmployeeSchedule].[BreakTimeend] AS [BreakTimeend], 
-    [EmployeeSchedule].[EndTime] AS [EndTime], 
-    [EmployeeSchedule].[EmployeeId] AS [EmployeeId], 
-    [EmployeeSchedule].[EmployeeFirstName] AS [EmployeeFirstName], 
-    [EmployeeSchedule].[EmployeeLastName] AS [EmployeeLastName]
-    FROM [dbo].[EmployeeSchedule] AS [EmployeeSchedule]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="Faq" EntityType="Self.Faq" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [Faq].[id] AS [id], 
@@ -1199,26 +1077,6 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <AssociationSet Name="FK_Feeedbacks_Volunteers" Association="Self.FK_Feeedbacks_Volunteers">
       <End Role="Volunteers" EntitySet="Volunteers" />
       <End Role="Feeedbacks" EntitySet="Feeedbacks" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GiftBills_Patients" Association="Self.FK_GiftBills_Patients">
-      <End Role="Patients" EntitySet="Patients" />
-      <End Role="GiftBills" EntitySet="GiftBills" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GiftItems_GiftBills" Association="Self.FK_GiftItems_GiftBills">
-      <End Role="GiftBills" EntitySet="GiftBills" />
-      <End Role="GiftItems" EntitySet="GiftItems" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GiftItems_GiftItemCategories" Association="Self.FK_GiftItems_GiftItemCategories">
-      <End Role="GiftItemCategories" EntitySet="GiftItemCategories" />
-      <End Role="GiftItems" EntitySet="GiftItems" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GiftOrder_giftbillid" Association="Self.FK_GiftOrder_giftbillid">
-      <End Role="GiftBills" EntitySet="GiftBills" />
-      <End Role="GiftOrders" EntitySet="GiftOrders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GiftOrder_productID" Association="Self.FK_GiftOrder_productID">
-      <End Role="GiftItemCategories" EntitySet="GiftItemCategories" />
-      <End Role="GiftOrders" EntitySet="GiftOrders" />
     </AssociationSet>
     <AssociationSet Name="FK_JobApplicants_JobPostings" Association="Self.FK_JobApplicants_JobPostings">
       <End Role="JobPostings" EntitySet="JobPostings" />

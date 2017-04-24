@@ -12,13 +12,23 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class GiftItem
+    public partial class giftItem
     {
-        public int giftId { get; set; }
-        public int giftBillId { get; set; }
-        public int giftCategoryId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public giftItem()
+        {
+            this.orderPlaceds = new HashSet<orderPlaced>();
+        }
     
-        public virtual GiftBill GiftBill { get; set; }
-        public virtual GiftItemCategory GiftItemCategory { get; set; }
+        public int giftItemId { get; set; }
+        public string giftItemName { get; set; }
+        public decimal giftItemPrice { get; set; }
+        public string giftItemDescription { get; set; }
+        public Nullable<System.DateTime> lastUpdated { get; set; }
+        public int giftTypeid { get; set; }
+    
+        public virtual giftType giftType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<orderPlaced> orderPlaceds { get; set; }
     }
 }
