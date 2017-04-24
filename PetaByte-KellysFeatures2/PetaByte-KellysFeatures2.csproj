@@ -139,6 +139,7 @@
     <Content Include="Content\fullcalendar.print.css" />
     <Content Include="Content\opt-imgs\codepen.svg" />
     <Content Include="Content\opt-imgs\email.svg" />
+    <Content Include="Content\opt-imgs\git.svg" />
     <Content Include="Content\opt-imgs\link.svg" />
     <Content Include="Content\opt-imgs\linkedin.svg" />
     <Content Include="Content\opt-imgs\nav-logo.jpg" />
