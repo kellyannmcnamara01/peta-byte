@@ -27,10 +27,10 @@ namespace PetaByte_KellysFeatures2.Models
         public string firstName { get; set; }
         public string middleName { get; set; }
         public string lastName { get; set; }
-        public System.DateTime DOB { get; set; }
+        public Nullable<System.DateTime> DOB { get; set; }
         public string gender { get; set; }
         public string physican { get; set; }
-        public System.DateTime joinDate { get; set; }
+        public Nullable<System.DateTime> joinDate { get; set; }
         public Nullable<int> contactId { get; set; }
         public Nullable<int> addressId { get; set; }
         public string healthCardNum { get; set; }

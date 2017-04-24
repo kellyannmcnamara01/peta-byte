@@ -1,0 +1,123 @@
+﻿@model PetaByte_KellysFeatures2.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.position)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.departmentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.departmentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.birthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.birthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sinNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sinNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.schedule)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.schedule)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.admin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.admin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Addresses1.addressStreet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Addresses1.addressStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact.mobileNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact.mobileNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmerageContact.emergeFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmerageContact.emergeFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeStatu.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeStatu.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Insurance.insuranceProiver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Insurance.insuranceProiver)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.employeeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
