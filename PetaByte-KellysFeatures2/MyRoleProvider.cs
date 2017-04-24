@@ -47,12 +47,12 @@ namespace PetaByte_KellysFeatures2
             throw new NotImplementedException();
         }
 
-        public override string[] GetRolesForUser(string username)
+        public override string[] GetRolesForUser(string roleDescription)
         {
             //throw new NotImplementedException();
             PetaByteContext db = new PetaByteContext();
 
-            tring s = db.Users.Where(x => x.Position.roleDescription == roleDescription).FirstOrDefault().Position.roleDescription;
+            string s = db.Users.Where(x => x.Position.roleDescription == roleDescription).FirstOrDefault().Position.roleDescription;
 
             string[] results = { s };
             return results;

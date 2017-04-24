@@ -13,17 +13,13 @@ using System.Web.Security;
 
 namespace PetaByte_KellysFeatures2.Controllers
 {
+    [AllowAnonymous]
     public class AccountController : Controller
     {
         PetaByteContext db = new PetaByteContext();
         /*
      * Note(bryanstephens): next step - integrate Membership provider into projects to handle user validation & login (more secure; classes predefined to handle logging in, password reset, creation of user)
      */
-        [AllowAnonymous]
-        public class AccountController : Controller
-        {
-
-            PetaByteLiveContext db = new PetaByteLiveContext();
 
             string param;
 
@@ -191,4 +187,3 @@ namespace PetaByte_KellysFeatures2.Controllers
              */
         }
     }
-}
