@@ -39,7 +39,7 @@
     <EntitySetMapping Name="Alerts">
       <EntityTypeMapping TypeName="PetaByteModel.Alert">
         <MappingFragment StoreEntitySet="Alerts">
-          <ScalarProperty Name="alertId" ColumnName="alertId" />
+          <ScalarProperty Name="akertId" ColumnName="akertId" />
           <ScalarProperty Name="alertText" ColumnName="alertText" />
           <ScalarProperty Name="timestamp" ColumnName="timestamp" />
           <ScalarProperty Name="status" ColumnName="status" />
@@ -55,6 +55,16 @@
           <ScalarProperty Name="breakfast" ColumnName="breakfast" />
           <ScalarProperty Name="lunch" ColumnName="lunch" />
           <ScalarProperty Name="dinner" ColumnName="dinner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="carts">
+      <EntityTypeMapping TypeName="PetaByteModel.cart">
+        <MappingFragment StoreEntitySet="cart">
+          <ScalarProperty Name="cartId" ColumnName="cartId" />
+          <ScalarProperty Name="cartSessionId" ColumnName="cartSessionId" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="count" ColumnName="count" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -166,6 +176,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeSchedules">
+      <EntityTypeMapping TypeName="PetaByteModel.EmployeeSchedule">
+        <MappingFragment StoreEntitySet="EmployeeSchedule">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="BreakTimeBegin" ColumnName="BreakTimeBegin" />
+          <ScalarProperty Name="BreakTimeend" ColumnName="BreakTimeend" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeeFirstName" ColumnName="EmployeeFirstName" />
+          <ScalarProperty Name="EmployeeLastName" ColumnName="EmployeeLastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="EmployeeStatus">
       <EntityTypeMapping TypeName="PetaByteModel.EmployeeStatu">
         <MappingFragment StoreEntitySet="EmployeeStatus">
@@ -202,6 +227,26 @@
           <ScalarProperty Name="postalcode" ColumnName="postalcode" />
           <ScalarProperty Name="province" ColumnName="province" />
           <ScalarProperty Name="symptoms" ColumnName="symptoms" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="giftItems">
+      <EntityTypeMapping TypeName="PetaByteModel.giftItem">
+        <MappingFragment StoreEntitySet="giftItem">
+          <ScalarProperty Name="giftItemId" ColumnName="giftItemId" />
+          <ScalarProperty Name="giftItemName" ColumnName="giftItemName" />
+          <ScalarProperty Name="giftItemPrice" ColumnName="giftItemPrice" />
+          <ScalarProperty Name="giftItemDescription" ColumnName="giftItemDescription" />
+          <ScalarProperty Name="lastUpdated" ColumnName="lastUpdated" />
+          <ScalarProperty Name="giftTypeid" ColumnName="giftTypeid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="giftTypes">
+      <EntityTypeMapping TypeName="PetaByteModel.giftType">
+        <MappingFragment StoreEntitySet="giftType">
+          <ScalarProperty Name="giftTypeId" ColumnName="giftTypeId" />
+          <ScalarProperty Name="giftTypeName" ColumnName="giftTypeName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -274,6 +319,32 @@
           <ScalarProperty Name="startTime" ColumnName="startTime" />
           <ScalarProperty Name="endTime" ColumnName="endTime" />
           <ScalarProperty Name="volunteerId" ColumnName="volunteerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderDetails">
+      <EntityTypeMapping TypeName="PetaByteModel.orderDetail">
+        <MappingFragment StoreEntitySet="orderDetails">
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="postalCode" ColumnName="postalCode" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderPlaceds">
+      <EntityTypeMapping TypeName="PetaByteModel.orderPlaced">
+        <MappingFragment StoreEntitySet="orderPlaced">
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -433,21 +504,6 @@
           <ScalarProperty Name="itemName" ColumnName="itemName" />
           <ScalarProperty Name="departmentsId" ColumnName="departmentsId" />
           <ScalarProperty Name="departmentName" ColumnName="departmentName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EmployeeSchedules">
-      <EntityTypeMapping TypeName="PetaByteModel.EmployeeSchedule">
-        <MappingFragment StoreEntitySet="EmployeeSchedule">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Day" ColumnName="Day" />
-          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-          <ScalarProperty Name="BreakTimeBegin" ColumnName="BreakTimeBegin" />
-          <ScalarProperty Name="BreakTimeend" ColumnName="BreakTimeend" />
-          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
-          <ScalarProperty Name="EmployeeFirstName" ColumnName="EmployeeFirstName" />
-          <ScalarProperty Name="EmployeeLastName" ColumnName="EmployeeLastName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

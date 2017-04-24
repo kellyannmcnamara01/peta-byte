@@ -532,6 +532,9 @@
     <Compile Include="Models\Cafeteria.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\cart.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Contact.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
@@ -574,16 +577,10 @@
     <Compile Include="Models\GetHelp.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GiftBill.cs">
+    <Compile Include="Models\giftItem.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GiftItem.cs">
-      <DependentUpon>PetaByte.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GiftItemCategory.cs">
-      <DependentUpon>PetaByte.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GiftOrder.cs">
+    <Compile Include="Models\giftType.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HospitalEvent.cs">
@@ -602,6 +599,12 @@
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OnCall.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\orderDetail.cs">
+      <DependentUpon>PetaByte.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\orderPlaced.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Page.cs">
@@ -719,6 +722,7 @@
     <Content Include="Views\EmployeeSchedules\Details.cshtml" />
     <Content Include="Views\EmployeeSchedules\Edit.cshtml" />
     <Content Include="Views\EmployeeSchedules\Index.cshtml" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

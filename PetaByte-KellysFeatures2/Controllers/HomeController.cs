@@ -24,6 +24,11 @@ namespace PetaByte_KellysFeatures2.Controllers
             return View(events);
         }
 
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+
         public ActionResult EventDetails(int? id)
         {
             HospitalEvent events = db.HospitalEvents.Single(evnt => evnt.eventsId == id);

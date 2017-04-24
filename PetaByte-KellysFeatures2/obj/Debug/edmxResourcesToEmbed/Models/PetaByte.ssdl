@@ -34,9 +34,9 @@
   </EntityType>
   <EntityType Name="Alerts">
     <Key>
-      <PropertyRef Name="alertId" />
+      <PropertyRef Name="akertId" />
     </Key>
-    <Property Name="alertId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="akertId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="alertText" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="timestamp" Type="datetime" />
     <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
@@ -51,6 +51,15 @@
     <Property Name="breakfast" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="lunch" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="dinner" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cart">
+    <Key>
+      <PropertyRef Name="cartId" />
+    </Key>
+    <Property Name="cartId" Type="int" Nullable="false" />
+    <Property Name="cartSessionId" Type="int" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" />
+    <Property Name="count" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Contacts">
     <Key>
@@ -213,6 +222,24 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="province" Type="varchar" MaxLength="50" />
     <Property Name="symptoms" Type="varchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="giftItem">
+    <Key>
+      <PropertyRef Name="giftItemId" />
+    </Key>
+    <Property Name="giftItemId" Type="int" Nullable="false" />
+    <Property Name="giftItemName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="giftItemPrice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="giftItemDescription" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="lastUpdated" Type="datetime" />
+    <Property Name="giftTypeid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="giftType">
+    <Key>
+      <PropertyRef Name="giftTypeId" />
+    </Key>
+    <Property Name="giftTypeId" Type="int" Nullable="false" />
+    <Property Name="giftTypeName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
   <EntityType Name="HospitalEvents">
     <Key>
       <PropertyRef Name="eventsId" />
@@ -278,6 +305,30 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="startTime" Type="datetime" Nullable="false" />
     <Property Name="endTime" Type="datetime" Nullable="false" />
     <Property Name="volunteerId" Type="int" />
+  </EntityType>
+  <EntityType Name="orderDetails">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="address" Type="varchar(max)" Nullable="false" />
+    <Property Name="city" Type="varchar(max)" Nullable="false" />
+    <Property Name="province" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="postalCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderPlaced">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="int" Nullable="false" />
+    <Property Name="productId" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Pages">
     <Key>
@@ -652,6 +703,18 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_giftItem_giftTypeId">
+    <End Role="giftType" Type="Self.giftType" Multiplicity="1" />
+    <End Role="giftItem" Type="Self.giftItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="giftType">
+        <PropertyRef Name="giftTypeId" />
+      </Principal>
+      <Dependent Role="giftItem">
+        <PropertyRef Name="giftTypeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_JobApplicants_JobPostings">
     <End Role="JobPostings" Type="Self.JobPostings" Multiplicity="1" />
     <End Role="JobApplicants" Type="Self.JobApplicants" Multiplicity="*" />
@@ -709,6 +772,18 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       </Principal>
       <Dependent Role="OnCalls">
         <PropertyRef Name="volunteerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_orderPlaced_productId">
+    <End Role="giftItem" Type="Self.giftItem" Multiplicity="1" />
+    <End Role="orderPlaced" Type="Self.orderPlaced" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="giftItem">
+        <PropertyRef Name="giftItemId" />
+      </Principal>
+      <Dependent Role="orderPlaced">
+        <PropertyRef Name="productId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -958,6 +1033,7 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <EntitySet Name="Addresses1" EntityType="Self.Addresses1" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Alerts" EntityType="Self.Alerts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cafeterias" EntityType="Self.Cafeterias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cart" EntityType="Self.cart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DonationHonours" EntityType="Self.DonationHonours" Schema="dbo" store:Type="Tables" />
@@ -971,12 +1047,16 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <EntitySet Name="EmployeeStatus" EntityType="Self.EmployeeStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Feeedbacks" EntityType="Self.Feeedbacks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GetHelps" EntityType="Self.GetHelps" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="giftItem" EntityType="Self.giftItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="giftType" EntityType="Self.giftType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HospitalEvents" EntityType="Self.HospitalEvents" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Insurances" EntityType="Self.Insurances" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="JobApplicants" EntityType="Self.JobApplicants" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="JobPostings" EntityType="Self.JobPostings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Navigations" EntityType="Self.Navigations" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OnCalls" EntityType="Self.OnCalls" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderDetails" EntityType="Self.orderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderPlaced" EntityType="Self.orderPlaced" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pages" EntityType="Self.Pages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Passwords" EntityType="Self.Passwords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
@@ -1078,6 +1158,10 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       <End Role="Volunteers" EntitySet="Volunteers" />
       <End Role="Feeedbacks" EntitySet="Feeedbacks" />
     </AssociationSet>
+    <AssociationSet Name="FK_giftItem_giftTypeId" Association="Self.FK_giftItem_giftTypeId">
+      <End Role="giftType" EntitySet="giftType" />
+      <End Role="giftItem" EntitySet="giftItem" />
+    </AssociationSet>
     <AssociationSet Name="FK_JobApplicants_JobPostings" Association="Self.FK_JobApplicants_JobPostings">
       <End Role="JobPostings" EntitySet="JobPostings" />
       <End Role="JobApplicants" EntitySet="JobApplicants" />
@@ -1097,6 +1181,10 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <AssociationSet Name="FK_OnCall_Volunteers" Association="Self.FK_OnCall_Volunteers">
       <End Role="Volunteers" EntitySet="Volunteers" />
       <End Role="OnCalls" EntitySet="OnCalls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_orderPlaced_productId" Association="Self.FK_orderPlaced_productId">
+      <End Role="giftItem" EntitySet="giftItem" />
+      <End Role="orderPlaced" EntitySet="orderPlaced" />
     </AssociationSet>
     <AssociationSet Name="FK_Pages_Employees" Association="Self.FK_Pages_Employees">
       <End Role="Employees" EntitySet="Employees" />

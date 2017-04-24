@@ -40,7 +40,6 @@
   <EntityType Name="Alert">
     <Key>
       <PropertyRef Name="akertId" />
-      <PropertyRef Name="alertId" />
     </Key>
     <Property Name="akertId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="alertText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
@@ -48,7 +47,6 @@
     <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="employeeId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Employee" Relationship="Self.FK_Alerts_Employees" FromRole="Alerts" ToRole="Employees" />
-    <Property Name="alertId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="Cafeteria">
     <Key>
@@ -59,6 +57,15 @@
     <Property Name="breakfast" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="lunch" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="dinner" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cart">
+    <Key>
+      <PropertyRef Name="cartId" />
+    </Key>
+    <Property Name="cartId" Type="Int32" Nullable="false" />
+    <Property Name="cartSessionId" Type="Int32" Nullable="false" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="count" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Contact">
     <Key>
@@ -192,6 +199,21 @@
     <NavigationProperty Name="SubNavigations" Relationship="Self.FK_SubNavigation_Employees" FromRole="Employees" ToRole="SubNavigations" />
     <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_Employees" FromRole="Employees" ToRole="Tickets" />
   </EntityType>
+  <EntityType Name="EmployeeSchedule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="BreakTimeBegin" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="BreakTimeend" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeSchedule_Employeeid" FromRole="EmployeeSchedule" ToRole="Employees" />
+  </EntityType>
   <EntityType Name="EmployeeStatu">
     <Key>
       <PropertyRef Name="employeeStatusId" />
@@ -233,50 +255,26 @@
     <Property Name="symptoms" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_getHelpId" FromRole="GetHelps" ToRole="Tickets" />
   </EntityType>
-  <EntityType Name="GiftBill">
+  <EntityType Name="giftItem">
     <Key>
-      <PropertyRef Name="billId" />
+      <PropertyRef Name="giftItemId" />
     </Key>
-    <Property Name="billId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="patientId" Type="Int32" Nullable="false" />
-    <Property Name="totalAmountDue" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="billPayDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Count" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Patient" Relationship="Self.FK_GiftBills_Patients" FromRole="GiftBills" ToRole="Patients" />
-    <NavigationProperty Name="GiftItems" Relationship="Self.FK_GiftItems_GiftBills" FromRole="GiftBills" ToRole="GiftItems" />
-    <NavigationProperty Name="GiftOrders" Relationship="Self.FK_GiftOrder_giftbillid" FromRole="GiftBills" ToRole="GiftOrders" />
+    <Property Name="giftItemId" Type="Int32" Nullable="false" />
+    <Property Name="giftItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="giftItemPrice" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="giftItemDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastUpdated" Type="DateTime" Precision="3" />
+    <Property Name="giftTypeid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="giftType" Relationship="Self.FK_giftItem_giftTypeId" FromRole="giftItem" ToRole="giftType" />
+    <NavigationProperty Name="orderPlaceds" Relationship="Self.FK_orderPlaced_productId" FromRole="giftItem" ToRole="orderPlaced" />
   </EntityType>
-  <EntityType Name="GiftItemCategory">
+  <EntityType Name="giftType">
     <Key>
-      <PropertyRef Name="giftCategoryId" />
+      <PropertyRef Name="giftTypeId" />
     </Key>
-    <Property Name="giftCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="giftDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="giftUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="GiftItems" Relationship="Self.FK_GiftItems_GiftItemCategories" FromRole="GiftItemCategories" ToRole="GiftItems" />
-    <NavigationProperty Name="GiftOrders" Relationship="Self.FK_GiftOrder_productID" FromRole="GiftItemCategories" ToRole="GiftOrders" />
-  </EntityType>
-  <EntityType Name="GiftItem">
-    <Key>
-      <PropertyRef Name="giftId" />
-    </Key>
-    <Property Name="giftId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="giftBillId" Type="Int32" Nullable="false" />
-    <Property Name="giftCategoryId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="GiftBill" Relationship="Self.FK_GiftItems_GiftBills" FromRole="GiftItems" ToRole="GiftBills" />
-    <NavigationProperty Name="GiftItemCategory" Relationship="Self.FK_GiftItems_GiftItemCategories" FromRole="GiftItems" ToRole="GiftItemCategories" />
-  </EntityType>
-  <EntityType Name="GiftOrder">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProductId" Type="Int32" Nullable="false" />
-    <Property Name="GiftBillId" Type="Int32" Nullable="false" />
-    <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <NavigationProperty Name="GiftBill" Relationship="Self.FK_GiftOrder_giftbillid" FromRole="GiftOrders" ToRole="GiftBills" />
-    <NavigationProperty Name="GiftItemCategory" Relationship="Self.FK_GiftOrder_productID" FromRole="GiftOrders" ToRole="GiftItemCategories" />
+    <Property Name="giftTypeId" Type="Int32" Nullable="false" />
+    <Property Name="giftTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="giftItems" Relationship="Self.FK_giftItem_giftTypeId" FromRole="giftType" ToRole="giftItem" />
   </EntityType>
   <EntityType Name="HospitalEvent">
     <Key>
@@ -354,6 +352,31 @@
     <NavigationProperty Name="Employee" Relationship="Self.FK_OnCall_Employees" FromRole="OnCalls" ToRole="Employees" />
     <NavigationProperty Name="Volunteer" Relationship="Self.FK_OnCall_Volunteers" FromRole="OnCalls" ToRole="Volunteers" />
   </EntityType>
+  <EntityType Name="orderDetail">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="Int32" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="province" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="postalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderPlaced">
+    <Key>
+      <PropertyRef Name="orderId" />
+    </Key>
+    <Property Name="orderId" Type="Int32" Nullable="false" />
+    <Property Name="productId" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="giftItem" Relationship="Self.FK_orderPlaced_productId" FromRole="orderPlaced" ToRole="giftItem" />
+  </EntityType>
   <EntityType Name="Page">
     <Key>
       <PropertyRef Name="pageId" />
@@ -406,7 +429,6 @@
     <NavigationProperty Name="Contact" Relationship="Self.FK_Patients_Contact" FromRole="Patients" ToRole="Contacts" />
     <NavigationProperty Name="EmerageContact" Relationship="Self.FK_Patients_EmerageContacts" FromRole="Patients" ToRole="EmerageContacts" />
     <NavigationProperty Name="Feeedbacks" Relationship="Self.FK_Feeedbacks_Patients" FromRole="Patients" ToRole="Feeedbacks" />
-    <NavigationProperty Name="GiftBills" Relationship="Self.FK_GiftBills_Patients" FromRole="Patients" ToRole="GiftBills" />
     <NavigationProperty Name="Insurance" Relationship="Self.FK_Patients_Insurance" FromRole="Patients" ToRole="Insurances" />
     <NavigationProperty Name="PatientsRooms" Relationship="Self.FK_PatientsRooms_Patients" FromRole="Patients" ToRole="PatientsRooms" />
     <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_patientId" FromRole="Patients" ToRole="Requests" />
@@ -526,29 +548,6 @@
     <Property Name="departmentsId" Type="Int32" />
     <Property Name="departmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Department" Relationship="Self.FK_WhatToBring_Departments" FromRole="WhatToBrings" ToRole="Departments" />
-  </EntityType>
-  <EntityType Name="EmployeeSchedule">
-    <Key>
-      <PropertyRef Name="id" />
-      <PropertyRef Name="Day" />
-      <PropertyRef Name="StartTime" />
-      <PropertyRef Name="BreakTimeBegin" />
-      <PropertyRef Name="BreakTimeend" />
-      <PropertyRef Name="EndTime" />
-      <PropertyRef Name="EmployeeId" />
-      <PropertyRef Name="EmployeeFirstName" />
-      <PropertyRef Name="EmployeeLastName" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="BreakTimeBegin" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="BreakTimeend" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
-    <Property Name="EmployeeFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="EmployeeLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeSchedule_Employeeid" FromRole="EmployeeSchedule" ToRole="Employees" />
   </EntityType>
   <EntityType Name="Faq">
     <Key>
@@ -978,63 +977,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_GiftBills_Patients">
-    <End Role="Patients" Type="Self.Patient" Multiplicity="1" />
-    <End Role="GiftBills" Type="Self.GiftBill" Multiplicity="*" />
+  <Association Name="FK_giftItem_giftTypeId">
+    <End Role="giftType" Type="Self.giftType" Multiplicity="1" />
+    <End Role="giftItem" Type="Self.giftItem" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Patients">
-        <PropertyRef Name="patientId" />
+      <Principal Role="giftType">
+        <PropertyRef Name="giftTypeId" />
       </Principal>
-      <Dependent Role="GiftBills">
-        <PropertyRef Name="patientId" />
+      <Dependent Role="giftItem">
+        <PropertyRef Name="giftTypeid" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_GiftItems_GiftBills">
-    <End Role="GiftBills" Type="Self.GiftBill" Multiplicity="1" />
-    <End Role="GiftItems" Type="Self.GiftItem" Multiplicity="*" />
+  <Association Name="FK_orderPlaced_productId">
+    <End Role="giftItem" Type="Self.giftItem" Multiplicity="1" />
+    <End Role="orderPlaced" Type="Self.orderPlaced" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="GiftBills">
-        <PropertyRef Name="billId" />
+      <Principal Role="giftItem">
+        <PropertyRef Name="giftItemId" />
       </Principal>
-      <Dependent Role="GiftItems">
-        <PropertyRef Name="giftBillId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_GiftOrder_giftbillid">
-    <End Role="GiftBills" Type="Self.GiftBill" Multiplicity="1" />
-    <End Role="GiftOrders" Type="Self.GiftOrder" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GiftBills">
-        <PropertyRef Name="billId" />
-      </Principal>
-      <Dependent Role="GiftOrders">
-        <PropertyRef Name="GiftBillId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_GiftItems_GiftItemCategories">
-    <End Role="GiftItemCategories" Type="Self.GiftItemCategory" Multiplicity="1" />
-    <End Role="GiftItems" Type="Self.GiftItem" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GiftItemCategories">
-        <PropertyRef Name="giftCategoryId" />
-      </Principal>
-      <Dependent Role="GiftItems">
-        <PropertyRef Name="giftCategoryId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_GiftOrder_productID">
-    <End Role="GiftItemCategories" Type="Self.GiftItemCategory" Multiplicity="1" />
-    <End Role="GiftOrders" Type="Self.GiftOrder" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GiftItemCategories">
-        <PropertyRef Name="giftCategoryId" />
-      </Principal>
-      <Dependent Role="GiftOrders">
-        <PropertyRef Name="ProductId" />
+      <Dependent Role="orderPlaced">
+        <PropertyRef Name="productId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1152,6 +1115,7 @@
     <EntitySet Name="Addresses1" EntityType="Self.Addresses1" />
     <EntitySet Name="Alerts" EntityType="Self.Alert" />
     <EntitySet Name="Cafeterias" EntityType="Self.Cafeteria" />
+    <EntitySet Name="carts" EntityType="Self.cart" />
     <EntitySet Name="Contacts" EntityType="Self.Contact" />
     <EntitySet Name="Departments" EntityType="Self.Department" />
     <EntitySet Name="DonationHonours" EntityType="Self.DonationHonour" />
@@ -1161,19 +1125,20 @@
     <EntitySet Name="DonorsProfiles" EntityType="Self.DonorsProfile" />
     <EntitySet Name="EmerageContacts" EntityType="Self.EmerageContact" />
     <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="EmployeeSchedules" EntityType="Self.EmployeeSchedule" />
     <EntitySet Name="EmployeeStatus" EntityType="Self.EmployeeStatu" />
     <EntitySet Name="Feeedbacks" EntityType="Self.Feeedback" />
     <EntitySet Name="GetHelps" EntityType="Self.GetHelp" />
-    <EntitySet Name="GiftBills" EntityType="Self.GiftBill" />
-    <EntitySet Name="GiftItemCategories" EntityType="Self.GiftItemCategory" />
-    <EntitySet Name="GiftItems" EntityType="Self.GiftItem" />
-    <EntitySet Name="GiftOrders" EntityType="Self.GiftOrder" />
+    <EntitySet Name="giftItems" EntityType="Self.giftItem" />
+    <EntitySet Name="giftTypes" EntityType="Self.giftType" />
     <EntitySet Name="HospitalEvents" EntityType="Self.HospitalEvent" />
     <EntitySet Name="Insurances" EntityType="Self.Insurance" />
     <EntitySet Name="JobApplicants" EntityType="Self.JobApplicant" />
     <EntitySet Name="JobPostings" EntityType="Self.JobPosting" />
     <EntitySet Name="Navigations" EntityType="Self.Navigation" />
     <EntitySet Name="OnCalls" EntityType="Self.OnCall" />
+    <EntitySet Name="orderDetails" EntityType="Self.orderDetail" />
+    <EntitySet Name="orderPlaceds" EntityType="Self.orderPlaced" />
     <EntitySet Name="Pages" EntityType="Self.Page" />
     <EntitySet Name="Passwords" EntityType="Self.Password" />
     <EntitySet Name="Patients" EntityType="Self.Patient" />
@@ -1186,7 +1151,6 @@
     <EntitySet Name="VolunteerApplicants" EntityType="Self.VolunteerApplicant" />
     <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
     <EntitySet Name="WhatToBrings" EntityType="Self.WhatToBring" />
-    <EntitySet Name="EmployeeSchedules" EntityType="Self.EmployeeSchedule" />
     <EntitySet Name="Faqs" EntityType="Self.Faq" />
     <EntitySet Name="Requests" EntityType="Self.Request" />
     <AssociationSet Name="FK_Addresses_AddressDates" Association="Self.FK_Addresses_AddressDates">
@@ -1317,25 +1281,13 @@
       <End Role="GetHelps" EntitySet="GetHelps" />
       <End Role="Tickets" EntitySet="Tickets" />
     </AssociationSet>
-    <AssociationSet Name="FK_GiftBills_Patients" Association="Self.FK_GiftBills_Patients">
-      <End Role="Patients" EntitySet="Patients" />
-      <End Role="GiftBills" EntitySet="GiftBills" />
+    <AssociationSet Name="FK_giftItem_giftTypeId" Association="Self.FK_giftItem_giftTypeId">
+      <End Role="giftType" EntitySet="giftTypes" />
+      <End Role="giftItem" EntitySet="giftItems" />
     </AssociationSet>
-    <AssociationSet Name="FK_GiftItems_GiftBills" Association="Self.FK_GiftItems_GiftBills">
-      <End Role="GiftBills" EntitySet="GiftBills" />
-      <End Role="GiftItems" EntitySet="GiftItems" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GiftOrder_giftbillid" Association="Self.FK_GiftOrder_giftbillid">
-      <End Role="GiftBills" EntitySet="GiftBills" />
-      <End Role="GiftOrders" EntitySet="GiftOrders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GiftItems_GiftItemCategories" Association="Self.FK_GiftItems_GiftItemCategories">
-      <End Role="GiftItemCategories" EntitySet="GiftItemCategories" />
-      <End Role="GiftItems" EntitySet="GiftItems" />
-    </AssociationSet>
-    <AssociationSet Name="FK_GiftOrder_productID" Association="Self.FK_GiftOrder_productID">
-      <End Role="GiftItemCategories" EntitySet="GiftItemCategories" />
-      <End Role="GiftOrders" EntitySet="GiftOrders" />
+    <AssociationSet Name="FK_orderPlaced_productId" Association="Self.FK_orderPlaced_productId">
+      <End Role="giftItem" EntitySet="giftItems" />
+      <End Role="orderPlaced" EntitySet="orderPlaceds" />
     </AssociationSet>
     <AssociationSet Name="FK_Patients_Insurance" Association="Self.FK_Patients_Insurance">
       <End Role="Insurances" EntitySet="Insurances" />
