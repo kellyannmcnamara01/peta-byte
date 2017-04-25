@@ -24,7 +24,7 @@ namespace PetaByte_KellysFeatures2.Models
         public string PhysicianName { get; set; }
         public int EmployeeId { get; set; }
         public System.DateTime DateofAppointment { get; set; }
-        public System.DateTime PreferredAppTime { get; set; }
+        public System.TimeSpan PreferredAppTime { get; set; }
         public System.DateTime PreferredDate { get; set; }
         public System.DateTime DateofRequest { get; set; }
         public System.DateTime DateApproved { get; set; }

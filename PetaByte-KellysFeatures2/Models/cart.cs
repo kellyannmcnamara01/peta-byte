@@ -15,8 +15,11 @@ namespace PetaByte_KellysFeatures2.Models
     public partial class cart
     {
         public int cartId { get; set; }
-        public int cartSessionId { get; set; }
+        public string cartSessionId { get; set; }
         public Nullable<System.DateTime> dateCreated { get; set; }
+        public Nullable<int> GiftId { get; set; }
         public int count { get; set; }
+    
+        public virtual giftItem giftItem { get; set; }
     }
 }

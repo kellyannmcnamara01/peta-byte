@@ -17,6 +17,7 @@ namespace PetaByte_KellysFeatures2.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public giftItem()
         {
+            this.carts = new HashSet<cart>();
             this.orderPlaceds = new HashSet<orderPlaced>();
         }
     
@@ -27,6 +28,8 @@ namespace PetaByte_KellysFeatures2.Models
         public Nullable<System.DateTime> lastUpdated { get; set; }
         public int giftTypeid { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<cart> carts { get; set; }
         public virtual giftType giftType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orderPlaced> orderPlaceds { get; set; }

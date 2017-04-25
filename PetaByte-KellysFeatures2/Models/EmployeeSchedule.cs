@@ -16,11 +16,11 @@ namespace PetaByte_KellysFeatures2.Models
     {
         public int id { get; set; }
         public string Day { get; set; }
-        public System.TimeSpan StartTime { get; set; }
-        public System.TimeSpan BreakTimeBegin { get; set; }
-        public System.TimeSpan BreakTimeend { get; set; }
-        public System.TimeSpan EndTime { get; set; }
-        public int EmployeeId { get; set; }
+        public Nullable<System.TimeSpan> StartTime { get; set; }
+        public Nullable<System.TimeSpan> BreakTimeBegin { get; set; }
+        public Nullable<System.TimeSpan> BreakTimeend { get; set; }
+        public Nullable<System.TimeSpan> EndTime { get; set; }
+        public Nullable<int> EmployeeId { get; set; }
         public string EmployeeFirstName { get; set; }
         public string EmployeeLastName { get; set; }
     

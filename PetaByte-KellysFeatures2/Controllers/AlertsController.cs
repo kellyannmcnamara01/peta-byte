@@ -22,7 +22,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         private PetaByteContext db = new PetaByteContext();
 
         // GET: Alerts
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Index()
         {
             var alerts = db.Alerts.Include(a => a.Employee);
@@ -30,7 +30,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: Alerts/Create
-        [Authorize(Roles ="Admin")]
+        //[Authorize(Roles ="Admin")]
         public ActionResult Create()
         {
             ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName");
@@ -40,7 +40,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // POST: Alerts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "akertId,alertText,timestamp,status,employeeId")] Alert alert)
@@ -68,7 +68,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: Alerts/Edit/5
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -87,7 +87,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // POST: Alerts/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "akertId,alertText,timestamp,status,employeeId")] Alert alert)
@@ -114,7 +114,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: Alerts/Delete/5
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -130,7 +130,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // POST: Alerts/Delete/5
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

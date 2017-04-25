@@ -22,9 +22,23 @@ namespace PetaByte_KellysFeatures2.Models
     
         public int donationsId { get; set; }
         public decimal donationAmount { get; set; }
-        public int occurenceId { get; set; }
+        public Nullable<int> occurenceId { get; set; }
         public System.DateTime donationDate { get; set; }
         public Nullable<int> donorsId { get; set; }
+        public string donorFN { get; set; }
+        public string donorLN { get; set; }
+        public string email { get; set; }
+        public string homeNum { get; set; }
+        public string workNum { get; set; }
+        public string mobileNum { get; set; }
+        public string addressStreet { get; set; }
+        public string addressProv { get; set; }
+        public string addressCountry { get; set; }
+        public string postal { get; set; }
+        public string addressCity { get; set; }
+        public string honorFN { get; set; }
+        public string honorLN { get; set; }
+        public string company { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonationHonour> DonationHonours { get; set; }
