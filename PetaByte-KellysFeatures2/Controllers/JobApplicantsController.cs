@@ -24,7 +24,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         private PetaByteContext db = new PetaByteContext();
 
         // GET: JobApplicants
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var jobApplicants = db.JobApplicants.Include(j => j.JobPosting);
@@ -74,24 +74,26 @@ namespace PetaByte_KellysFeatures2.Controllers
         {
             if (ModelState.IsValid)
             {
-                //NOTE (Kelly Ann McNamara): if statement for file upload
-                //NOTE (Kelly Ann McNamara): create var that returns the file name and extention
-                //NOTE (Kelly Ann McNamara): have the getter and setter for appCV to equal the fileName the user uploads
-                //NOTE (Kelly Ann McNamara): add all the user input to the db
-                //NOTE (Kelly Ann McNamara): save changes
-                //NOTE (Kelly Ann McNamara): create a file path to the uploaded content
-                //NOTE (Kelly Ann McNamara): save said path
+                //if statement for file upload
+                //create var that returns the file name and extention
+                //have the getter and setter for appCV to equal the fileName the user uploads
+                //add all the user input to the db
+                //save changes
+                //create a file path to the uploaded content
+                //save said path
                 if (file.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(file.FileName);
                     jobApplicant.appCv = fileName;
-                    
+
                     db.JobApplicants.Add(jobApplicant);
                     db.SaveChanges();
 
                     var path = Path.Combine(Server.MapPath("~/Content/applicants/") + fileName);
                     file.SaveAs(path);
                 }
+                //db.JobApplicants.Add(jobApplicant);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
