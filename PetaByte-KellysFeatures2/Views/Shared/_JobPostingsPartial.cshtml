@@ -12,7 +12,8 @@
             </div>
             <div class="panel-collapse collapse" id="collapse-@item.jobId" role="tabpanel" aria-labelledby="jobposting1">
                 <div class="panel-body">
-                    @item.jobDesc
+                    @*@item.jobDesc*@
+                    @Html.Raw(item.jobDesc)
                 </div>
             </div>
         </div>
