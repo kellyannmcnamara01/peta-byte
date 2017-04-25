@@ -24,6 +24,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         private PetaByteContext db = new PetaByteContext();
 
         // GET: JobApplicants
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var jobApplicants = db.JobApplicants.Include(j => j.JobPosting);
@@ -31,6 +32,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         //NOTE (Kelly Ann McNamara): Partial view for job postings
+        [AllowAnonymous]
         public PartialViewResult JobPosting()
         {
             //NOTE (Kelly Ann McNamara):  Populate a list to display all of the job postings that have the status of "Published" from the db
@@ -39,6 +41,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: JobApplicants/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -54,6 +57,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: JobApplicants/Create
+        [AllowAnonymous]
         public ActionResult Create()
         {
             ViewBag.jobId = new SelectList(db.JobPostings, "jobId", "jobTitle");
@@ -63,6 +67,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // POST: JobApplicants/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(HttpPostedFileBase file, [Bind(Include = "jobAppId,jobId,appJobTitle,appFirstName,appLastName,appEmail,appLinkedIn,appMessage,appCv,appOtherFile")] JobApplicant jobApplicant)
@@ -95,6 +100,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: JobApplicants/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -113,6 +119,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // POST: JobApplicants/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "jobAppId,jobId,appJobTitle,appFirstName,appLastName,appEmail,appLinkedIn,appMessage,appCv,appOtherFile")] JobApplicant jobApplicant)
@@ -128,6 +135,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: JobApplicants/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -143,6 +151,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // POST: JobApplicants/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
