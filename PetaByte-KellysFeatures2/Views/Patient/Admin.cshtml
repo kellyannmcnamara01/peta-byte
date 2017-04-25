@@ -1,0 +1,114 @@
+﻿
+@*
+    Team: Petabyte(Temiskaming Hospital)
+    Name: Wei Gao
+    Description:
+        This page shows the admin panel for the admin user, it shows all the patients who have submitted the form successfully,
+        the admin user can edit, add, delete patients' record by clicking on different buttons.
+*@
+
+@model IEnumerable<PetaByte_KellysFeatures2.Models.Patient>
+
+@{
+    ViewBag.Title = "Admin";
+    @* indivisual css from me *@
+Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Admin Index</h2>
+<link href="~/Content/form-admin.css" rel="stylesheet" />
+<p class="button">
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-condensed table-hover table-responsive">
+    <thead class="thead-inverse">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.firstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.postal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Allergies)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.healthCardNum)
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Allergies)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.healthCardNum)
+            </td>
+            <td class="crud">
+                @Html.ActionLink("Edit", "Edit", new { id = item.patientId }, htmlAttributes: new { @class = "button-edit" })
+            </td>
+            <td class="crud">
+                @Html.ActionLink("Details", "Details", new { id = item.patientId }, htmlAttributes: new { @class = "button-edit" })
+            </td>
+            <td class="crud">
+                @Html.ActionLink("Delete", "Delete", new { id = item.patientId }, htmlAttributes: new { @class = "button-delete" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
