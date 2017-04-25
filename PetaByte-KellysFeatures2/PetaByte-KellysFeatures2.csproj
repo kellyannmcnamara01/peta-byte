@@ -518,6 +518,7 @@
     <Compile Include="Controllers\JobPostingsController.cs" />
     <Compile Include="Controllers\NavigationsController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
     <Compile Include="Controllers\SubNavigationsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -734,6 +735,12 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\reset.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Patient\Admin.cshtml" />
+    <Content Include="Views\Patient\Create.cshtml" />
+    <Content Include="Views\Patient\Delete.cshtml" />
+    <Content Include="Views\Patient\Details.cshtml" />
+    <Content Include="Views\Patient\Edit.cshtml" />
+    <Content Include="Views\Patient\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
