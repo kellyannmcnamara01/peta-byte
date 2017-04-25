@@ -1,13 +1,12 @@
 ﻿
+@model IEnumerable<PetaByte_KellysFeatures2.Models.Patient>
 @*
     Team: Petabyte(Temiskaming Hospital)
     Name: Wei Gao
     Description:
-        This page shows the admin panel for the admin user, it shows all the patients who have submitted the form successfully,
-        the admin user can edit, add, delete patients' record by clicking on different buttons.
+    This page shows the admin panel for the admin user, it shows all the patients who have submitted the form successfully,
+    the admin user can edit, add, delete patients' record by clicking on different buttons.
 *@
-
-@model IEnumerable<PetaByte_KellysFeatures2.Models.Patient>
 
 @{
     ViewBag.Title = "Admin";
@@ -108,6 +107,7 @@ Layout = "~/Views/Shared/_AdminLayout.cshtml";
     }
 
 </table>
+
 
 
 

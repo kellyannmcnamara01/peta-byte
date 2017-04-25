@@ -1,12 +1,13 @@
-﻿@*
+﻿
+
+@model PetaByte_KellysFeatures2.Models.Patient
+@*
     Team: Petabyte(Temiskaming Hospital)
     Name: Wei Gao
     Description:
-        This page shows the detail of a patients' record with a "delete" button, 
+        This page shows the detail of a patients' record with a "delete" button,
         if the button is pressed, the patient's record will be deleted.
 *@
-
-@model PetaByte_KellysFeatures2.Models.Patient
 
 @{
     ViewBag.Title = "Delete";
@@ -107,9 +108,10 @@
             @Html.DisplayFor(model => model.healthCardNum)
         </dd>
 
-   </dl>
+    </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
@@ -118,4 +120,5 @@
         </div>
     }
 </div>
+
 

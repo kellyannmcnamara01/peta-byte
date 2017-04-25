@@ -1,10 +1,4 @@
-﻿/*
-    Team: Petabyte(Temiskaming Hospital)
-    Name: Wei Gao
-    Description: 
-        This file handles all the requirements from diferent views and replies from the model, 
-        either save values to the database or send the inputs back to different views.  
-*/
+﻿
 
 using System;
 using System.Collections.Generic;
@@ -18,6 +12,13 @@ using PetaByte_KellysFeatures2.Models;
 using System.Net.Mail;
 using System.Threading;
 using System.Threading.Tasks;
+/*
+    Team: Petabyte(Temiskaming Hospital)
+    Name: Wei Gao
+    Description: 
+        This file handles all the requirements from diferent views and replies from the model, 
+        either save values to the database or send the inputs back to different views.  
+*/
 
 namespace PetaByte_KellysFeatures2.Controllers
 {
