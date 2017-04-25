@@ -1,0 +1,35 @@
+﻿@model PetaByte_KellysFeatures2.Models.Request
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Request</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.firstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
