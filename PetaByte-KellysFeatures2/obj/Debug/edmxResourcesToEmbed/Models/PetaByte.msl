@@ -64,6 +64,7 @@
           <ScalarProperty Name="cartId" ColumnName="cartId" />
           <ScalarProperty Name="cartSessionId" ColumnName="cartSessionId" />
           <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="GiftId" ColumnName="GiftId" />
           <ScalarProperty Name="count" ColumnName="count" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -119,6 +120,20 @@
           <ScalarProperty Name="occurenceId" ColumnName="occurenceId" />
           <ScalarProperty Name="donationDate" ColumnName="donationDate" />
           <ScalarProperty Name="donorsId" ColumnName="donorsId" />
+          <ScalarProperty Name="donorFN" ColumnName="donorFN" />
+          <ScalarProperty Name="donorLN" ColumnName="donorLN" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="homeNum" ColumnName="homeNum" />
+          <ScalarProperty Name="workNum" ColumnName="workNum" />
+          <ScalarProperty Name="mobileNum" ColumnName="mobileNum" />
+          <ScalarProperty Name="addressStreet" ColumnName="addressStreet" />
+          <ScalarProperty Name="addressProv" ColumnName="addressProv" />
+          <ScalarProperty Name="addressCountry" ColumnName="addressCountry" />
+          <ScalarProperty Name="postal" ColumnName="postal" />
+          <ScalarProperty Name="addressCity" ColumnName="addressCity" />
+          <ScalarProperty Name="honorFN" ColumnName="honorFN" />
+          <ScalarProperty Name="honorLN" ColumnName="honorLN" />
+          <ScalarProperty Name="company" ColumnName="company" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

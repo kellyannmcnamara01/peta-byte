@@ -63,9 +63,11 @@
       <PropertyRef Name="cartId" />
     </Key>
     <Property Name="cartId" Type="Int32" Nullable="false" />
-    <Property Name="cartSessionId" Type="Int32" Nullable="false" />
+    <Property Name="cartSessionId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="dateCreated" Type="DateTime" Precision="3" />
+    <Property Name="GiftId" Type="Int32" />
     <Property Name="count" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="giftItem" Relationship="Self.FK_cart_GiftId" FromRole="cart" ToRole="giftItem" />
   </EntityType>
   <EntityType Name="Contact">
     <Key>
@@ -121,9 +123,23 @@
     </Key>
     <Property Name="donationsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="donationAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="occurenceId" Type="Int32" Nullable="false" />
+    <Property Name="occurenceId" Type="Int32" />
     <Property Name="donationDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="donorsId" Type="Int32" />
+    <Property Name="donorFN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="donorLN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="homeNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="workNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mobileNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="addressStreet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addressProv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addressCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="postal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="addressCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="honorFN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="honorLN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="DonationHonours" Relationship="Self.FK_DonationHonours_Donations" FromRole="Donations" ToRole="DonationHonours" />
     <NavigationProperty Name="DonationOccurence" Relationship="Self.FK_Donations_DonationOccurence" FromRole="Donations" ToRole="DonationOccurences" />
     <NavigationProperty Name="Donor" Relationship="Self.FK_Donations_Donors" FromRole="Donations" ToRole="Donors" />
@@ -204,14 +220,14 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="StartTime" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="BreakTimeBegin" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="BreakTimeend" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="EndTime" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
-    <Property Name="EmployeeFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="EmployeeLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartTime" Type="Time" Precision="7" />
+    <Property Name="BreakTimeBegin" Type="Time" Precision="7" />
+    <Property Name="BreakTimeend" Type="Time" Precision="7" />
+    <Property Name="EndTime" Type="Time" Precision="7" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="EmployeeFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeSchedule_Employeeid" FromRole="EmployeeSchedule" ToRole="Employees" />
   </EntityType>
   <EntityType Name="EmployeeStatu">
@@ -265,6 +281,7 @@
     <Property Name="giftItemDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="lastUpdated" Type="DateTime" Precision="3" />
     <Property Name="giftTypeid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="carts" Relationship="Self.FK_cart_GiftId" FromRole="giftItem" ToRole="cart" />
     <NavigationProperty Name="giftType" Relationship="Self.FK_giftItem_giftTypeId" FromRole="giftItem" ToRole="giftType" />
     <NavigationProperty Name="orderPlaceds" Relationship="Self.FK_orderPlaced_productId" FromRole="giftItem" ToRole="orderPlaced" />
   </EntityType>
@@ -305,7 +322,7 @@
     </Key>
     <Property Name="jobAppId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="jobId" Type="Int32" Nullable="false" />
-    <Property Name="appJobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="appJobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="appFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="appLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="appEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -586,7 +603,7 @@
     <Property Name="PhysicianName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="EmployeeId" Type="Int32" Nullable="false" />
     <Property Name="DateofAppointment" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="PreferredAppTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PreferredAppTime" Type="Time" Nullable="false" Precision="7" />
     <Property Name="PreferredDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DateofRequest" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="DateApproved" Type="DateTime" Nullable="false" Precision="3" />
@@ -650,6 +667,18 @@
       </Principal>
       <Dependent Role="Alerts">
         <PropertyRef Name="employeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cart_GiftId">
+    <End Role="giftItem" Type="Self.giftItem" Multiplicity="0..1" />
+    <End Role="cart" Type="Self.cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="giftItem">
+        <PropertyRef Name="giftItemId" />
+      </Principal>
+      <Dependent Role="cart">
+        <PropertyRef Name="GiftId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -750,7 +779,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Donations_DonationOccurence">
-    <End Role="DonationOccurences" Type="Self.DonationOccurence" Multiplicity="1" />
+    <End Role="DonationOccurences" Type="Self.DonationOccurence" Multiplicity="0..1" />
     <End Role="Donations" Type="Self.Donation" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="DonationOccurences">
@@ -846,7 +875,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_EmployeeSchedule_Employeeid">
-    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
     <End Role="EmployeeSchedule" Type="Self.EmployeeSchedule" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employees">
@@ -1172,6 +1201,10 @@
     <AssociationSet Name="FK_Alerts_Employees" Association="Self.FK_Alerts_Employees">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="Alerts" EntitySet="Alerts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cart_GiftId" Association="Self.FK_cart_GiftId">
+      <End Role="giftItem" EntitySet="giftItems" />
+      <End Role="cart" EntitySet="carts" />
     </AssociationSet>
     <AssociationSet Name="FK_Employees_Contact" Association="Self.FK_Employees_Contact">
       <End Role="Contacts" EntitySet="Contacts" />

@@ -736,20 +736,17 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\reset.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
-
     <Content Include="Views\Requests\Create.cshtml" />
     <Content Include="Views\Requests\Delete.cshtml" />
     <Content Include="Views\Requests\Details.cshtml" />
     <Content Include="Views\Requests\Edit.cshtml" />
     <Content Include="Views\Requests\Index.cshtml" />
-
     <Content Include="Views\Patient\Admin.cshtml" />
     <Content Include="Views\Patient\Create.cshtml" />
     <Content Include="Views\Patient\Delete.cshtml" />
     <Content Include="Views\Patient\Details.cshtml" />
     <Content Include="Views\Patient\Edit.cshtml" />
     <Content Include="Views\Patient\Index.cshtml" />
-
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
