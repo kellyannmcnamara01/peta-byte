@@ -71,12 +71,13 @@ namespace PetaByte_KellysFeatures2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Index([Bind(Include = "Id,F_name,L_name,Address,City,Country,Email,Phone,Postal,Dob, Allergies, HCN, Insurance_PN")] Patient patient)
+        public async Task<ActionResult> Index([Bind(Include = "patientId,firstName,middleName, lastName,Address,City,Country,Email,Phone,Postal,Dob, Allergies, healthCardNum")] Patient patient)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+                    patient.middleName = " ";
                     db.Patients.Add(patient);
                     db.SaveChanges();
                     int id = patient.patientId;
@@ -117,7 +118,7 @@ namespace PetaByte_KellysFeatures2.Controllers
                         await client.SendMailAsync(email);
                         ViewBag.sent = "Email sent";
                     }
-                    return RedirectToAction("Detail", new { id = patient.patientId });
+                    return RedirectToAction("Details", new { id = patient.patientId });
                 }
             }
             catch (DataException dex)
@@ -137,12 +138,13 @@ namespace PetaByte_KellysFeatures2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,F_name,L_name,Address,City,Country,Email,Phone,Postal,Dob, Allergies, HCN")] Patient patient)
+        public ActionResult Create([Bind(Include = "patientId,firstName,middelName,lastName,Address,City,Country,email,phone,postal,DOB, Allergies, healthCardNum")] Patient patient)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+                    patient.middleName = " ";
                     db.Patients.Add(patient);
                     db.SaveChanges();
                     return RedirectToAction("Admin");
@@ -176,13 +178,35 @@ namespace PetaByte_KellysFeatures2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,F_name,L_name,Address,City,Country,Email,Phone,Postal,Dob, Allergies, HCN")] Patient patient)
+        public ActionResult Edit([Bind(Include = "patientId,firstName,middleName,lastName,Address,City,Country,email,phone,postal,DOB, Allergies, healthCardNum")] Patient patient)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(patient).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Admin");
+                try
+                {
+                    patient.middleName = " ";
+                    db.Entry(patient).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Admin");
+                }
+                //http://stackoverflow.com/questions/5400530/validation-failed-for-one-or-more-entities-while-saving-changes-to-sql-server-da
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
             }
             return View(patient);
         }
@@ -213,14 +237,24 @@ namespace PetaByte_KellysFeatures2.Controllers
             return RedirectToAction("Admin");
         }
 
-        public JsonResult IsHCNAvailable(String Hcn, int PatientID)
+        public JsonResult IsHCNAvailable(String HealthCardNum, int? PatientID)
         {
-            return Json(!db.Patients.Any(x => x.patientId != PatientID && x.healthCardNum == Hcn), JsonRequestBehavior.AllowGet);
+            if (PatientID != null)
+            {
+                return Json(db.Patients.Any(x => x.patientId == PatientID || x.healthCardNum != HealthCardNum), JsonRequestBehavior.AllowGet);
+            }
+            else
+                return Json(!db.Patients.Any(x => x.healthCardNum == HealthCardNum), JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult IsEmailAvailable(String Email, int PatientID)
+        public JsonResult IsEmailAvailable(String Email, int? PatientID)
         {
-            return Json(!db.Patients.Any(x => x.patientId != PatientID && x.email == Email), JsonRequestBehavior.AllowGet);
+            if (PatientID != null)
+            {
+                return Json(db.Patients.Any(x => x.patientId == PatientID || x.email != Email), JsonRequestBehavior.AllowGet);
+            }
+            else
+                return Json(!db.Patients.Any(x => x.email == Email), JsonRequestBehavior.AllowGet);
         }
 
         // sample code
