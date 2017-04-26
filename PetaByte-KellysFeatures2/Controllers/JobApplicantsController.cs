@@ -101,7 +101,7 @@ namespace PetaByte_KellysFeatures2.Controllers
                 }
                 //db.JobApplicants.Add(jobApplicant);
                 //db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.jobId = new SelectList(db.JobPostings, "jobId", "jobTitle", jobApplicant.jobId);
