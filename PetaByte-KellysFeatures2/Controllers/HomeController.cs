@@ -29,17 +29,20 @@ namespace PetaByte_KellysFeatures2.Controllers
             return View();
         }
 
-        public ActionResult EventDetails(int? id)
-        {
-            HospitalEvent events = db.HospitalEvents.Single(evnt => evnt.eventsId == id);
 
-            return View(events);
-        }
-
+        /*////////- Mahmud's Controlelrs -////////*/
+        /*///////////////////////////////////////*/
         public ActionResult Allevents()
         {
             return View(db.HospitalEvents.ToList());
         }
+        public ActionResult EventDetails(int? id)
+        {
+            HospitalEvent events = db.HospitalEvents.SingleOrDefault(evnt => evnt.eventsId == id);
+
+            return View(events);
+        }
+        /*/////- End Mahmud's Controlelrs -/////*/
 
         public PartialViewResult Alerts()
         {
