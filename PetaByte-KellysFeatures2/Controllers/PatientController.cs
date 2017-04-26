@@ -26,7 +26,7 @@ namespace PetaByte_KellysFeatures2.Controllers
     public class PatientController : Controller
     {
         private PetaByteContext db = new PetaByteContext();
-        [Authorize(Roles = "Admin")]
+    //    [Authorize(Roles = "Admin")]
         // GET: Patients
         public ActionResult Admin()
         {
@@ -127,7 +127,7 @@ namespace PetaByte_KellysFeatures2.Controllers
             }
             return View();
         }
-        [Authorize(Roles = "Admin")]
+    //    [Authorize(Roles = "Admin")]
         // GET: Patients/Create
         public ActionResult Create()
         {
@@ -139,7 +139,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
+     //   [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "patientId,firstName,middelName,lastName,Address,City,Country,email,phone,postal,DOB, Allergies, healthCardNum")] Patient patient)
         {
             try
@@ -159,7 +159,8 @@ namespace PetaByte_KellysFeatures2.Controllers
 
             return View(patient);
         }
-        [Authorize(Roles = "Admin")]
+        //Currently, another team member's authorize feature is not working
+      //  [Authorize(Roles = "Admin")]
         // GET: Patients/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -180,7 +181,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
+    //    [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "patientId,firstName,middleName,lastName,Address,City,Country,email,phone,postal,DOB, Allergies, healthCardNum")] Patient patient)
         {
             if (ModelState.IsValid)
@@ -214,7 +215,7 @@ namespace PetaByte_KellysFeatures2.Controllers
             return View(patient);
         }
 
-        [Authorize(Roles = "Admin")]
+    //    [Authorize(Roles = "Admin")]
 
         // GET: Patients/Delete/5
         public ActionResult Delete(int? id)
@@ -234,7 +235,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // POST: Patients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
+   //     [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Patient patient = db.Patients.Find(id);
