@@ -179,7 +179,7 @@ body {
     text-align: left !important;
 }
 
-input[type="text"], input[type="password"], input[type="email"], .drop-down{
+input[type="text"], input[type="password"], input[type="email"], .drop-down, input[type="datetime"]{
     background: #b6c7d8;
     border-radius: 0px;
     border: none;
@@ -191,7 +191,9 @@ input[type="text"], input[type="password"], input[type="email"], .drop-down{
     color: #0d467d;
     transition: 0.3s ease all;
 }
-input[type="text"]:hover, input[type="text"]:active, input[type="text"]:focus, input[type="password"]:hover, input[type="password"]:active, input[type="password"]:focus, input[type="email"]:hover, input[type="email"]:active, input[type="email"]:focus, .drop-down:hover, .drop-down:active, .drop-down:focus {
+input[type="text"]:hover, input[type="text"]:active, input[type="text"]:focus, input[type="password"]:hover, 
+input[type="password"]:active, input[type="password"]:focus, input[type="email"]:hover, input[type="email"]:active, 
+input[type="email"]:focus, .drop-down:hover, .drop-down:active, .drop-down:focus, input[type="datetime"]:hover, input[type="datetime"]:active, input[type="datetime"]:focus {
     outline: none;
     box-shadow: none;
     border: none;
