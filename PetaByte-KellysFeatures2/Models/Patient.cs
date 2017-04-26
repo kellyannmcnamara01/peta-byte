@@ -7,43 +7,99 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
+
 namespace PetaByte_KellysFeatures2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public partial class Patient
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        private String _middleName;
         public Patient()
         {
             this.Feeedbacks = new HashSet<Feeedback>();
             this.PatientsRooms = new HashSet<PatientsRoom>();
             this.Requests = new HashSet<Request>();
         }
-    
         public int patientId { get; set; }
+        //Make sure the label for the input is "FirstName"
+        [DisplayName("First Name *:")]
+        //Make the input field to be required and if the input is missing for the input field,
+        // then display the error message "First Name is required"
+        [Required(ErrorMessage = "First Name is required.")]
+        // Make sure the input has at least two characters, otherwise shows the message 
+        // "Please enter at least two characters for the first name."
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "Please enter at least two characters for the first name.")]
+
         public string firstName { get; set; }
-        public string middleName { get; set; }
+        [DisplayName("Last Name *:")]
+        [Required(ErrorMessage = "Last Name is required.")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "Please enter at least two characters for the last name.")]
         public string lastName { get; set; }
-        public Nullable<System.DateTime> DOB { get; set; }
+        [DisplayName("Address *:")]
+        [Required(ErrorMessage = "Address is required.")]
+        public string Address { get; set; }
+        [DisplayName("City *:")]
+        [Required(ErrorMessage = "City is required.")]
+        public string City { get; set; }
+        [DisplayName("Country *:")]
+        [Required(ErrorMessage = "Country is required.")]
+        public string Country { get; set; }
+        [DisplayName("Email *:")]
+        [Required(ErrorMessage = "Email is required.")]
+        //make sure that the email entered by a user or and an admin is valid
+        [DataType(DataType.EmailAddress, ErrorMessage = "email format is not right!!!.")]
+        //checks to make sure that no duplicated health card number has been entered
+        [Remote("IsEmailAvailable", "Patient", AdditionalFields = "patientId", ErrorMessage = "Email already in use")]
+        public string email { get; set; }
+        [DisplayName("Phone *:")]
+        [Required(ErrorMessage = "Phone number is required.")]
+        //http://stackoverflow.com/questions/28904826/phone-number-validation-mvc
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid Phone number")]
+        public string phone { get; set; }
+        [DisplayName("Postal *:")]
+        [Required(ErrorMessage = "Postal Code is required.")]
+        //checks to make sure the postal code would either be American or Canadian, see the link for reference.
+        [DataType(DataType.PostalCode)]
+        //http://stackoverflow.com/questions/1146202/canadian-postal-code-validation
+        [RegularExpression(@"(^\d{5}(-\d{4})?$)|(^[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]$)", ErrorMessage = "Not a valid Canadian or US Postal Code")]
+        public string postal { get; set; }
+        [DisplayName("Dob *:")]
+        [Required(ErrorMessage = "Date of Birth is required.")]
+        [DataType(DataType.Date, ErrorMessage = "Date format is not valid")]
+        public System.DateTime DOB { get; set; }
+        [DisplayName("Allergies *:")]
+        [Required(ErrorMessage = "Allergies field is required.")]
+        public string Allergies { get; set; }
+        [DisplayName("Health Card Number *:")]
+        [Required(ErrorMessage = "Health Card Number is required.")]
+        //checks to make sure that no duplicated health card number has been entered
+        [Remote("IsHCNAvailable", "Patient", AdditionalFields = "patientId", ErrorMessage = "Health Card Number already in use")]
+        public string healthCardNum { get; set; }
+
+        public string middleName { get { return _middleName; } set { _middleName = " "; } }
+
+        //    public Nullable<System.DateTime> DOB { get; set; }
         public string gender { get; set; }
         public string physican { get; set; }
         public Nullable<System.DateTime> joinDate { get; set; }
         public Nullable<int> contactId { get; set; }
         public Nullable<int> addressId { get; set; }
-        public string healthCardNum { get; set; }
+
         public Nullable<int> emerageContactID { get; set; }
         public Nullable<int> insuranceId { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-        public string Allergies { get; set; }
+
         public string relationship { get; set; }
-        public string email { get; set; }
-        public string phone { get; set; }
-        public string postal { get; set; }
-    
+
+
+
         public virtual Addresses1 Addresses1 { get; set; }
         public virtual Contact Contact { get; set; }
         public virtual EmerageContact EmerageContact { get; set; }
@@ -56,3 +112,5 @@ namespace PetaByte_KellysFeatures2.Models
         public virtual ICollection<Request> Requests { get; set; }
     }
 }
+
+
