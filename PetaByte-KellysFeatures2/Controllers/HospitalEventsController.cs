@@ -46,7 +46,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "eventsId,evntName,evntDatetime,evntDesc,evntLoc")] HospitalEvent hospitalEvent)
+        public ActionResult Create([Bind(Include = "eventsId,evntName,evntDate,evntDesc,evntLoc")] HospitalEvent hospitalEvent)
         {
             if (ModelState.IsValid)
             {
