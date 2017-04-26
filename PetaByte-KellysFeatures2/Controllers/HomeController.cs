@@ -41,7 +41,8 @@ namespace PetaByte_KellysFeatures2.Controllers
         public ActionResult EventDetails(int? id)
         {
             HospitalEvent events = db.HospitalEvents.SingleOrDefault(evnt => evnt.eventsId == id);
-
+/*            HospitalEvent evnt = db.HospitalEvents.Find(id);
+            List<HospitalEvent> evntt = db.HospitalEvents.Where(evt => evt.eventsId == id).ToList();*/
             return View(events);
         }
         /*/////- End Mahmud's Controlelrs -/////*/
