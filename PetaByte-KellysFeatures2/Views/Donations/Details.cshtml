@@ -1,0 +1,163 @@
+﻿@model PetaByte_KellysFeatures2.Models.Donation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Donation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.donationAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donationAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.donationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.donorFN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donorFN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.donorLN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.donorLN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.homeNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.homeNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.workNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.workNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mobileNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mobileNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressStreet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressProv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressProv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressCountry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.honorFN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.honorFN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.honorLN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.honorLN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.company)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.company)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonationOccurence.donationOccurenceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonationOccurence.donationOccurenceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Donor.donorFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donor.donorFirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.donationsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
