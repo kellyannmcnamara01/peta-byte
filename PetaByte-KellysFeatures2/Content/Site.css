@@ -486,8 +486,8 @@ p {
         }
         /* 04-5. Homepage Contact */
         #contact-hp {
-            background: #9bdffb;
-            padding: 200px 0px;
+            background: #a3ccff;
+            padding: 200px 0px 0px;
             margin-top: -160px;
         }
         #map {
@@ -495,11 +495,25 @@ p {
             width: 100%;
             padding: 0;
         }
+        #map-bg {
+            background-image: url(/Content/opt-imgs/map-img.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 535px;
+            float:left;
+            width: 50%;
+            margin-top: -200px;
+        }
+        #map-bg img {
+            width: 100%;
+        }
         #contact-hp__map {
             width: 100%;
             height: 100%;
             position: relative;
             overflow:visible;
+            margin-top: -25px;
         }
         #contact-hp__info {
         }
@@ -706,6 +720,11 @@ p {
     }
 
 /* 13. Media Queries */
+@media only screen and (min-wdith: 1062ox) {
+    #map-bg {
+        margin-top: -180px;
+    }
+}
 @media only screen and (min-width: 1024px) {
     #events-curve {
         border-radius: 0px 0px 50% 50%;
@@ -749,6 +768,9 @@ p {
     }
     .navbar-collapse {
         display: block;
+    }
+    #map-bg {
+        width: 100%;
     }
 }
 @media only screen and (max-width: 597px) {

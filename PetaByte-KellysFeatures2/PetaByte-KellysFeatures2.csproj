@@ -142,6 +142,7 @@
     <Content Include="Content\opt-imgs\git.svg" />
     <Content Include="Content\opt-imgs\link.svg" />
     <Content Include="Content\opt-imgs\linkedin.svg" />
+    <Content Include="Content\opt-imgs\map-img.jpg" />
     <Content Include="Content\opt-imgs\nav-logo.jpg" />
     <Content Include="Content\opt-imgs\opening-img-hp.jpg" />
     <Content Include="Content\opt-imgs\petabyte-h-logo.png" />
