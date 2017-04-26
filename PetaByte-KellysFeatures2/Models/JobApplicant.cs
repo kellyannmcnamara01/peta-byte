@@ -49,11 +49,11 @@ namespace PetaByte_KellysFeatures2.Models
         public string appMessage { get; set; }
         
         [DisplayName("CV")]
-        [DataType(DataType.Upload)]
+        //[DataType(DataType.Upload)]
         public string appCv { get; set; }
 
         [DisplayName("Additional File")]
-        [DataType(DataType.Upload)]
+        //[DataType(DataType.Upload)]
         public string appOtherFile { get; set; }
     
         public virtual JobPosting JobPosting { get; set; }
