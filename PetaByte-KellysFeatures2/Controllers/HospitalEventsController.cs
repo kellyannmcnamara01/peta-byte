@@ -8,6 +8,13 @@ using System.Web;
 using System.Web.Mvc;
 using PetaByte_KellysFeatures2.Models;
 
+//  Project: Temiskaming Hospital Website
+//  Team Name: PetaByte
+//  Class: Mobile Development
+//  Professor: Lee Situ
+//  Author: Mahmud Al-Mohammad Amin
+//  File Description: This controller sets the Actions for the Admin side logic and views. 
+
 namespace PetaByte_KellysFeatures2.Controllers
 {
     public class HospitalEventsController : Controller

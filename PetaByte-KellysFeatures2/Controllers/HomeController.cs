@@ -32,10 +32,12 @@ namespace PetaByte_KellysFeatures2.Controllers
 
         /*////////- Mahmud's Controlelrs -////////*/
         /*///////////////////////////////////////*/
+        /*Action to display all events*/
         public ActionResult Allevents()
         {
             return View(db.HospitalEvents.ToList());
         }
+        /*Action to get events details by id*/
         public ActionResult EventDetails(int? id)
         {
             HospitalEvent events = db.HospitalEvents.SingleOrDefault(evnt => evnt.eventsId == id);
