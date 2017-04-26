@@ -14,6 +14,8 @@
     Note: Views do not have many comments, they were mostly edited within small details.
 *@
 
+@*--jQuery for styling--*@
+@************************@
 <script>
     $(document).ready(function() {
         $('.footer_back').css('color', 'white');
@@ -23,7 +25,6 @@
         $('.event__desc').css({ 'font-size': '21px' });
         $('.event__loc').css({ 'font-size': '17px' });
 
-
     });
 </script>
 <div class="container">
@@ -32,6 +33,9 @@
     <div style="margin-top: 100px; margin-left: 30px; ">
         <h4 style="margin-top: 70px; font-size: 38px; color: #0d467d; border-bottom: 3px solid #0d467d">Hospital Events</h4>
         <hr />
+        
+        @*--Displaying Event Details--*@
+        @******************************@
         <dl class="dl-horizontal float left" style="font-size: 16px; max-width: 600px; ">
             <dt class="event__namefor">
                 @Html.DisplayNameFor(model => model.evntName)

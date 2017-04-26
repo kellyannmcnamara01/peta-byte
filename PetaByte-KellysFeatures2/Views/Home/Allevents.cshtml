@@ -15,6 +15,9 @@
     Note: Views do not have many comments, they were mostly edited within small details.
 *@
 
+
+@*--Script to display the calander, and a loop to generate the events on the calander--*@
+@***************************************************************************************@
 <script>
     $(document).ready(function() {
         $('#calendar').fullCalendar({
@@ -49,6 +52,8 @@
 
         });
 
+        /*--jQuery for styling--*/
+        /*/////////////////////*/
         $('').css({'':''});
         $('h2').css({ 'color': '#0D467D', 'font-weight': 'bold' });
         $(".fc-title").css('font-size', '16px');
@@ -71,7 +76,9 @@
     <div class="container" id="event__cntnr2">
         <h1 id="events__inro" style="margin-top: 70px; font-size: 38px; color: #0d467d; border-bottom: 3px solid #0d467d">Hospital Events</h1>
         <div class="row" style="margin-top: 100px; margin-bottom: 100px;">
-
+            
+            @*--Foreach loop to display all events--*@
+            @****************************************@
             <div class="col-md-6">
                 @foreach (HospitalEvent events in Model)
                 {
