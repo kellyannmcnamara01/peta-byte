@@ -96,6 +96,8 @@ namespace PetaByte_KellysFeatures2.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    //NOTE (Kelly Ann McNamara): place in the current date time to the db when the data is saved
+                    jobPosting.timestamp = DateTime.Now;
                     db.Entry(jobPosting).State = EntityState.Modified;
                     db.SaveChanges();
                     return RedirectToAction("Index");
