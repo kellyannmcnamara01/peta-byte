@@ -90,7 +90,7 @@
                                         <p class="event__Title">@Html.DisplayNameFor(model => model.evntName)</p>
                                     </div>
                                     <div class="event__click">
-                                        <a href="/Home/EventDetails/@events.eventsId"> @Html.DisplayFor(modelItem => events.evntName)</a>
+                                        <a href="/Home/EventDetails/?id=@events.eventsId"> @Html.DisplayFor(modelItem => events.evntName)</a>
                                     </div>
                                     <div>
                                         <p class="event__Title">@Html.DisplayNameFor(model => model.evntDate)</p>
