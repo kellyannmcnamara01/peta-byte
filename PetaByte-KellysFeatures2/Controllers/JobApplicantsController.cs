@@ -72,15 +72,22 @@ namespace PetaByte_KellysFeatures2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(HttpPostedFileBase file, [Bind(Include = "jobAppId,jobId,appJobTitle,appFirstName,appLastName,appEmail,appLinkedIn,appMessage,appCv,appOtherFile")] JobApplicant jobApplicant)
         {
+            //List<JobPosting> jobposting = db.JobPostings.Where(stats => stats.status == "Published").ToList();
+            //JobAppPostings jap = new JobAppPostings();
+            //jap.jobpostings = jobposting;
+
+            //NOTE (Kelly Ann McNamara):  Populate a list to display all of the job postings that have the status of "Published" from the db
+            List<JobPosting> jobId = db.JobPostings.Where(jp => jp.status == "Published").ToList();
+
             if (ModelState.IsValid)
             {
-                //if statement for file upload
-                //create var that returns the file name and extention
-                //have the getter and setter for appCV to equal the fileName the user uploads
-                //add all the user input to the db
-                //save changes
-                //create a file path to the uploaded content
-                //save said path
+                //NOTE (Kelly Ann McNamara): if statement for file upload
+                //NOTE (Kelly Ann McNamara): create var that returns the file name and extention
+                //NOTE (Kelly Ann McNamara): have the getter and setter for appCV to equal the fileName the user uploads
+                //NOTE (Kelly Ann McNamara): add all the user input to the db
+                //NOTE (Kelly Ann McNamara): save changes
+                //NOTE (Kelly Ann McNamara): create a file path to the uploaded content
+                //NOTE (Kelly Ann McNamara): save said path
                 if (file.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(file.FileName);

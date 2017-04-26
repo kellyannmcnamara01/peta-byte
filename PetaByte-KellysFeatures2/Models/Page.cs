@@ -11,19 +11,40 @@ namespace PetaByte_KellysFeatures2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
     public partial class Page
     {
         public int pageId { get; set; }
+
+        [Required(ErrorMessage = "Please enter a page title")]
+        [DisplayName("Page Title")]
+        [MaxLength(100)]
         public string pageTitle { get; set; }
+
         [AllowHtml]
+        [Required(ErrorMessage = "Please enter page content")]
+        [DisplayName("Page Content")]
         public string pageContent { get; set; }
+
+        [DisplayName("Time Stamp")]
         public Nullable<System.DateTime> timestamp { get; set; }
+
+        [Required(ErrorMessage = "Please enter a status")]
+        [DisplayName("Status")]
         public string status { get; set; }
+
+        [DisplayName("Author")]
         public int employeeId { get; set; }
+
+        [Required(ErrorMessage = "Please enter a page url")]
+        [DisplayName("Page Url")]
+        [MaxLength(50)]
         public string pageUrl { get; set; }
-    
+
+        [DisplayName("Author")]
         public virtual Employee Employee { get; set; }
     }
 }

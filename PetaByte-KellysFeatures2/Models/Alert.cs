@@ -11,15 +11,29 @@ namespace PetaByte_KellysFeatures2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Alert
     {
         public int akertId { get; set; }
+
+        [Required(ErrorMessage = "Please enter the user first name")]
+        [DisplayName ("Alert Message")]
+        [MaxLength(200)]
         public string alertText { get; set; }
+
+        [DisplayName("Time Stamp")]
         public Nullable<System.DateTime> timestamp { get; set; }
+
+        [Required(ErrorMessage = "Please enter the status")]
+        [DisplayName("Status")]
         public string status { get; set; }
+
+        [DisplayName("Author")]
         public int employeeId { get; set; }
-    
+
+        [DisplayName("Author")]
         public virtual Employee Employee { get; set; }
     }
 }

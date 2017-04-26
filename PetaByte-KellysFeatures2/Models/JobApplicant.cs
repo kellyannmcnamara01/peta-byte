@@ -11,20 +11,53 @@ namespace PetaByte_KellysFeatures2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class JobApplicant
     {
         public int jobAppId { get; set; }
+
         public int jobId { get; set; }
+
+        [Required(ErrorMessage = "Please enter the job title")]
+        [DisplayName("Job Title")]
+        [MaxLength(50)]
         public string appJobTitle { get; set; }
+
+        [Required(ErrorMessage = "Please enter your first name")]
+        [DisplayName("First Name")]
+        [MaxLength(50)]
         public string appFirstName { get; set; }
+
+        [Required(ErrorMessage = "Please enter your last name")]
+        [DisplayName("Last Name")]
+        [MaxLength(50)]
         public string appLastName { get; set; }
+
+        [Required(ErrorMessage = "Please enter your email")]
+        [DisplayName("Email")]
+        [MaxLength(50)]
+        [DataType(DataType.EmailAddress)]
         public string appEmail { get; set; }
+
+        [DisplayName("LinkedIn Username")]
+        [MaxLength(50)]
         public string appLinkedIn { get; set; }
+        
+        [DisplayName("Message")]
         public string appMessage { get; set; }
+        
+        [DisplayName("CV")]
+        [DataType(DataType.Upload)]
         public string appCv { get; set; }
+
+        [DisplayName("Additional File")]
+        [DataType(DataType.Upload)]
         public string appOtherFile { get; set; }
     
         public virtual JobPosting JobPosting { get; set; }
+
+        public virtual JobPosting status { get; set; }
     }
 }
