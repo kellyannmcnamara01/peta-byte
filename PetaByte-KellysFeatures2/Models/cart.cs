@@ -12,14 +12,14 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Cart
+    public partial class cart
     {
-        public int CartId { get; set; }
-        public string CartSessionId { get; set; }
-        public int GiftId { get; set; }
-        public System.DateTime DateCreated { get; set; }
-        public int Count { get; set; }
+        public int cartId { get; set; }
+        public string cartSessionId { get; set; }
+        public Nullable<System.DateTime> dateCreated { get; set; }
+        public Nullable<int> GiftId { get; set; }
+        public int count { get; set; }
     
-        public virtual GiftItem GiftItem { get; set; }
+        public virtual giftItem giftItem { get; set; }
     }
 }

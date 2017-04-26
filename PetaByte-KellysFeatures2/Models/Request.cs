@@ -20,14 +20,14 @@ namespace PetaByte_KellysFeatures2.Models
         public string HealthCardNum { get; set; }
         public string PatientFirstName { get; set; }
         public string PatientLastName { get; set; }
-        public Nullable<int> PatientId { get; set; }
+        public int PatientId { get; set; }
         public string PhysicianName { get; set; }
-        public Nullable<int> EmployeeId { get; set; }
-        public Nullable<System.DateTime> DateofAppointment { get; set; }
-        public Nullable<System.TimeSpan> PreferredAppTime { get; set; }
-        public Nullable<System.DateTime> PreferredDate { get; set; }
-        public Nullable<System.DateTime> DateofRequest { get; set; }
-        public Nullable<System.DateTime> DateApproved { get; set; }
+        public int EmployeeId { get; set; }
+        public System.DateTime DateofAppointment { get; set; }
+        public System.TimeSpan PreferredAppTime { get; set; }
+        public System.DateTime PreferredDate { get; set; }
+        public System.DateTime DateofRequest { get; set; }
+        public System.DateTime DateApproved { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Patient Patient { get; set; }

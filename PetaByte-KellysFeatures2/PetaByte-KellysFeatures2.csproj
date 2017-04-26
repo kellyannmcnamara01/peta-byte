@@ -541,13 +541,10 @@
     <Compile Include="Models\Cafeteria.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cart.cs">
+    <Compile Include="Models\cart.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Contact.cs">
-      <DependentUpon>PetaByte.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CustomerOrder.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Department.cs">
@@ -560,9 +557,6 @@
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DonationOccurence.cs">
-      <DependentUpon>PetaByte.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DonationProfile.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Donor.cs">
@@ -592,10 +586,10 @@
     <Compile Include="Models\GetHelp.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GiftItem.cs">
+    <Compile Include="Models\giftItem.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GiftType.cs">
+    <Compile Include="Models\giftType.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HospitalEvent.cs">
@@ -616,10 +610,10 @@
     <Compile Include="Models\OnCall.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\OrderPlaced.cs">
+    <Compile Include="Models\orderDetail.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\OrderPlaced1.cs">
+    <Compile Include="Models\orderPlaced.cs">
       <DependentUpon>PetaByte.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Page.cs">

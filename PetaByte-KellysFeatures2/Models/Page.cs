@@ -11,11 +11,13 @@ namespace PetaByte_KellysFeatures2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+
     public partial class Page
     {
         public int pageId { get; set; }
         public string pageTitle { get; set; }
+        [AllowHtml]
         public string pageContent { get; set; }
         public Nullable<System.DateTime> timestamp { get; set; }
         public string status { get; set; }

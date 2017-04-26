@@ -12,26 +12,26 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class GiftItem
+    public partial class giftItem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GiftItem()
+        public giftItem()
         {
-            this.Carts = new HashSet<Cart>();
-            this.OrderPlaceds = new HashSet<OrderPlaced1>();
+            this.carts = new HashSet<cart>();
+            this.orderPlaceds = new HashSet<orderPlaced>();
         }
     
-        public int GiftItemId { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public string Description { get; set; }
-        public Nullable<System.DateTime> LastUpdated { get; set; }
-        public int GiftTypeId { get; set; }
+        public int giftItemId { get; set; }
+        public string giftItemName { get; set; }
+        public decimal giftItemPrice { get; set; }
+        public string giftItemDescription { get; set; }
+        public Nullable<System.DateTime> lastUpdated { get; set; }
+        public int giftTypeid { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cart> Carts { get; set; }
-        public virtual GiftType GiftType { get; set; }
+        public virtual ICollection<cart> carts { get; set; }
+        public virtual giftType giftType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderPlaced1> OrderPlaceds { get; set; }
+        public virtual ICollection<orderPlaced> orderPlaceds { get; set; }
     }
 }

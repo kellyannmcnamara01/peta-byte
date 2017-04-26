@@ -11,7 +11,8 @@ namespace PetaByte_KellysFeatures2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+
     public partial class JobPosting
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,6 +23,7 @@ namespace PetaByte_KellysFeatures2.Models
     
         public int jobId { get; set; }
         public string jobTitle { get; set; }
+        [AllowHtml]
         public string jobDesc { get; set; }
         public int employeeId { get; set; }
         public Nullable<System.DateTime> timestamp { get; set; }
