@@ -141,6 +141,11 @@ body {
     padding: 15px 5px 0px;
     float: right;
 }
+.dash-link {
+    font-weight: 700;
+    padding-top: 17px;
+    font-size: 1.3em;
+}
 
 /* Typography */
 
