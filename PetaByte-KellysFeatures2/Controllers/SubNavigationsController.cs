@@ -14,7 +14,7 @@ using PetaByte_KellysFeatures2.Models;
 //  Class: Mobile Development
 //  Professor: Lee Situ
 //  Author: Kelly Ann McNamara
-//  File Description: This feature is incomplete at the moment.
+//  File Description: This feature is incomplete at the moment.  --> IMPORTANT NOTE
 
 
 namespace PetaByte_KellysFeatures2.Controllers

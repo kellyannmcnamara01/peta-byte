@@ -23,6 +23,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         private PetaByteContext db = new PetaByteContext();
 
         // GET: JobPostings
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var jobPostings = db.JobPostings.Include(j => j.Employee);
@@ -30,6 +31,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: JobPostings/Create
+        //[Authorize(Roles ="Admin")]
         public ActionResult Create()
         {
             ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName");
@@ -39,6 +41,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // POST: JobPostings/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[Authorize(Roles ="Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "jobId,jobTitle,jobDesc,employeeId,timestamp,status")] JobPosting jobPosting)
@@ -65,6 +68,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: JobPostings/Edit/5
+        //[Authorize(Roles ="Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,6 +87,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // POST: JobPostings/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[Authorize(Roles ="Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "jobId,jobTitle,jobDesc,employeeId,timestamp,status")] JobPosting jobPosting)
@@ -106,6 +111,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: JobPostings/Delete/5
+        //[Authorize(Roles ="Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -121,6 +127,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // POST: JobPostings/Delete/5
+        //[Authorize(Roles ="Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

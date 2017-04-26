@@ -23,6 +23,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         private PetaByteContext db = new PetaByteContext();
 
         // GET: Pages
+        //[Authorize(Roles ="Admin")]
         public ActionResult Index()
         {
             var pages = db.Pages.Include(p => p.Employee);
@@ -30,6 +31,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: Pages/Details/5
+        //[AllowAnonymous]
         [Route("{controller}/{action}/{pageUrl}")]
         public ActionResult Details(string pageUrl)
         {
@@ -54,6 +56,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: Pages/Create
+        //[Authorize(Roles ="Admin")]
         public ActionResult Create()
         {
             ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName");
@@ -63,6 +66,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // POST: Pages/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[Authorize(Roles ="Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "pageId,pageTitle,pageContent,timestamp,status,employeeId,pageUrl")] Page page)
@@ -80,6 +84,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: Pages/Edit/5
+        //[Authorize(Roles ="Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -99,7 +104,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598
         // text editor from : http://nicedit.com/
-
+        //[Authorize(Roles ="Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "pageId,pageTitle,pageContent,timestamp,status,employeeId,pageUrl")] Page page)
@@ -117,6 +122,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // GET: Pages/Delete/5
+        //[Authorize(Roles ="Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -132,6 +138,7 @@ namespace PetaByte_KellysFeatures2.Controllers
         }
 
         // POST: Pages/Delete/5
+        //[Authorize(Roles ="Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
