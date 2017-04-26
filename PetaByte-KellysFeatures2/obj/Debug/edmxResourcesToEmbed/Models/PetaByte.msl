@@ -58,14 +58,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="carts">
-      <EntityTypeMapping TypeName="PetaByteModel.cart">
-        <MappingFragment StoreEntitySet="cart">
-          <ScalarProperty Name="cartId" ColumnName="cartId" />
-          <ScalarProperty Name="cartSessionId" ColumnName="cartSessionId" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="PetaByteModel.Cart">
+        <MappingFragment StoreEntitySet="Carts">
+          <ScalarProperty Name="CartId" ColumnName="CartId" />
+          <ScalarProperty Name="CartSessionId" ColumnName="CartSessionId" />
           <ScalarProperty Name="GiftId" ColumnName="GiftId" />
-          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -79,6 +79,23 @@
           <ScalarProperty Name="workEmail" ColumnName="workEmail" />
           <ScalarProperty Name="pagersNum" ColumnName="pagersNum" />
           <ScalarProperty Name="workNum" ColumnName="workNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerOrders">
+      <EntityTypeMapping TypeName="PetaByteModel.CustomerOrder">
+        <MappingFragment StoreEntitySet="CustomerOrders">
+          <ScalarProperty Name="CustomerOrderId" ColumnName="CustomerOrderId" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -245,23 +262,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="giftItems">
-      <EntityTypeMapping TypeName="PetaByteModel.giftItem">
-        <MappingFragment StoreEntitySet="giftItem">
-          <ScalarProperty Name="giftItemId" ColumnName="giftItemId" />
-          <ScalarProperty Name="giftItemName" ColumnName="giftItemName" />
-          <ScalarProperty Name="giftItemPrice" ColumnName="giftItemPrice" />
-          <ScalarProperty Name="giftItemDescription" ColumnName="giftItemDescription" />
-          <ScalarProperty Name="lastUpdated" ColumnName="lastUpdated" />
-          <ScalarProperty Name="giftTypeid" ColumnName="giftTypeid" />
+    <EntitySetMapping Name="GiftItems">
+      <EntityTypeMapping TypeName="PetaByteModel.GiftItem">
+        <MappingFragment StoreEntitySet="GiftItem">
+          <ScalarProperty Name="GiftItemId" ColumnName="GiftItemId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="GiftTypeId" ColumnName="GiftTypeId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="giftTypes">
-      <EntityTypeMapping TypeName="PetaByteModel.giftType">
-        <MappingFragment StoreEntitySet="giftType">
-          <ScalarProperty Name="giftTypeId" ColumnName="giftTypeId" />
-          <ScalarProperty Name="giftTypeName" ColumnName="giftTypeName" />
+    <EntitySetMapping Name="GiftTypes">
+      <EntityTypeMapping TypeName="PetaByteModel.GiftType">
+        <MappingFragment StoreEntitySet="GiftType">
+          <ScalarProperty Name="GiftTypeId" ColumnName="GiftTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -337,29 +354,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="orderDetails">
-      <EntityTypeMapping TypeName="PetaByteModel.orderDetail">
-        <MappingFragment StoreEntitySet="orderDetails">
-          <ScalarProperty Name="orderId" ColumnName="orderId" />
-          <ScalarProperty Name="firstName" ColumnName="firstName" />
-          <ScalarProperty Name="lastName" ColumnName="lastName" />
-          <ScalarProperty Name="address" ColumnName="address" />
-          <ScalarProperty Name="city" ColumnName="city" />
-          <ScalarProperty Name="province" ColumnName="province" />
-          <ScalarProperty Name="postalCode" ColumnName="postalCode" />
-          <ScalarProperty Name="country" ColumnName="country" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="amount" ColumnName="amount" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="orderPlaceds">
-      <EntityTypeMapping TypeName="PetaByteModel.orderPlaced">
-        <MappingFragment StoreEntitySet="orderPlaced">
-          <ScalarProperty Name="orderId" ColumnName="orderId" />
-          <ScalarProperty Name="productId" ColumnName="productId" />
-          <ScalarProperty Name="quantity" ColumnName="quantity" />
+    <EntitySetMapping Name="OrderPlaceds">
+      <EntityTypeMapping TypeName="PetaByteModel.OrderPlaced">
+        <MappingFragment StoreEntitySet="OrderPlaced">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -522,12 +522,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DonationProfiles">
+      <EntityTypeMapping TypeName="PetaByteModel.DonationProfile">
+        <MappingFragment StoreEntitySet="DonationProfiles">
+          <ScalarProperty Name="donationprofileId" ColumnName="donationprofileId" />
+          <ScalarProperty Name="donationMessage" ColumnName="donationMessage" />
+          <ScalarProperty Name="donationId" ColumnName="donationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Faqs">
       <EntityTypeMapping TypeName="PetaByteModel.Faq">
         <MappingFragment StoreEntitySet="Faq">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="question" ColumnName="question" />
           <ScalarProperty Name="answer" ColumnName="answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderPlaceds1">
+      <EntityTypeMapping TypeName="PetaByteModel.OrderPlaced1">
+        <MappingFragment StoreEntitySet="OrderPlaceds">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

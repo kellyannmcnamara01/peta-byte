@@ -12,18 +12,12 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class orderDetail
+    public partial class DonationProfile
     {
-        public int orderId { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string address { get; set; }
-        public string city { get; set; }
-        public string province { get; set; }
-        public string postalCode { get; set; }
-        public string country { get; set; }
-        public string email { get; set; }
-        public Nullable<System.DateTime> dateCreated { get; set; }
-        public decimal amount { get; set; }
+        public int donationprofileId { get; set; }
+        public string donationMessage { get; set; }
+        public int donationId { get; set; }
+    
+        public virtual Donation Donation { get; set; }
     }
 }

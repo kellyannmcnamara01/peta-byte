@@ -18,6 +18,7 @@ namespace PetaByte_KellysFeatures2.Models
         public Donation()
         {
             this.DonationHonours = new HashSet<DonationHonour>();
+            this.DonationProfiles = new HashSet<DonationProfile>();
         }
     
         public int donationsId { get; set; }
@@ -43,6 +44,8 @@ namespace PetaByte_KellysFeatures2.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonationHonour> DonationHonours { get; set; }
         public virtual DonationOccurence DonationOccurence { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DonationProfile> DonationProfiles { get; set; }
         public virtual Donor Donor { get; set; }
     }
 }

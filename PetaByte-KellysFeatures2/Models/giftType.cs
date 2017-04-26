@@ -12,18 +12,18 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class giftType
+    public partial class GiftType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public giftType()
+        public GiftType()
         {
-            this.giftItems = new HashSet<giftItem>();
+            this.GiftItems = new HashSet<GiftItem>();
         }
     
-        public int giftTypeId { get; set; }
-        public string giftTypeName { get; set; }
+        public int GiftTypeId { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<giftItem> giftItems { get; set; }
+        public virtual ICollection<GiftItem> GiftItems { get; set; }
     }
 }

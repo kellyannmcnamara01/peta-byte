@@ -30,8 +30,9 @@ namespace PetaByte_KellysFeatures2.Models
         public virtual DbSet<Addresses1> Addresses1 { get; set; }
         public virtual DbSet<Alert> Alerts { get; set; }
         public virtual DbSet<Cafeteria> Cafeterias { get; set; }
-        public virtual DbSet<cart> carts { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
+        public virtual DbSet<CustomerOrder> CustomerOrders { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<DonationHonour> DonationHonours { get; set; }
         public virtual DbSet<DonationOccurence> DonationOccurences { get; set; }
@@ -44,16 +45,15 @@ namespace PetaByte_KellysFeatures2.Models
         public virtual DbSet<EmployeeStatu> EmployeeStatus { get; set; }
         public virtual DbSet<Feeedback> Feeedbacks { get; set; }
         public virtual DbSet<GetHelp> GetHelps { get; set; }
-        public virtual DbSet<giftItem> giftItems { get; set; }
-        public virtual DbSet<giftType> giftTypes { get; set; }
+        public virtual DbSet<GiftItem> GiftItems { get; set; }
+        public virtual DbSet<GiftType> GiftTypes { get; set; }
         public virtual DbSet<HospitalEvent> HospitalEvents { get; set; }
         public virtual DbSet<Insurance> Insurances { get; set; }
         public virtual DbSet<JobApplicant> JobApplicants { get; set; }
         public virtual DbSet<JobPosting> JobPostings { get; set; }
         public virtual DbSet<Navigation> Navigations { get; set; }
         public virtual DbSet<OnCall> OnCalls { get; set; }
-        public virtual DbSet<orderDetail> orderDetails { get; set; }
-        public virtual DbSet<orderPlaced> orderPlaceds { get; set; }
+        public virtual DbSet<OrderPlaced> OrderPlaceds { get; set; }
         public virtual DbSet<Page> Pages { get; set; }
         public virtual DbSet<Password> Passwords { get; set; }
         public virtual DbSet<Patient> Patients { get; set; }
@@ -66,7 +66,9 @@ namespace PetaByte_KellysFeatures2.Models
         public virtual DbSet<VolunteerApplicant> VolunteerApplicants { get; set; }
         public virtual DbSet<Volunteer> Volunteers { get; set; }
         public virtual DbSet<WhatToBring> WhatToBrings { get; set; }
+        public virtual DbSet<DonationProfile> DonationProfiles { get; set; }
         public virtual DbSet<Faq> Faqs { get; set; }
+        public virtual DbSet<OrderPlaced1> OrderPlaceds1 { get; set; }
         public virtual DbSet<Request> Requests { get; set; }
     }
 }

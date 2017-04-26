@@ -52,15 +52,15 @@
     <Property Name="lunch" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="dinner" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <EntityType Name="cart">
+  <EntityType Name="Carts">
     <Key>
-      <PropertyRef Name="cartId" />
+      <PropertyRef Name="CartId" />
     </Key>
-    <Property Name="cartId" Type="int" Nullable="false" />
-    <Property Name="cartSessionId" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="dateCreated" Type="datetime" />
-    <Property Name="GiftId" Type="int" />
-    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="CartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartSessionId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GiftId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Contacts">
     <Key>
@@ -73,6 +73,22 @@
     <Property Name="workEmail" Type="varchar" MaxLength="100" />
     <Property Name="pagersNum" Type="varchar" MaxLength="50" />
     <Property Name="workNum" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CustomerOrders">
+    <Key>
+      <PropertyRef Name="CustomerOrderId" />
+    </Key>
+    <Property Name="CustomerOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Firstname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lastname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Province" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="Departments">
     <Key>
@@ -100,6 +116,18 @@
     </Key>
     <Property Name="donationOccurenceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="donationFreq" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PetaByte.dbo.DonationProfiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DonationProfiles">
+    <Key>
+      <PropertyRef Name="donationprofileId" />
+      <PropertyRef Name="donationMessage" />
+      <PropertyRef Name="donationId" />
+    </Key>
+    <Property Name="donationprofileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="donationMessage" Type="varchar(max)" Nullable="false" />
+    <Property Name="donationId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Donations">
     <Key>
@@ -237,23 +265,23 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="province" Type="varchar" MaxLength="50" />
     <Property Name="symptoms" Type="varchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="giftItem">
+  <EntityType Name="GiftItem">
     <Key>
-      <PropertyRef Name="giftItemId" />
+      <PropertyRef Name="GiftItemId" />
     </Key>
-    <Property Name="giftItemId" Type="int" Nullable="false" />
-    <Property Name="giftItemName" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="giftItemPrice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="giftItemDescription" Type="varchar" MaxLength="200" Nullable="false" />
-    <Property Name="lastUpdated" Type="datetime" />
-    <Property Name="giftTypeid" Type="int" Nullable="false" />
+    <Property Name="GiftItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastUpdated" Type="datetime" />
+    <Property Name="GiftTypeId" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="giftType">
+  <EntityType Name="GiftType">
     <Key>
-      <PropertyRef Name="giftTypeId" />
+      <PropertyRef Name="GiftTypeId" />
     </Key>
-    <Property Name="giftTypeId" Type="int" Nullable="false" />
-    <Property Name="giftTypeName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="GiftTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="HospitalEvents">
     <Key>
@@ -321,29 +349,25 @@ warning 6002: The table/view 'PetaByte.dbo.Faq' does not have a primary key defi
     <Property Name="endTime" Type="datetime" Nullable="false" />
     <Property Name="volunteerId" Type="int" />
   </EntityType>
-  <EntityType Name="orderDetails">
+  <EntityType Name="OrderPlaced">
     <Key>
-      <PropertyRef Name="orderId" />
+      <PropertyRef Name="ProductId" />
     </Key>
-    <Property Name="orderId" Type="int" Nullable="false" />
-    <Property Name="firstName" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="lastName" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="address" Type="varchar(max)" Nullable="false" />
-    <Property Name="city" Type="varchar(max)" Nullable="false" />
-    <Property Name="province" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="postalCode" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="dateCreated" Type="datetime" />
-    <Property Name="amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="orderPlaced">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PetaByte.dbo.OrderPlaceds' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="OrderPlaceds">
     <Key>
-      <PropertyRef Name="orderId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="Quantity" />
     </Key>
-    <Property Name="orderId" Type="int" Nullable="false" />
-    <Property Name="productId" Type="int" Nullable="false" />
-    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Pages">
     <Key>
@@ -413,34 +437,21 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
   <EntityType Name="Requests">
     <Key>
       <PropertyRef Name="id" />
-      <PropertyRef Name="Status" />
-      <PropertyRef Name="PurposeOfVisit" />
-      <PropertyRef Name="HealthCardNum" />
-      <PropertyRef Name="PatientFirstName" />
-      <PropertyRef Name="PatientLastName" />
-      <PropertyRef Name="PatientId" />
-      <PropertyRef Name="PhysicianName" />
-      <PropertyRef Name="EmployeeId" />
-      <PropertyRef Name="DateofAppointment" />
-      <PropertyRef Name="PreferredAppTime" />
-      <PropertyRef Name="PreferredDate" />
-      <PropertyRef Name="DateofRequest" />
-      <PropertyRef Name="DateApproved" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="PurposeOfVisit" Type="varchar(max)" Nullable="false" />
-    <Property Name="HealthCardNum" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="PatientFirstName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="PatientLastName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="PatientId" Type="int" Nullable="false" />
-    <Property Name="PhysicianName" Type="varchar(max)" Nullable="false" />
-    <Property Name="EmployeeId" Type="int" Nullable="false" />
-    <Property Name="DateofAppointment" Type="datetime" Nullable="false" />
-    <Property Name="PreferredAppTime" Type="time" Precision="7" Nullable="false" />
-    <Property Name="PreferredDate" Type="datetime" Nullable="false" />
-    <Property Name="DateofRequest" Type="datetime" Nullable="false" />
-    <Property Name="DateApproved" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="PurposeOfVisit" Type="varchar(max)" />
+    <Property Name="HealthCardNum" Type="varchar" MaxLength="500" />
+    <Property Name="PatientFirstName" Type="varchar" MaxLength="50" />
+    <Property Name="PatientLastName" Type="varchar" MaxLength="50" />
+    <Property Name="PatientId" Type="int" />
+    <Property Name="PhysicianName" Type="varchar(max)" />
+    <Property Name="EmployeeId" Type="int" />
+    <Property Name="DateofAppointment" Type="datetime" />
+    <Property Name="PreferredAppTime" Type="time" Precision="7" />
+    <Property Name="PreferredDate" Type="datetime" />
+    <Property Name="DateofRequest" Type="datetime" />
+    <Property Name="DateApproved" Type="datetime" />
   </EntityType>
   <EntityType Name="SubNavigations">
     <Key>
@@ -550,14 +561,16 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_cart_GiftId">
-    <End Role="giftItem" Type="Self.giftItem" Multiplicity="0..1" />
-    <End Role="cart" Type="Self.cart" Multiplicity="*" />
+  <Association Name="FK_Cart_GiftId">
+    <End Role="GiftItem" Type="Self.GiftItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Carts" Type="Self.Carts" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="giftItem">
-        <PropertyRef Name="giftItemId" />
+      <Principal Role="GiftItem">
+        <PropertyRef Name="GiftItemId" />
       </Principal>
-      <Dependent Role="cart">
+      <Dependent Role="Carts">
         <PropertyRef Name="GiftId" />
       </Dependent>
     </ReferentialConstraint>
@@ -595,6 +608,18 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       </Principal>
       <Dependent Role="DonationHonours">
         <PropertyRef Name="donorsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_donationProfiles_donationId">
+    <End Role="Donations" Type="Self.Donations" Multiplicity="1" />
+    <End Role="DonationProfiles" Type="Self.DonationProfiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donations">
+        <PropertyRef Name="donationsId" />
+      </Principal>
+      <Dependent Role="DonationProfiles">
+        <PropertyRef Name="donationId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -730,15 +755,17 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_giftItem_giftTypeId">
-    <End Role="giftType" Type="Self.giftType" Multiplicity="1" />
-    <End Role="giftItem" Type="Self.giftItem" Multiplicity="*" />
+  <Association Name="FK_GiftItem_GiftTypeId">
+    <End Role="GiftType" Type="Self.GiftType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GiftItem" Type="Self.GiftItem" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="giftType">
-        <PropertyRef Name="giftTypeId" />
+      <Principal Role="GiftType">
+        <PropertyRef Name="GiftTypeId" />
       </Principal>
-      <Dependent Role="giftItem">
-        <PropertyRef Name="giftTypeid" />
+      <Dependent Role="GiftItem">
+        <PropertyRef Name="GiftTypeId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -802,15 +829,31 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_orderPlaced_productId">
-    <End Role="giftItem" Type="Self.giftItem" Multiplicity="1" />
-    <End Role="orderPlaced" Type="Self.orderPlaced" Multiplicity="*" />
+  <Association Name="FK_OrderPlaced_OrderId">
+    <End Role="CustomerOrders" Type="Self.CustomerOrders" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OrderPlaced" Type="Self.OrderPlaced" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="giftItem">
-        <PropertyRef Name="giftItemId" />
+      <Principal Role="CustomerOrders">
+        <PropertyRef Name="CustomerOrderId" />
       </Principal>
-      <Dependent Role="orderPlaced">
-        <PropertyRef Name="productId" />
+      <Dependent Role="OrderPlaced">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderPlaced_ProductId">
+    <End Role="GiftItem" Type="Self.GiftItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="OrderPlaceds" Type="Self.OrderPlaceds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiftItem">
+        <PropertyRef Name="GiftItemId" />
+      </Principal>
+      <Dependent Role="OrderPlaceds">
+        <PropertyRef Name="ProductId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -887,7 +930,7 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Requests_employeeId">
-    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
     <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employees">
@@ -899,7 +942,7 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Requests_patientId">
-    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
     <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Patients">
@@ -1060,8 +1103,9 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <EntitySet Name="Addresses1" EntityType="Self.Addresses1" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Alerts" EntityType="Self.Alerts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Cafeterias" EntityType="Self.Cafeterias" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="cart" EntityType="Self.cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Carts" EntityType="Self.Carts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerOrders" EntityType="Self.CustomerOrders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DonationHonours" EntityType="Self.DonationHonours" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DonationOccurences" EntityType="Self.DonationOccurences" Schema="dbo" store:Type="Tables" />
@@ -1074,16 +1118,15 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <EntitySet Name="EmployeeStatus" EntityType="Self.EmployeeStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Feeedbacks" EntityType="Self.Feeedbacks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GetHelps" EntityType="Self.GetHelps" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="giftItem" EntityType="Self.giftItem" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="giftType" EntityType="Self.giftType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiftItem" EntityType="Self.GiftItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiftType" EntityType="Self.GiftType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HospitalEvents" EntityType="Self.HospitalEvents" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Insurances" EntityType="Self.Insurances" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="JobApplicants" EntityType="Self.JobApplicants" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="JobPostings" EntityType="Self.JobPostings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Navigations" EntityType="Self.Navigations" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OnCalls" EntityType="Self.OnCalls" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="orderDetails" EntityType="Self.orderDetails" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="orderPlaced" EntityType="Self.orderPlaced" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderPlaced" EntityType="Self.OrderPlaced" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pages" EntityType="Self.Pages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Passwords" EntityType="Self.Passwords" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
@@ -1096,12 +1139,26 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <EntitySet Name="VolunteerApplicants" EntityType="Self.VolunteerApplicants" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Volunteers" EntityType="Self.Volunteers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="WhatToBrings" EntityType="Self.WhatToBrings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonationProfiles" EntityType="Self.DonationProfiles" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DonationProfiles].[donationprofileId] AS [donationprofileId], 
+    [DonationProfiles].[donationMessage] AS [donationMessage], 
+    [DonationProfiles].[donationId] AS [donationId]
+    FROM [dbo].[DonationProfiles] AS [DonationProfiles]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="Faq" EntityType="Self.Faq" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [Faq].[id] AS [id], 
     [Faq].[question] AS [question], 
     [Faq].[answer] AS [answer]
     FROM [dbo].[Faq] AS [Faq]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OrderPlaceds" EntityType="Self.OrderPlaceds" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [OrderPlaceds].[ProductId] AS [ProductId], 
+    [OrderPlaceds].[OrderId] AS [OrderId], 
+    [OrderPlaceds].[Quantity] AS [Quantity]
+    FROM [dbo].[OrderPlaceds] AS [OrderPlaceds]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="Requests" EntityType="Self.Requests" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -1129,9 +1186,9 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       <End Role="Employees" EntitySet="Employees" />
       <End Role="Alerts" EntitySet="Alerts" />
     </AssociationSet>
-    <AssociationSet Name="FK_cart_GiftId" Association="Self.FK_cart_GiftId">
-      <End Role="giftItem" EntitySet="giftItem" />
-      <End Role="cart" EntitySet="cart" />
+    <AssociationSet Name="FK_Cart_GiftId" Association="Self.FK_Cart_GiftId">
+      <End Role="GiftItem" EntitySet="GiftItem" />
+      <End Role="Carts" EntitySet="Carts" />
     </AssociationSet>
     <AssociationSet Name="FK_Departments_Symptoms" Association="Self.FK_Departments_Symptoms">
       <End Role="Symptoms" EntitySet="Symptoms" />
@@ -1144,6 +1201,10 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
     <AssociationSet Name="FK_DonationHonours_Donors" Association="Self.FK_DonationHonours_Donors">
       <End Role="Donors" EntitySet="Donors" />
       <End Role="DonationHonours" EntitySet="DonationHonours" />
+    </AssociationSet>
+    <AssociationSet Name="FK_donationProfiles_donationId" Association="Self.FK_donationProfiles_donationId">
+      <End Role="Donations" EntitySet="Donations" />
+      <End Role="DonationProfiles" EntitySet="DonationProfiles" />
     </AssociationSet>
     <AssociationSet Name="FK_Donations_DonationOccurence" Association="Self.FK_Donations_DonationOccurence">
       <End Role="DonationOccurences" EntitySet="DonationOccurences" />
@@ -1189,9 +1250,9 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       <End Role="Volunteers" EntitySet="Volunteers" />
       <End Role="Feeedbacks" EntitySet="Feeedbacks" />
     </AssociationSet>
-    <AssociationSet Name="FK_giftItem_giftTypeId" Association="Self.FK_giftItem_giftTypeId">
-      <End Role="giftType" EntitySet="giftType" />
-      <End Role="giftItem" EntitySet="giftItem" />
+    <AssociationSet Name="FK_GiftItem_GiftTypeId" Association="Self.FK_GiftItem_GiftTypeId">
+      <End Role="GiftType" EntitySet="GiftType" />
+      <End Role="GiftItem" EntitySet="GiftItem" />
     </AssociationSet>
     <AssociationSet Name="FK_JobApplicants_JobPostings" Association="Self.FK_JobApplicants_JobPostings">
       <End Role="JobPostings" EntitySet="JobPostings" />
@@ -1213,9 +1274,13 @@ warning 6002: The table/view 'PetaByte.dbo.Requests' does not have a primary key
       <End Role="Volunteers" EntitySet="Volunteers" />
       <End Role="OnCalls" EntitySet="OnCalls" />
     </AssociationSet>
-    <AssociationSet Name="FK_orderPlaced_productId" Association="Self.FK_orderPlaced_productId">
-      <End Role="giftItem" EntitySet="giftItem" />
-      <End Role="orderPlaced" EntitySet="orderPlaced" />
+    <AssociationSet Name="FK_OrderPlaced_OrderId" Association="Self.FK_OrderPlaced_OrderId">
+      <End Role="CustomerOrders" EntitySet="CustomerOrders" />
+      <End Role="OrderPlaced" EntitySet="OrderPlaced" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderPlaced_ProductId" Association="Self.FK_OrderPlaced_ProductId">
+      <End Role="GiftItem" EntitySet="GiftItem" />
+      <End Role="OrderPlaceds" EntitySet="OrderPlaceds" />
     </AssociationSet>
     <AssociationSet Name="FK_Pages_Employees" Association="Self.FK_Pages_Employees">
       <End Role="Employees" EntitySet="Employees" />

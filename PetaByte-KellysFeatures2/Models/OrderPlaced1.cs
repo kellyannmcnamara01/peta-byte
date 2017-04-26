@@ -12,12 +12,12 @@ namespace PetaByte_KellysFeatures2.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderPlaced
+    public partial class OrderPlaced1
     {
         public int ProductId { get; set; }
         public int OrderId { get; set; }
         public int Quantity { get; set; }
     
-        public virtual CustomerOrder CustomerOrder { get; set; }
+        public virtual GiftItem GiftItem { get; set; }
     }
 }
