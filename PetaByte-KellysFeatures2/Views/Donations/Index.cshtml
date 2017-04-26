@@ -1,0 +1,136 @@
+﻿@model IEnumerable<PetaByte_KellysFeatures2.Models.Donation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.donationAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.donationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.donorFN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.donorLN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.homeNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.workNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mobileNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addressStreet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addressProv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addressCountry)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.addressCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.honorFN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.honorLN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationOccurence.donationOccurenceId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Donor.donorFirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.donationAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.donationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.donorFN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.donorLN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.homeNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.workNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mobileNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addressStreet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addressProv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addressCountry)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.addressCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.honorFN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.honorLN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationOccurence.donationOccurenceId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Donor.donorFirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.donationsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.donationsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.donationsId })
+        </td>
+    </tr>
+}
+
+</table>
